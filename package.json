@@ -1,0 +1,14 @@
+{
+  "name": "dealon-store",
+  "version": "1.0.0",
+  "description": "DealOn - Smart Tech Deals & Automated Publishing Engine",
+  "main": "auto_publisher.js",
+  "scripts": {
+    "publish": "node auto_publisher.js",
+    "tracker": "node tracker.js",
+    "engine": "node publish_engine.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5"
+  }
+}

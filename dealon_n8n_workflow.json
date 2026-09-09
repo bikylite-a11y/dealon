@@ -1,0 +1,163 @@
+{
+  "name": "DealOn Automated Tech Deal Tracker & Telegram Dispatcher",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours",
+              "hoursInterval": 3
+            }
+          ]
+        }
+      },
+      "name": "Cron Trigger (Every 3 Hours)",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        240,
+        300
+      ],
+      "id": "7fa37db9-e85d-4f76-805b-11756543b501"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Fallback curated catalog when external sheet is not configured\nconst sampleCatalog = [\n  {\n    \"id\": \"cmf-nothing-65w-gan\",\n    \"title\": \"CMF by Nothing 65W GaN 3-Port Fast Charger\",\n    \"brand\": \"CMF by Nothing\",\n    \"category\": \"Charging Essentials\",\n    \"current_price\": 2499,\n    \"mrp\": 3999,\n    \"historical_low\": 2499,\n    \"target_drop_price\": 2699,\n    \"is_historical_low\": true,\n    \"discount_pct\": 38,\n    \"asin\": \"B0CFV8ZJ6Q\",\n    \"features\": [\"65W GaN Fast Charge\", \"2x USB-C + 1x USB-A\"]\n  },\n  {\n    \"id\": \"stuffcool-neutron-33w\",\n    \"title\": \"Stuffcool Neutron 33W Dual Port Tiny GaN Charger\",\n    \"brand\": \"Stuffcool\",\n    \"category\": \"Charging Essentials\",\n    \"current_price\": 1299,\n    \"mrp\": 2299,\n    \"historical_low\": 1249,\n    \"target_drop_price\": 1399,\n    \"is_historical_low\": false,\n    \"discount_pct\": 43,\n    \"asin\": \"B09MLQ39S2\",\n    \"features\": [\"Ultra-compact GaN\", \"Type-C PD 33W + PPS\"]\n  },\n  {\n    \"id\": \"realme-buds-t300-anc\",\n    \"title\": \"Realme Buds T300 Active Noise Cancelling TWS Earbuds\",\n    \"brand\": \"Realme\",\n    \"category\": \"Audio Gear\",\n    \"current_price\": 1999,\n    \"mrp\": 3999,\n    \"historical_low\": 1999,\n    \"target_drop_price\": 2199,\n    \"is_historical_low\": true,\n    \"discount_pct\": 50,\n    \"asin\": \"B0CG2QG5Y9\",\n    \"features\": [\"30dB ANC\", \"12.4mm Bass Drivers\"]\n  },\n  {\n    \"id\": \"tangzu-waner-sg-iem\",\n    \"title\": \"Tangzu Wan'er S.G Audiophile In-Ear Monitor (IEM)\",\n    \"brand\": \"Tangzu\",\n    \"category\": \"Audio Gear\",\n    \"current_price\": 1699,\n    \"mrp\": 2999,\n    \"historical_low\": 1599,\n    \"target_drop_price\": 1799,\n    \"is_historical_low\": false,\n    \"discount_pct\": 43,\n    \"asin\": \"B0BNL41V9H\",\n    \"features\": [\"10mm PET Driver\", \"Detachable 2-Pin OFC\"]\n  },\n  {\n    \"id\": \"verilux-8-in-1-usb-c-hub\",\n    \"title\": \"Verilux 8-in-1 Aluminum USB-C Hub & Docking Adapter\",\n    \"brand\": \"Verilux\",\n    \"category\": \"Computing Peripherals\",\n    \"current_price\": 1499,\n    \"mrp\": 2999,\n    \"historical_low\": 1499,\n    \"target_drop_price\": 1699,\n    \"is_historical_low\": true,\n    \"discount_pct\": 50,\n    \"asin\": \"B0B68TRP2T\",\n    \"features\": [\"4K HDMI\", \"100W PD Pass-through\"]\n  }\n];\n\nreturn sampleCatalog.map(item => ({ json: item }));"
+      },
+      "name": "Load Product Catalog",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        460,
+        300
+      ],
+      "id": "e45a2789-9a2c-47bc-8a3b-93ff58849b22"
+    },
+    {
+      "parameters": {
+        "jsCode": "const affiliateTag = $env.AMAZON_AFFILIATE_TAG || 'dealon04-21';\nconst results = [];\n\nfor (const item of $input.all()) {\n  const p = item.json;\n  const currentPrice = Number(p.current_price);\n  const targetDropPrice = Number(p.target_drop_price);\n  const historicalLow = Number(p.historical_low);\n  const mrp = Number(p.mrp);\n  const isLow = p.is_historical_low || currentPrice <= historicalLow;\n  \n  // Evaluation condition: Trigger alert if current price hits target drop threshold\n  const shouldAlert = currentPrice <= targetDropPrice;\n  \n  if (shouldAlert) {\n    const savings = mrp - currentPrice;\n    const discount = Math.round(((mrp - currentPrice) / mrp) * 100);\n    const affiliateUrl = `https://www.amazon.in/dp/${p.asin}?tag=${affiliateTag}`;\n    const badgeHeader = isLow ? '🔥 *HISTORICAL ALL-TIME LOW ALERT*' : '⚡ *PRICE DROP ALERT*';\n    \n    // High-converting formatted Markdown message for Telegram\n    const message = `${badgeHeader}\\n\\n` +\n      `📦 *${p.title}*\\n` +\n      `🏢 *Brand:* ${p.brand} | 🏷️ #${p.category.replace(/\\s+/g, '')}\\n\\n` +\n      `💰 *Deal Price:* ₹${currentPrice.toLocaleString('en-IN')}\\n` +\n      `❌ *MRP:* ~₹${mrp.toLocaleString('en-IN')}~\\n` +\n      `📉 *Savings:* ₹${savings.toLocaleString('en-IN')} (${discount}% OFF)\\n` +\n      `🎯 *Historical 90D Low:* ₹${historicalLow.toLocaleString('en-IN')}\\n\\n` +\n      `👉 *Grab Deal on Amazon:*\\n${affiliateUrl}\\n\\n` +\n      `🔔 Tracked 24/7 by @dealon\\_offers | DealOn Portal`;\n    \n    results.push({\n      json: {\n        ...p,\n        affiliate_url: affiliateUrl,\n        formatted_message: message,\n        should_alert: true,\n        button_text: `🛒 Buy on Amazon (₹${currentPrice})`\n      }\n    });\n  }\n}\n\nreturn results;"
+      },
+      "name": "Evaluate Price Drops & Format Alert",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        680,
+        300
+      ],
+      "id": "a958b432-8419-4f76-87cf-43285741b003"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{ $json.should_alert }}",
+              "value2": true
+            }
+          ]
+        }
+      },
+      "name": "Filter Triggered Deals Only",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        900,
+        300
+      ],
+      "id": "c138df10-5201-44ef-9b48-8df05372ca04"
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $env.TELEGRAM_CHAT_ID || '@dealon_offers' }}",
+        "text": "={{ $json.formatted_message }}",
+        "additionalFields": {
+          "parse_mode": "Markdown",
+          "reply_markup": {
+            "inline_keyboard": [
+              [
+                {
+                  "text": "={{ $json.button_text }}",
+                  "url": "={{ $json.affiliate_url }}"
+                }
+              ],
+              [
+                {
+                  "text": "🌐 Open DealOn Portal",
+                  "url": "https://dealon.netlify.app"
+                },
+                {
+                  "text": "📢 VIP Channel",
+                  "url": "https://t.me/dealon_offers"
+                }
+              ]
+            ]
+          }
+        }
+      },
+      "name": "Send Alert to Telegram VIP",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.1,
+      "position": [
+        1120,
+        280
+      ],
+      "id": "d748f219-5481-4eb2-a94f-4d6423985105",
+      "credentials": {
+        "telegramApi": {
+          "id": "telegram-bot-credential-id",
+          "name": "DealOn Telegram Bot Account"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Cron Trigger (Every 3 Hours)": {
+      "main": [
+        [
+          {
+            "node": "Load Product Catalog",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Load Product Catalog": {
+      "main": [
+        [
+          {
+            "node": "Evaluate Price Drops & Format Alert",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Evaluate Price Drops & Format Alert": {
+      "main": [
+        [
+          {
+            "node": "Filter Triggered Deals Only",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filter Triggered Deals Only": {
+      "main": [
+        [
+          {
+            "node": "Send Alert to Telegram VIP",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  }
+}

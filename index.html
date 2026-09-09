@@ -1,0 +1,2041 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DealOn — Smart Tech Deals. Automated Savings.</title>
+  <meta name="description" content="Curated daily tech deals tracking verified historical lows across charging essentials, audiophile gear, and desk setups.">
+  <meta name="theme-color" content="#F0F0E0">
+  <link rel="canonical" href="https://dealon.netlify.app/">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="shortcut icon" href="favicon.png">
+  <link rel="apple-touch-icon" href="favicon.png">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dealon.netlify.app/">
+  <meta property="og:title" content="DealOn — Smart Tech Deals. Automated Savings.">
+  <meta property="og:description" content="Curated daily tech deals tracking verified historical lows across charging, audio, and desk setup gear.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=1200&auto=format&fit=crop&q=80">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@dealon_offers">
+  <meta name="twitter:title" content="DealOn — Smart Tech Deals. Automated Savings.">
+  <meta name="twitter:description" content="Curated daily tech deals tracking verified historical lows.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=1200&auto=format&fit=crop&q=80">
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"ItemList","name":"DealOn Curated Tech Deals","url":"https://dealon.netlify.app/","numberOfItems":29}
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ── Reset & Base ──────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    :root {
+      /* Core Brand Colors */
+      --bg-main: #F0F0E0;              /* Off-White */
+      --bg-card: #FFFFFF;              /* Pure White for clean contrast on cards */
+      --bg-subtle: #E7E7D6;            /* Slightly darker tone for borders/dividers */
+
+      /* Interactive Elements */
+      --primary-accent: #FF8C00;       /* Terracotta Orange (Buttons & Primary Links) */
+      --primary-hover: #E07B00;        /* Darker Terracotta for active/hover */
+      --primary-glow: rgba(255, 140, 0, 0.25);
+
+      /* Functional Accents */
+      --accent-sea-green: #128C7E;     /* Sea Green (Trust, Verified, WhatsApp, Badges) */
+      --accent-sea-green-light: #E8F5F3;
+      --accent-crimson: #E34234;       /* Crimson Red (Flash Sales, % Discounts, Steals) */
+      --accent-crimson-light: #FDECEB;
+
+      /* Typography & Neutral Colors */
+      --text-primary: #1C2321;         /* Deep slate for high contrast */
+      --text-secondary: #596562;       /* Readable secondary body text */
+      --border-color: #DCDCC8;         /* Subtle warm border */
+
+      /* System Aliases for Component Rules */
+      --bg: var(--bg-main);
+      --bg-card2: #F8F8F0;
+      --border: var(--border-color);
+      --border-light: var(--bg-subtle);
+      --indigo: var(--primary-accent);
+      --indigo-dark: var(--primary-hover);
+      --indigo-glow: var(--primary-glow);
+      --emerald: var(--accent-sea-green);
+      --emerald-dark: #0E7064;
+      --emerald-glow: rgba(18, 140, 126, 0.2);
+      --rose: var(--accent-crimson);
+      --amber: #D97706;
+      --text: var(--text-primary);
+      --text-muted: var(--text-secondary);
+      --text-dim: #788884;
+      --radius: 14px;
+      --radius-sm: 8px;
+      --radius-lg: 20px;
+      --shadow: 0 4px 20px rgba(28, 35, 33, 0.08);
+      --transition: 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+      --font: 'Inter', system-ui, -apple-system, sans-serif;
+      --mono: 'JetBrains Mono', monospace;
+    }
+
+    /* Global Background and Typography */
+    body {
+      background-color: var(--bg-main) !important;
+      color: var(--text-primary);
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      min-height: 100vh;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Links */
+    a {
+      color: var(--primary-accent);
+      text-decoration: none;
+      transition: color 0.2s ease, opacity 0.2s ease;
+    }
+
+    a:hover {
+      color: var(--primary-hover);
+    }
+
+    /* ── Scrollbar ──────────────────────────────────── */
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg-main); }
+    ::-webkit-scrollbar-thumb { background: var(--border-color); border-radius: 99px; }
+
+    /* ── Layout ──────────────────────────────────── */
+    .container { max-width: 1380px; margin: 0 auto; padding: 0 24px; }
+
+    /* ── Top Live Deal Bar ──────────────────────────────────── */
+    .top-ticker-bar, .announcement-banner, .announcement {
+      background-color: var(--accent-sea-green) !important;
+      color: #FFFFFF !important;
+      padding: 10px 0;
+      text-align: center;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .top-ticker-bar a, .announcement-banner a, .announcement a {
+      color: #FFFFFF !important;
+      text-decoration: underline;
+      font-weight: 700;
+      margin-left: 6px;
+    }
+
+    .pulse {
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      background: #FFFFFF;
+      border-radius: 50%;
+      margin-right: 8px;
+      animation: pulse 1.5s ease-in-out infinite;
+      vertical-align: middle;
+    }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1);} 50%{opacity:0.4;transform:scale(0.7);} }
+
+    /* ── Header ──────────────────────────────────── */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(240, 240, 224, 0.94);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border-color);
+      padding: 0;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 14px 0;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+
+    .logo-img {
+      height: 38px;
+      max-width: 170px;
+      width: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 8px rgba(255,140,0,0.25));
+      display: block;
+    }
+
+    .hero-logo-wrap {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
+
+    .hero-logo-img {
+      height: 76px;
+      max-width: 340px;
+      width: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 6px 24px rgba(255,140,0,0.25));
+      transition: var(--transition);
+    }
+
+    .hero-logo-img:hover {
+      transform: scale(1.03);
+    }
+
+    /* Search bar in header */
+    .header-search {
+      flex: 1;
+      max-width: 500px;
+      position: relative;
+    }
+
+    .header-search input {
+      width: 100%;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      color: var(--text-primary);
+      font-family: var(--font);
+      font-size: 0.9rem;
+      padding: 10px 44px 10px 16px;
+      border-radius: 99px;
+      outline: none;
+      transition: var(--transition);
+    }
+
+    .header-search input:focus {
+      border-color: var(--primary-accent);
+      box-shadow: 0 0 0 3px var(--primary-glow);
+    }
+    .header-search input::placeholder { color: var(--text-secondary); }
+
+    .header-search .search-icon-btn {
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-secondary);
+      pointer-events: none;
+    }
+
+    .header-search .kbd-hint {
+      position: absolute;
+      right: 40px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 0.68rem;
+      font-family: var(--mono);
+      color: var(--text-secondary);
+      background: var(--bg-subtle);
+      padding: 1px 6px;
+      border-radius: 4px;
+      pointer-events: none;
+      transition: var(--transition);
+    }
+
+    .header-search input:focus ~ .kbd-hint { opacity: 0; }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-left: auto;
+    }
+
+    /* ── Buttons ──────────────────────────────────── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-family: var(--font);
+      font-weight: 600;
+      font-size: 0.85rem;
+      padding: 9px 16px;
+      border-radius: 99px;
+      border: none;
+      cursor: pointer;
+      transition: var(--transition);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    /* Primary CTA Buttons */
+    .btn-primary, 
+    .cta-button, 
+    button[type="submit"],
+    .hero-cta,
+    .view-deal-btn,
+    .buy-btn {
+      background-color: var(--primary-accent) !important;
+      color: #FFFFFF !important;
+      border: none;
+      border-radius: 8px;
+      font-weight: 700;
+      box-shadow: 0 4px 14px var(--primary-glow);
+      transition: all 0.2s ease;
+    }
+
+    .btn-primary:hover, 
+    .cta-button:hover, 
+    .view-deal-btn:hover,
+    .buy-btn:hover {
+      background-color: var(--primary-hover) !important;
+      transform: translateY(-1px);
+    }
+
+    /* Secondary Button / Outlines */
+    .btn-secondary, 
+    .outline-cta,
+    .btn-ghost {
+      background-color: transparent !important;
+      color: var(--primary-accent) !important;
+      border: 2px solid var(--primary-accent) !important;
+      border-radius: 8px;
+    }
+
+    .btn-secondary:hover,
+    .outline-cta:hover,
+    .btn-ghost:hover {
+      background-color: var(--primary-accent) !important;
+      color: #FFFFFF !important;
+    }
+
+    .btn-emerald {
+      background: var(--accent-sea-green) !important;
+      color: #FFFFFF !important;
+      box-shadow: 0 4px 14px rgba(18, 140, 126, 0.25);
+    }
+    .btn-emerald:hover {
+      background: var(--emerald-dark) !important;
+      transform: translateY(-1px);
+    }
+
+    .btn-whatsapp {
+      background: #25D366 !important;
+      color: #FFFFFF !important;
+      font-weight: 700;
+      border-radius: 8px;
+    }
+    .btn-whatsapp:hover {
+      background: #20BA59 !important;
+      transform: translateY(-1px);
+    }
+
+    .icon-btn {
+      width: 38px;
+      height: 38px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: var(--text-secondary);
+      transition: var(--transition);
+    }
+    .icon-btn:hover { background: var(--bg-subtle); color: var(--text-primary); }
+    .icon-btn svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2; }
+
+    /* ── Hero Section ──────────────────────────────────── */
+    .hero {
+      padding: 56px 0 40px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -120px; left: -120px;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(255,140,0,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -80px; right: -80px;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(18,140,126,0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-content { position: relative; z-index: 1; text-align: center; }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--accent-sea-green-light);
+      border: 1px solid var(--accent-sea-green);
+      color: var(--accent-sea-green);
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 5px 14px;
+      border-radius: 99px;
+      margin-bottom: 20px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin-bottom: 16px;
+      color: var(--text-primary);
+    }
+
+    .hero h1 span {
+      background: linear-gradient(135deg, var(--primary-accent) 0%, var(--accent-sea-green) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-sub {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      max-width: 560px;
+      margin: 0 auto 32px;
+      line-height: 1.7;
+    }
+
+    .hero-ctas {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+    }
+
+    /* Stats row */
+    .stats-row, .stat-box {
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      flex-wrap: wrap;
+      background-color: var(--bg-card) !important;
+      border: 1px solid var(--border-color) !important;
+      border-radius: var(--radius);
+      padding: 20px 32px;
+      max-width: 760px;
+      margin: 0 auto;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+
+    .stat-item {
+      flex: 1;
+      min-width: 140px;
+      text-align: center;
+      padding: 0 20px;
+      position: relative;
+    }
+
+    .stat-item + .stat-item::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 15%; height: 70%;
+      width: 1px;
+      background: var(--border-color);
+    }
+
+    .stat-num {
+      font-size: 1.65rem;
+      font-weight: 800;
+      font-family: var(--mono);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .stat-num.indigo { color: var(--primary-accent); }
+    .stat-num.emerald { color: var(--accent-sea-green); }
+    .stat-num.amber { color: var(--accent-crimson); }
+    .stat-label { font-size: 0.78rem; color: var(--text-secondary); font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; }
+
+    /* ── Deal of the Day ──────────────────────────────────── */
+    .dotd-section { padding: 32px 0 0; }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--text-primary);
+    }
+
+    .section-badge {
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 99px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    /* Discount & Flash Sale Badges (Crimson Red) */
+    .badge-discount, 
+    .discount-tag, 
+    .tag-fire, 
+    .price-drop-badge,
+    .card-discount-chip,
+    .badge-hot,
+    .badge-steal,
+    .badge-rose {
+      background-color: var(--accent-crimson-light) !important;
+      color: var(--accent-crimson) !important;
+      border: 1px solid var(--accent-crimson) !important;
+      font-weight: 700;
+    }
+
+    /* Verified / Trust / Category Badges (Sea Green) */
+    .badge-verified, 
+    .tag-success, 
+    .verified-historical-low,
+    .badge-historical,
+    .badge-emerald {
+      background-color: var(--accent-sea-green-light) !important;
+      color: var(--accent-sea-green) !important;
+      border: 1px solid var(--accent-sea-green) !important;
+      font-weight: 600;
+    }
+
+    .badge-indigo {
+      background: rgba(255, 140, 0, 0.12) !important;
+      color: var(--primary-accent) !important;
+      border: 1px solid rgba(255, 140, 0, 0.35) !important;
+      font-weight: 700;
+    }
+
+    .badge-deal {
+      background: var(--primary-accent) !important;
+      color: #FFFFFF !important;
+    }
+
+    .badge-popular {
+      background: var(--accent-sea-green) !important;
+      color: #FFFFFF !important;
+    }
+
+    .dotd-card {
+      background: var(--bg-card) !important;
+      border: 2px solid var(--accent-sea-green) !important;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      box-shadow: 0 4px 24px rgba(18,140,126,0.12), 0 2px 8px rgba(0,0,0,0.04);
+      position: relative;
+    }
+
+    .dotd-img-wrap {
+      position: relative;
+      background: var(--bg-card2);
+      overflow: hidden;
+    }
+
+    .dotd-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .dotd-card:hover .dotd-img-wrap img { transform: scale(1.04); }
+
+    .dotd-strip {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      background: var(--accent-sea-green);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 5px 16px;
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .dotd-body {
+      padding: 28px 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .dotd-meta { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+
+    .dotd-title {
+      font-size: 1.45rem;
+      font-weight: 800;
+      line-height: 1.3;
+      color: var(--text-primary);
+    }
+
+    .dotd-prices { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; }
+
+    .dotd-price {
+      font-size: 2rem;
+      font-weight: 900;
+      font-family: var(--mono);
+      color: var(--accent-sea-green);
+    }
+
+    .dotd-mrp {
+      font-size: 1.05rem;
+      font-family: var(--mono);
+      color: var(--text-secondary);
+      text-decoration: line-through;
+    }
+
+    .dotd-save {
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      background: var(--accent-crimson-light);
+      border: 1px solid var(--accent-crimson);
+      color: var(--accent-crimson);
+      border-radius: 99px;
+    }
+
+    .dotd-features { display: flex; flex-direction: column; gap: 6px; }
+
+    .dotd-feature-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+    }
+
+    .dotd-feature-item::before { content: '✓'; color: var(--accent-sea-green); font-weight: 700; }
+
+    .dotd-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 6px; }
+
+    .star-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.85rem;
+    }
+
+    .stars { color: #D97706; letter-spacing: -1px; }
+    .rating-count { color: var(--text-secondary); }
+
+    /* ── Category Tabs + Filters ──────────────────────────────────── */
+    .controls-section { padding: 32px 0 0; }
+
+    .cat-scroll {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+      scrollbar-width: none;
+    }
+
+    .cat-scroll::-webkit-scrollbar { display: none; }
+
+    .cat-btn {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font);
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 9px 18px;
+      border-radius: 99px;
+      border: 1px solid var(--border-color);
+      background: var(--bg-card);
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: var(--transition);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .cat-btn:hover { background: var(--bg-subtle); color: var(--text-primary); border-color: var(--border-color); }
+
+    .cat-btn.active {
+      background: var(--primary-accent) !important;
+      color: #FFFFFF !important;
+      border-color: var(--primary-accent) !important;
+      box-shadow: 0 2px 12px var(--primary-glow);
+    }
+
+    .filter-row, .filter-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 14px;
+      flex-wrap: wrap;
+    }
+
+    .select-custom {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      color: var(--text-primary);
+      font-family: var(--font);
+      font-size: 0.84rem;
+      padding: 8px 14px;
+      border-radius: 10px;
+      outline: none;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .select-custom:focus { border-color: var(--primary-accent); box-shadow: 0 0 0 3px var(--primary-glow); }
+
+    .toggle-pill {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 10px;
+      border: 1px solid var(--border-color);
+      background: var(--bg-card);
+      color: var(--text-secondary);
+      font-size: 0.84rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      font-family: var(--font);
+    }
+
+    .toggle-pill input { accent-color: var(--accent-sea-green); cursor: pointer; }
+
+    .results-count {
+      margin-left: auto;
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+
+    /* ── Products Grid ──────────────────────────────────── */
+    .deals-section { padding: 24px 0 48px; }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(285px, 1fr));
+      gap: 20px;
+    }
+
+    /* ── Product Card ──────────────────────────────────── */
+    .deal-card {
+      background-color: var(--bg-card) !important;
+      border: 1px solid var(--border-color) !important;
+      border-radius: var(--radius);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: var(--transition);
+      position: relative;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+
+    .deal-card:hover {
+      border-color: var(--primary-accent) !important;
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px var(--primary-glow), 0 4px 12px rgba(0,0,0,0.06);
+    }
+
+    .deal-card.historical-low {
+      border-color: var(--accent-sea-green) !important;
+    }
+    .deal-card.historical-low:hover {
+      border-color: var(--accent-sea-green) !important;
+      box-shadow: 0 12px 32px rgba(18,140,126,0.18), 0 4px 12px rgba(0,0,0,0.06);
+    }
+
+    /* Card Image */
+    .card-img-wrap {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      background: var(--bg-card2);
+    }
+
+    .card-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .deal-card:hover .card-img-wrap img { transform: scale(1.06); }
+
+    .card-badge {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      font-size: 0.68rem;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 99px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      backdrop-filter: blur(8px);
+      z-index: 2;
+    }
+
+    .card-discount-chip {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 0.78rem;
+      font-weight: 800;
+      font-family: var(--mono);
+      padding: 4px 8px;
+      border-radius: 8px;
+      backdrop-filter: blur(8px);
+      z-index: 2;
+    }
+
+    .card-wishlist {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      width: 34px; height: 34px;
+      background: #FFFFFF;
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--border-color);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer;
+      z-index: 3;
+      transition: var(--transition);
+      color: var(--text-secondary);
+    }
+
+    .card-wishlist:hover {
+      background: var(--accent-crimson-light);
+      border-color: var(--accent-crimson);
+      color: var(--accent-crimson);
+    }
+    .card-wishlist.active {
+      color: var(--accent-crimson);
+      border-color: var(--accent-crimson);
+      background: var(--accent-crimson-light);
+    }
+    .card-wishlist svg { width: 15px; height: 15px; stroke: currentColor; fill: none; stroke-width: 2; transition: var(--transition); }
+    .card-wishlist.active svg { fill: currentColor; }
+
+    /* Card Body */
+    .card-body {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      gap: 10px;
+      background: var(--bg-card);
+    }
+
+    .card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+
+    .card-brand {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--primary-accent);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .card-rating-mini {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.76rem;
+      color: var(--text-secondary);
+      flex-shrink: 0;
+    }
+
+    .star-icon { color: #D97706; font-size: 0.8rem; }
+
+    .card-title {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.4;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .card-features {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .card-feature-tag {
+      font-size: 0.74rem;
+      color: var(--text-secondary);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .card-feature-tag::before { content: '·'; color: var(--primary-accent); font-size: 1rem; line-height: 0; }
+
+    /* Price Area */
+    .card-price-area {
+      background: var(--bg-card2);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .card-price {
+      font-size: 1.3rem;
+      font-weight: 900;
+      font-family: var(--mono);
+      color: var(--accent-sea-green);
+    }
+    .card-mrp {
+      font-size: 0.8rem;
+      font-family: var(--mono);
+      color: var(--text-secondary);
+      text-decoration: line-through;
+    }
+    .card-savings {
+      font-size: 0.72rem;
+      color: var(--text-secondary);
+    }
+    .card-savings strong { color: var(--accent-crimson); font-weight: 700; }
+
+    /* Sparkline */
+    .sparkline-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .sparkline-label { font-size: 0.7rem; color: var(--text-secondary); white-space: nowrap; }
+    .sparkline-canvas { flex: 1; height: 22px; }
+
+    /* Card Actions */
+    .card-actions {
+      display: grid;
+      grid-template-columns: 1fr auto auto;
+      gap: 8px;
+      margin-top: auto;
+    }
+
+    .card-icon-btn {
+      width: 40px; height: 40px;
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer;
+      transition: var(--transition);
+      flex-shrink: 0;
+    }
+
+    .card-icon-btn svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2; color: var(--text-secondary); }
+    .card-icon-btn:hover { background: var(--bg-subtle); }
+    .card-icon-btn:hover svg { color: var(--text-primary); }
+    .card-icon-btn.whatsapp-btn:hover { background: var(--accent-sea-green-light); border-color: var(--accent-sea-green); }
+    .card-icon-btn.whatsapp-btn:hover svg { color: var(--accent-sea-green); }
+    .card-icon-btn.copy-btn:hover { background: var(--primary-glow); border-color: var(--primary-accent); }
+    .card-icon-btn.copy-btn:hover svg { color: var(--primary-accent); }
+
+    /* Empty State */
+    .empty-state {
+      text-align: center;
+      padding: 80px 24px;
+      color: var(--text-secondary);
+    }
+
+    .empty-state .empty-icon { font-size: 3rem; margin-bottom: 16px; }
+    .empty-state h3 { font-size: 1.2rem; font-weight: 700; color: var(--text-primary); margin-bottom: 8px; }
+    .empty-state p { font-size: 0.9rem; margin-bottom: 20px; }
+
+    /* ── Telegram VIP & WhatsApp Integration Cards ──────────────────────────────────── */
+    .telegram-banner, .newsletter-section, .telegram-cta {
+      background-color: #FFFFFF !important;
+      border: 2px solid var(--primary-accent) !important;
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      text-align: center;
+      margin: 8px 0 48px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 20px var(--primary-glow);
+    }
+
+    .telegram-cta::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 200px; height: 200px;
+      background: radial-gradient(circle, rgba(255,140,0,0.12) 0%, transparent 70%);
+    }
+
+    .telegram-btn {
+      background-color: #229ED9 !important; /* Standard Telegram Blue for recognition */
+      color: #FFFFFF !important;
+    }
+
+    .telegram-cta-inner { position: relative; z-index: 1; }
+    .telegram-cta h2 { font-size: 1.6rem; font-weight: 800; margin-bottom: 10px; color: var(--text-primary); }
+    .telegram-cta p { color: var(--text-secondary); margin-bottom: 24px; max-width: 480px; margin-left: auto; margin-right: auto; }
+    .telegram-cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+    /* ── Footer & Mobile Bottom Navigation ──────────────────────────────────── */
+    footer, .mobile-bottom-nav, .mobile-nav {
+      background-color: #FFFFFF !important;
+      border-top: 1px solid var(--border-color);
+    }
+
+    footer {
+      position: relative;
+      padding: 56px 0 28px;
+    }
+
+    .footer-tricolor-strip {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #FF9933 0%, #FF9933 33.3%, #FFFFFF 33.3%, #FFFFFF 66.6%, #138808 66.6%, #138808 100%);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1.1fr;
+      gap: 40px;
+      margin-bottom: 44px;
+    }
+
+    .footer-col {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .footer-title {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      letter-spacing: -0.01em;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .footer-tagline {
+      color: var(--text-secondary);
+      font-size: 0.88rem;
+    }
+
+    .footer-nav-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-nav-link {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.84rem;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      font-family: var(--font);
+      text-align: left;
+      padding: 0;
+    }
+
+    .footer-nav-link:hover {
+      color: var(--primary-accent);
+      transform: translateX(3px);
+    }
+
+    .make-in-india-card {
+      background: var(--bg-card2);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      padding: 14px 16px;
+      margin-top: 6px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .make-in-india-card::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: linear-gradient(180deg, #FF9933, #FFFFFF, #138808);
+    }
+
+    .make-in-india-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+
+    .make-in-india-text {
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    .footer-badge-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 6px;
+    }
+
+    .footer-tag-pill {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 3px 9px;
+      border-radius: 99px;
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      color: var(--text-secondary);
+    }
+
+    .footer-bottom-bar {
+      border-top: 1px solid var(--border-color);
+      padding-top: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+    }
+
+    .footer-disclaimer {
+      color: var(--text-secondary);
+    }
+
+    @media (max-width: 900px) {
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+      }
+    }
+
+    @media (max-width: 580px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 26px;
+      }
+    }
+
+    /* ── Toast ──────────────────────────────────── */
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(80px);
+      background: var(--text-primary);
+      border: 1px solid var(--border-color);
+      color: #FFFFFF;
+      padding: 12px 22px;
+      border-radius: 12px;
+      font-size: 0.87rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 8px 32px rgba(28, 35, 33, 0.25);
+      transition: transform 0.3s cubic-bezier(0.4,0,0.2,1), opacity 0.3s;
+      z-index: 9999;
+      opacity: 0;
+      white-space: nowrap;
+    }
+
+    .toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
+    .toast-icon { color: var(--accent-sea-green); }
+
+    /* ── Modal ──────────────────────────────────── */
+    .modal-overlay {
+      position: fixed; inset: 0;
+      background: rgba(28, 35, 33, 0.6);
+      backdrop-filter: blur(6px);
+      z-index: 1000;
+      display: flex; align-items: center; justify-content: center; padding: 24px;
+      opacity: 0; visibility: hidden;
+      transition: var(--transition);
+    }
+
+    .modal-overlay.active { opacity: 1; visibility: visible; }
+
+    .modal, .modal-content {
+      background-color: var(--bg-card) !important;
+      border: 1px solid var(--border-color) !important;
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      max-width: 480px;
+      width: 100%;
+      box-shadow: 0 24px 80px rgba(28, 35, 33, 0.2);
+      transform: scale(0.95);
+      transition: transform 0.2s ease;
+      color: var(--text-primary);
+    }
+
+    .modal-overlay.active .modal { transform: scale(1); }
+
+    .modal-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; }
+    .modal-title { font-size: 1.1rem; font-weight: 800; color: var(--text-primary); }
+    .modal-close { background: none; border: none; cursor: pointer; color: var(--text-secondary); padding: 4px; border-radius: 6px; transition: var(--transition); }
+    .modal-close:hover { color: var(--text-primary); background: var(--bg-subtle); }
+    .modal-close svg { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 2; display: block; }
+
+    .form-group { margin-bottom: 18px; }
+    .form-label { display: block; font-size: 0.83rem; font-weight: 600; color: var(--text-secondary); margin-bottom: 6px; }
+    .form-input, .form-select {
+      width: 100%;
+      background: var(--bg-card2);
+      border: 1px solid var(--border-color);
+      color: var(--text-primary);
+      font-family: var(--font);
+      font-size: 0.9rem;
+      padding: 10px 14px;
+      border-radius: 10px;
+      outline: none;
+      transition: var(--transition);
+    }
+    .form-input:focus, .form-select:focus { border-color: var(--primary-accent); box-shadow: 0 0 0 3px var(--primary-glow); }
+    .form-hint { font-size: 0.76rem; color: var(--text-secondary); margin-top: 5px; }
+
+    /* ── Mobile Bottom Nav ──────────────────────────────────── */
+    .mobile-nav {
+      position: fixed; bottom: 0; left: 0; right: 0;
+      height: 64px;
+      backdrop-filter: blur(16px);
+      display: none;
+      align-items: center;
+      justify-content: space-around;
+      z-index: 500;
+    }
+
+    .mobile-nav-item {
+      display: flex; flex-direction: column; align-items: center; gap: 3px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.65rem;
+      font-weight: 600;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 6px 14px;
+      transition: var(--transition);
+      font-family: var(--font);
+    }
+
+    .mobile-nav-item:hover, .mobile-nav-item.active-nav { color: var(--primary-accent); }
+    .mobile-nav-icon { font-size: 1.2rem; }
+
+    /* ── Responsive ──────────────────────────────────── */
+    @media (max-width: 768px) {
+      body { padding-bottom: 70px; }
+      .mobile-nav { display: flex; }
+      .header-search { display: none; }
+      .dotd-card { grid-template-columns: 1fr; }
+      .dotd-img-wrap { height: 220px; }
+      .hero h1 { font-size: 2rem; }
+      .stats-row { padding: 16px; }
+      .stat-item { min-width: 100px; padding: 0 10px; }
+      .stat-num { font-size: 1.3rem; }
+      .products-grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; }
+      .telegram-cta { padding: 28px 20px; }
+    }
+
+    @media (max-width: 480px) {
+      .products-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+      .card-body { padding: 10px; gap: 7px; }
+      .card-price { font-size: 1.05rem; }
+      .card-title { font-size: 0.8rem; }
+      .card-features { display: none; }
+      .card-actions { grid-template-columns: 1fr auto auto; gap: 6px; }
+      .card-icon-btn { width: 36px; height: 36px; }
+      .buy-btn { font-size: 0.78rem; padding: 9px 10px; }
+      .card-img-wrap { aspect-ratio: 1; }
+    }
+  
+  </style>
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+  <div class="announcement">
+    <span class="pulse"></span>
+    LIVE: <strong>29 verified tech deals</strong> at historical lows today.
+    <a href="https://t.me/dealon_offers" target="_blank" rel="noopener noreferrer">Join VIP Telegram @dealon_offers →</a>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="header-inner">
+        <a href="/" class="logo" title="DealOn — Smart Tech Deals">
+          <img src="logo.png" alt="DealOn" class="logo-img">
+        </a>
+
+        <div class="header-search">
+          <input type="text" id="searchInput" placeholder="Search products, brands, specs…" autocomplete="off">
+          <span class="kbd-hint">[ / ]</span>
+          <span class="search-icon-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2.5">
+              <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+          </span>
+        </div>
+
+        <div class="header-actions">
+          <button class="icon-btn" id="openAlertModalBtn" title="Set Price Alert">
+            <svg viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+          </button>
+          <a href="https://t.me/dealon_offers" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 0 0-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.52 2.77-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .37z"/></svg>
+            VIP Alerts
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-logo-wrap">
+          <img src="logo.png" alt="DealOn" class="hero-logo-img">
+        </div>
+        <div class="hero-badge">
+          <span class="pulse"></span>
+          Automated Price Intelligence · Updated Every 3 Hours
+        </div>
+        <h1>Smart Tech Deals.<br><span>Automated Savings.</span></h1>
+        <p class="hero-sub">
+          We eliminate manual price hunting by tracking 29+ premium tech products 24/7 and alerting you the moment prices hit verified historical lows.
+        </p>
+        <div class="hero-ctas">
+          <a href="#dealsSection" class="btn btn-emerald" style="font-size: 0.95rem; padding: 12px 24px;">
+            🔥 Browse Deals
+          </a>
+          <a href="https://t.me/dealon_offers" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" style="font-size: 0.95rem; padding: 12px 24px;">
+            📢 Get Instant Alerts
+          </a>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats-row">
+          <div class="stat-item">
+            <div class="stat-num indigo" id="statCount">29</div>
+            <div class="stat-label">Deals Tracked</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num emerald" id="statAvgDiscount">47%</div>
+            <div class="stat-label">Avg Savings</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num amber" id="statHistoricalLows">8</div>
+            <div class="stat-label">At Hist. Lows</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num" style="color:#C4B5FD;">3h</div>
+            <div class="stat-label">Update Freq.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Deal of the Day -->
+  <section class="dotd-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-title">
+          ⚡ Deal of the Day
+          <span class="section-badge badge-emerald">VERIFIED HISTORICAL LOW</span>
+        </div>
+      </div>
+      <div id="dotdWrap"></div>
+    </div>
+  </section>
+
+  <!-- Controls -->
+  <section class="controls-section">
+    <div class="container">
+      <div class="cat-scroll" id="categoryTabs">
+        <button class="cat-btn active" data-cat="all">🛍️ All Deals</button>
+        <button class="cat-btn" data-cat="Charging Essentials">⚡ Charging Essentials</button>
+        <button class="cat-btn" data-cat="Audio Gear">🎧 Audio Gear</button>
+        <button class="cat-btn" data-cat="Desk Setup">🖥️ Desk Setup</button>
+        <button class="cat-btn" data-cat="Computing Peripherals">⌨️ Peripherals</button>
+        <button class="cat-btn" data-cat="Gaming Gadgets">🎮 Gaming</button>
+      </div>
+      <div class="filter-row">
+        <select id="sortFilter" class="select-custom">
+          <option value="discount">Sort: Highest Discount</option>
+          <option value="price_asc">Sort: Price ↑ Low to High</option>
+          <option value="price_desc">Sort: Price ↓ High to Low</option>
+          <option value="rating">Sort: Top Rated</option>
+          <option value="popular">Sort: Most Reviews</option>
+        </select>
+        <select id="discountFilter" class="select-custom">
+          <option value="0">Any Discount</option>
+          <option value="35">35%+ Off</option>
+          <option value="40">40%+ Off</option>
+          <option value="50">50%+ Off (Steals)</option>
+          <option value="60">60%+ Off (Fire)</option>
+        </select>
+        <label class="toggle-pill">
+          <input type="checkbox" id="histLowToggle"> 🎯 Hist. Lows Only
+        </label>
+        <span class="results-count" id="resultsCount"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Grid -->
+  <section class="deals-section" id="dealsSection">
+    <div class="container">
+      <div id="productsGrid" class="products-grid"></div>
+    </div>
+  </section>
+
+  <!-- Telegram CTA -->
+  <section class="container">
+    <div class="telegram-cta">
+      <div class="telegram-cta-inner">
+        <h2>Never Miss a Deal Again 🔔</h2>
+        <p>Join <strong>3,400+ deal hunters</strong> on our VIP Telegram channel. Get instant push notifications the moment a product hits a verified price low.</p>
+        <div class="telegram-cta-btns">
+          <a href="https://t.me/dealon_offers" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="font-size: 0.95rem; padding: 13px 26px;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 0 0-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.52 2.77-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .37z"/></svg>
+            Join @dealon_offers — Free
+          </a>
+          <button class="btn btn-ghost" id="openAlertBtn2" style="font-size: 0.95rem; padding: 13px 26px;">
+            🔔 Set Custom Price Alert
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-tricolor-strip"></div>
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1: Brand & Make in India -->
+        <div class="footer-col">
+          <a href="/" class="logo" title="DealOn — Smart Tech Deals">
+            <img src="logo.png" alt="DealOn" class="logo-img">
+          </a>
+          <div class="footer-tagline">Smart Tech Deals. Automated Savings.</div>
+          
+          <div class="make-in-india-card">
+            <div class="make-in-india-header">
+              <span style="font-size: 1.2rem;">🇮🇳</span>
+              <span>Made in India · Curated for Techies</span>
+            </div>
+            <p class="make-in-india-text">
+              Tracking verified lowest prices & historical drops across top consumer tech, audiophile gear, and desk accessories on Amazon India.
+            </p>
+            <div class="footer-badge-row">
+              <span class="footer-tag-pill">⚡ GaN Tech</span>
+              <span class="footer-tag-pill">🎧 HiFi Audio</span>
+              <span class="footer-tag-pill">🖥️ Desk Setup</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Col 2: Categories -->
+        <div class="footer-col">
+          <div class="footer-title">🛍️ Top Categories</div>
+          <ul class="footer-nav-list">
+            <li><button class="footer-nav-link" onclick="filterCategory('Charging Essentials')">⚡ Charging Essentials</button></li>
+            <li><button class="footer-nav-link" onclick="filterCategory('Audio Gear')">🎧 Audio Gear & HiFi IEMs</button></li>
+            <li><button class="footer-nav-link" onclick="filterCategory('Desk Setup')">🖥️ Desk Setup & Ergonomics</button></li>
+            <li><button class="footer-nav-link" onclick="filterCategory('Computing Peripherals')">⌨️ Keyboards & USB-C Hubs</button></li>
+            <li><button class="footer-nav-link" onclick="filterCategory('Gaming Gadgets')">🎮 Gaming Mice & Peripherals</button></li>
+            <li><button class="footer-nav-link" onclick="filterCategory('all')">🔥 View All 29 Tech Deals</button></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Deal Hunting Tools -->
+        <div class="footer-col">
+          <div class="footer-title">⚡ Deal Tools</div>
+          <ul class="footer-nav-list">
+            <li><button class="footer-nav-link" onclick="filterHistLows()">🎯 90-Day Historical Lows</button></li>
+            <li><button class="footer-nav-link" onclick="filterDiscounts(50)">🔥 Steal Deals (50%+ OFF)</button></li>
+            <li><button class="footer-nav-link" onclick="filterDiscounts(60)">🚀 Fire Deals (60%+ OFF)</button></li>
+            <li><button class="footer-nav-link" onclick="showSavedWishlist()">❤️ My Saved Wishlist</button></li>
+            <li><button class="footer-nav-link" onclick="document.getElementById('alertModal').classList.add('active')">🔔 Set Price Drop Alert</button></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Community & Social -->
+        <div class="footer-col">
+          <div class="footer-title">🌐 Connect With Us</div>
+          <ul class="footer-nav-list">
+            <li><a href="https://t.me/dealon_offers" target="_blank" rel="noopener noreferrer" class="footer-nav-link">📢 Telegram — Instant Alerts</a></li>
+            <li><a href="https://www.instagram.com/dealon_offers/" target="_blank" rel="noopener noreferrer" class="footer-nav-link">📸 Instagram — @dealon_offers</a></li>
+            <li><a href="https://www.facebook.com/dealonoffers/" target="_blank" rel="noopener noreferrer" class="footer-nav-link">📘 Facebook — @dealonoffers</a></li>
+            <li><a href="https://share.google/X2MkXQhyJFo0RrpKK" target="_blank" rel="noopener noreferrer" class="footer-nav-link">🏢 Google Business Profile</a></li>
+            <li><a href="https://api.whatsapp.com/send?text=Check%20out%20DealOn%20for%20verified%20tech%20deals:%20https://dealon.netlify.app/" target="_blank" rel="noopener noreferrer" class="footer-nav-link">💬 Share on WhatsApp</a></li>
+          </ul>
+
+          <div class="footer-social-icons" style="display:flex; gap:12px; margin-top:12px; flex-wrap:wrap;">
+            <a href="https://t.me/dealon_offers" target="_blank" rel="noopener noreferrer" title="Telegram" style="width:36px;height:36px;background:var(--bg-card2);border:1px solid var(--border);border-radius:10px;display:flex;align-items:center;justify-content:center;transition:all .2s;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="#0088cc"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 0 0-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.52 2.77-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .37z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/dealon_offers/" target="_blank" rel="noopener noreferrer" title="Instagram" style="width:36px;height:36px;background:var(--bg-card2);border:1px solid var(--border);border-radius:10px;display:flex;align-items:center;justify-content:center;transition:all .2s;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="#E4405F"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+            <a href="https://www.facebook.com/dealonoffers/" target="_blank" rel="noopener noreferrer" title="Facebook" style="width:36px;height:36px;background:var(--bg-card2);border:1px solid var(--border);border-radius:10px;display:flex;align-items:center;justify-content:center;transition:all .2s;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="#1877F2"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="https://share.google/X2MkXQhyJFo0RrpKK" target="_blank" rel="noopener noreferrer" title="Google Business" style="width:36px;height:36px;background:var(--bg-card2);border:1px solid var(--border);border-radius:10px;display:flex;align-items:center;justify-content:center;transition:all .2s;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="#4285F4"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <div class="footer-disclaimer">
+          <strong>Affiliate Disclosure:</strong> DealOn participates in the Amazon Associates program (tag: <code>dealon04-21</code>). Prices and availability are subject to change by Amazon.in sellers. Verified drops are tracked using 90-day price history algorithms.
+        </div>
+        <div style="display: flex; align-items: center; gap: 8px; font-weight: 600;">
+          <span>🇮🇳 Built with pride for India</span>
+          <span>·</span>
+          <span>© 2026 DealOn. All rights reserved.</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile Bottom Nav -->
+  <nav class="mobile-nav">
+    <a href="#dealsSection" class="mobile-nav-item active-nav">
+      <span class="mobile-nav-icon">🔥</span>
+      <span>Deals</span>
+    </a>
+    <button class="mobile-nav-item" id="mobileSearchBtn">
+      <span class="mobile-nav-icon">🔍</span>
+      <span>Search</span>
+    </button>
+    <a href="https://t.me/dealon_offers" target="_blank" rel="noopener noreferrer" class="mobile-nav-item">
+      <span class="mobile-nav-icon">📢</span>
+      <span>VIP</span>
+    </a>
+  </nav>
+
+  <!-- Toast -->
+  <div class="toast" id="toast">
+    <span class="toast-icon">✓</span>
+    <span id="toastMsg">Done!</span>
+  </div>
+
+  <!-- Alert Modal -->
+  <div class="modal-overlay" id="alertModal">
+    <div class="modal">
+      <div class="modal-header">
+        <span class="modal-title">🔔 Set Price Drop Alert</span>
+        <button class="modal-close" id="closeAlertModal">
+          <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <form id="alertForm">
+        <div class="form-group">
+          <label class="form-label">Product</label>
+          <select id="alertProduct" class="form-select"></select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Alert me when price drops below (₹)</label>
+          <input type="number" id="alertTargetPrice" class="form-input" placeholder="e.g. 1500">
+          <div class="form-hint">Current prices update every 3 hours.</div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Telegram Username or Email</label>
+          <input type="text" id="alertContact" class="form-input" placeholder="@YourTelegram or email">
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%; justify-content: center; padding: 12px;">Activate Alert</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // ═══════════════════════════════════════════════
+    //  DealOn App — Product Data & Logic
+    // ═══════════════════════════════════════════════
+
+    const AFFILIATE_TAG = 'dealon04-21';
+    let currentCategory = 'all';
+
+    // ── Product Database ─────────────────────────
+    const PRODUCTS = [{"id":"cmf-nothing-65w-gan","title":"CMF by Nothing 65W GaN 3-Port Fast Charger","brand":"CMF by Nothing","category":"Charging Essentials","current_price":2499,"mrp":3999,"historical_low":2499,"target_drop_price":2699,"is_historical_low":true,"discount_pct":38,"rating":4.5,"reviews_count":4120,"asin":"B0CFV8ZJ6Q","product_url":"https://www.amazon.in/dp/B0CFV8ZJ6Q?tag=dealon04-21","image_url":"https://images.unsplash.com/photo-1583863788434-e58a36330cf0?w=600&auto=format&fit=crop&q=80","badge":"HISTORICAL LOW","features":["65W High-Speed GaN Charging","2x USB-C + 1x USB-A Ports","Compatible with MacBooks, Laptops & Phones"],"price_history":[3499,3299,2999,2799,2699,2499]},{"id":"stuffcool-neutron-33w","title":"Stuffcool Neutron 33W Dual Port Tiny GaN Charger","brand":"Stuffcool","category":"Charging Essentials","current_price":1299,"mrp":2299,"historical_low":1249,"target_drop_price":1399,"is_historical_low":false,"discount_pct":43,"rating":4.4,"reviews_count":1890,"asin":"B09MLQ39S2","product_url":"https://www.amazon.in/dp/B09MLQ39S2?tag=dealon04-21","image_url":"https://images.unsplash.com/photo-1622445268047-97d84bcfeb03?w=600&auto=format&fit=crop&q=80","badge":"HOT DROP","features":["Ultra-compact GaN micro-footprint","Type-C PD 33W + PPS Support","Safe fast-charge for iPhone & Galaxy"],"price_history":[1999,1899,1599,1499,1399,1299]},{"id":"anker-735-ganprime-65w","title":"Anker 735 GaNPrime 65W Foldable 3-Port Wall Charger","brand":"Anker","category":"Charging Essentials","current_price":3799,"mrp":5999,"historical_low":3799,"target_drop_price":3999,"is_historical_low":true,"discount_pct":37,"rating":4.7,"reviews_count":6730,"asin":"B09W2PNLX7","product_url":"https://www.amazon.in/dp/B09W2PNLX7?tag=dealon04-21","image_url":"https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=600&auto=format&fit=crop&q=80","badge":"HISTORICAL LOW","features":["PowerIQ 4.0 Dynamic Power Distribution","ActiveShield 2.0 Temperature Monitoring","Powers laptop, phone & earbuds simultaneously"],"price_history":[4999,4699,4499,4199,3999,3799]},{"id":"ambrane-100w-braided-cable","title":"Ambrane 100W Fast Charging Type-C to Type-C Braided Cable","brand":"Ambrane","category":"Charging Essentials","current_price":299,"mrp":699,"historical_low":249,"target_drop_price":329,"is_historical_low":false,"discount_pct":57,"rating":4.3,"reviews_count":12850,"asin":"B09V7N7R5P","product_url":"https://www.amazon.in/dp/B09V7N7R5P?tag=dealon04-21","image_url":"https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=600&auto=format&fit=crop&q=80","badge":"STEAL DEAL","features":["100W Power Delivery E-Marker Chip","Tangle-Free Rugged Nylon Braiding","480 Mbps High-Speed Data Sync"],"price_history":[499,449,399,349,329,299]},{"id":"realme-buds-t300-anc","title":"Realme Buds T300 Active Noise Cancelling TWS Earbuds","brand":"Realme","category":"Audio Gear","current_price":1999,"mrp":3999,"historical_low":1999,"target_drop_price":2199,"is_historical_low":true,"discount_pct":50,"rating":4.4,"reviews_count":8940,"asin":"B0CG2QG5Y9","product_url":"https://www.amazon.in/dp/B0CG2QG5Y9?tag=dealon04-21","image_url":"https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=600&auto=format&fit=crop&q=80","badge":"50% OFF","features":["30dB Active Noise Cancellation","12.4mm Dynamic Bass Boost Drivers","40 Hours Total Playback with Fast Charging"],"price_history":[2999,2799,2499,2299,2199,1999]},{"id":"soundcore-q20i-anc","title":"Soundcore by Anker Q20i Hybrid Active Noise Cancelling Headphones","brand":"Soundcore","category":"Audio Gear","current_price":4499,"mrp":7999,"historical_low":4299,"target_drop_price":4699,"is_historical_low":false,"discount_pct":44,"rating":4.6,"reviews_count":14200,"asin":"B0C6B8DVS4","product_url":"https://www.amazon.in/dp/B0C6B8DVS4?tag=dealon04-21","image_url":"https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&auto=format&fit=crop&q=80","badge":"POPULAR PICK","features":["Hybrid ANC reduces ambient noise by up to 90%","40 Hours ANC Playtime & 60 Hours Normal","Hi-Res Audio Certified with Custom EQ App"],"price_history":[5999,5499,4999,4799,4699,4499]},{"id":"tangzu-waner-sg-iem","title":"Tangzu Wan'er S.G Audiophile In-Ear Monitor (IEM)","brand":"Tangzu","category":"Audio Gear","current_price":1699,"mrp":2999,"historical_low":1599,"target_drop_price":1799,"is_historical_low":false,"discount_pct":43,"rating":4.7,"reviews_count":3120,"asin":"B0BNL41V9H","product_url":"https://www.amazon.in/dp/B0BNL41V9H?tag=dealon04-21","image_url":"https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=600&auto=format&fit=crop&q=80","badge":"AUDIOPHILE GEM","features":["10mm PET Diaphragm Dynamic Driver","Detachable 0.78mm 2-Pin OFC Cable","Exceptional soundstage & vocal clarity"],"price_history":[2499,2299,1999,1899,1799,1699]},{"id":"7hz-salnotes-zero-iem","title":"7Hz Salnotes Zero HiFi 10mm Dynamic In-Ear Earphones","brand":"7Hz","category":"Audio Gear","current_price":1599,"mrp":2499,"historical_low":1599,"target_drop_price":1699,"is_historical_low":true,"discount_pct":36,"rating":4.6,"reviews_count":5210,"asin":"B0B8CBPJ7C","product_url":"https://www.amazon.in/dp/B0B8CBPJ7C?tag=dealon04-21","image_url":"https://images.unsplash.com/photo-1484704849700-f032a568e944?w=600&auto=format&fit=crop&q=80","badge":"HISTORICAL LOW","features":["Tuned by Crinacle Harman Target curve","10mm Composite Metal Diaphragm","Detachable high-purity silver-plated cable"],"price_history":[2199,1999,1899,1799,1699,1599]},{"id":"scarters-vegan-leather-desk-mat","title":"Scarters Vegan Leather Extended Desk Mat (90x45 cm)","brand":"Scarters","category":"Desk Setup","current_price":1199,"mrp":2495,"historical_low":1099,"target_drop_price":1299,"is_historical_low":false,"discount_pct":52,"rating":4.5,"reviews_count":4820,"asin":"B0892DRB9N","product_url":"https://www.amazon.in/dp/B0892DRB9N?tag=dealon04-21","image_url":"https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=600&auto=format&fit=crop&q=80","badge":"52% OFF","features":["Dual-sided waterproof vegan leather finish","Smooth mouse glide & keyboard cushioning","Anti-fray perimeter stitching & easy wipe clean"],"price_history":[1899,1699,1499,1399,1299,1199]},{"id":"baseus-screen-light-bar","title":"Baseus Magnetic Stepless Dimming Monitor Light Bar","brand":"Baseus","category":"Desk Setup","current_price":2899,"mrp":4999,"historical_low":2799,"target_drop_price":2999,"is_historical_low":false,"discount_pct":42,"rating":4.6,"reviews_count":3950,"asin":"B08C7KG5LP","product_url":"https://www.amazon.in/dp/B08C7KG5LP?tag=dealon04-21","image_url":"https://images.unsplash.com/photo-1593062096033-9a26b09da705?w=600&auto=format&fit=crop&q=80","badge":"DESK ESSENTIAL","features":["Zero screen glare asymmetrical optical design","3 Color Temperatures (2800K - 5500K)","Touch sensor stepless brightness control"],"price_history":[3999,3699,3399,3199,2999,2899]},{"id":"tukzer-headphone-hanger","title":"Tukzer Foldable Under-Desk Aluminum Headphone Hanger","brand":"Tukzer","category":"Desk Setup","current_price":499,"mrp":999,"historical_low":449,"target_drop_price":549,"is_historical_low":false,"discount_pct":50,"rating":4.4,"reviews_count":2100,"asin":"B08MVV6C7R","product_url":"https://www.amazon.in/dp/B08MVV6C7R?tag=dealon04-21","image_url":"https://images.unsplash.com/photo-1541689592655-f5f52825a3b8?w=600&auto=format&fit=crop&q=80","badge":"UNDER ₹500","features":["360 Degree rotating arm with cable loop","Universal clamp fit for desk thickness up to 50mm","Soft silicone padding prevents headphone denting"],"price_history":[799,699,649,599,549,499]},{"id":"royal-kludge-rk61","title":"Royal Kludge RK61 60% Tri-Mode Wireless Mechanical Keyboard","brand":"Royal Kludge","category":"Computing Peripherals","current_price":3899,"mrp":6999,"historical_low":3799,"target_drop_price":3999,"is_historical_low":false,"discount_pct":44,"rating":4.5,"reviews_count":7890,"asin":"B0832CZNS5","product_url":"https://www.amazon.in/dp/B0832CZNS5?tag=dealon04-21","image_url":"https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=600&auto=format&fit=crop&q=80","badge":"BESTSELLER","features":["Tri-mode: Bluetooth 5.0, 2.4Ghz Dongle & USB-C","Hot-Swappable Quiet Red Mechanical Switches","Dynamic RGB Backlight with software macro support"],"price_history":[4999,4699,4399,4199,3999,3899]},{"id":"verilux-8-in-1-usb-c-hub","title":"Verilux 8-in-1 Aluminum USB-C Hub & Docking Adapter","brand":"Verilux","category":"Computing Peripherals","current_price":1499,"mrp":2999,"historical_low":1499,"target_drop_price":1699,"is_historical_low":true,"discount_pct":50,"rating":4.3,"reviews_count":3410,"asin":"B0B68TRP2T","product_url":"https://www.amazon.in/dp/B0B68TRP2T?tag=dealon04-21","image_url":"https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=600&auto=format&fit=crop&q=80","badge":"HISTORICAL LOW","features":["4K@30Hz HDMI Video Output","100W Power Delivery Pass-through","SD/TF Card Reader + 3x USB 3.0 Ports"],"price_history":[2499,2199,1899,1799,1699,1499]},{"id":"logitech-pebble-combo","title":"Logitech Pebble Keys 2 K380s & M350s Slim Silent Combo","brand":"Logitech","category":"Computing Peripherals","current_price":2995,"mrp":4495,"historical_low":2899,"target_drop_price":3199,"is_historical_low":false,"discount_pct":33,"rating":4.6,"reviews_count":11400,"asin":"B0CHW61M6K","product_url":"https://www.amazon.in/dp/B0CHW61M6K?tag=dealon04-21","image_url":"https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=600&auto=format&fit=crop&q=80","badge":"POPULAR","features":["SilentTouch 90% Noise Reduction Clicks","Easy-Switch between 3 devices (Mac, iPad, Windows)","Up to 36-month keyboard & 24-month mouse battery life"],"price_history":[3995,3695,3495,3295,3195,2995]},{"id":"ant-esports-km540-combo","title":"Ant Esports KM540 Ergonomic Rainbow LED Gaming Keyboard and Mouse Combo","brand":"Ant Esports","category":"Gaming Gadgets","current_price":1199,"mrp":2999,"historical_low":1149,"target_drop_price":1249,"is_historical_low":false,"discount_pct":60,"rating":4.3,"reviews_count":5410,"asin":"B0892B1M9F","product_url":"https://www.amazon.in/dp/B0892B1M9F?tag=dealon04-21","image_url":"https://images.unsplash.com/photo-1542751371-adc38448a05e?w=600&auto=format&fit=crop&q=80","badge":"60% OFF","features":["Tactile Membrane Key Feel with Double-Injected Keycaps","7-Color Rainbow Breathing LED Backlight Modes","Ergonomic Gaming Mouse with Up to 3200 DPI Adjustability"],"price_history":[1899,1699,1499,1349,1249,1199]},{"id":"cosmic-byte-cb-gk-16-firefly","title":"Cosmic Byte CB-GK-16 Firefly TKL Mechanical Keyboard (Outemu Blue)","brand":"Cosmic Byte","category":"Gaming Gadgets","current_price":2199,"mrp":3499,"historical_low":1999,"target_drop_price":2299,"is_historical_low":false,"discount_pct":37,"rating":4.4,"reviews_count":8920,"asin":"B084G47W6G","product_url":"https://www.amazon.in/dp/B084G47W6G?tag=dealon04-21","image_url":"https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=600&auto=format&fit=crop&q=80","badge":"TKL FAVORITE","features":["Compact Tenkeyless (87 Keys) Sturdy Aluminum Top Plate","Outemu Clicky Blue Mechanical Switches with 50M Keypress Life","Rainbow LED Backlight with 11 Dynamic Lighting Effects"],"price_history":[2799,2599,2499,2399,2299,2199]},{"id":"redragon-m601-centrophorus","title":"Redragon M601 RGB Centrophorus Ergonomic 3200 DPI Gaming Mouse","brand":"Redragon","category":"Gaming Gadgets","current_price":999,"mrp":1990,"historical_low":899,"target_drop_price":1049,"is_historical_low":false,"discount_pct":50,"rating":4.5,"reviews_count":14600,"asin":"B00HTK1NCS","product_url":"https://www.amazon.in/dp/B00HTK1NCS?tag=dealon04-21","image_url":"https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=600&auto=format&fit=crop&q=80","badge":"UNDER ₹1,000","features":["Precision Optical Sensor with 4 On-the-Fly DPI Levels (800-3200)","6 Programmable Buttons & 8-Piece Weight Tuning Set (2.4g x 8)","Durable TEFLON Feet Pads & Braided Fiber Cable"],"price_history":[1499,1399,1299,1199,1099,999]},{"id":"oneplus-warp-supervooc-cable","title":"OnePlus SUPERVOOC 80W / 65W Fast Charging Type-A to Type-C Cable","brand":"OnePlus","category":"Charging Essentials","current_price":849,"mrp":1299,"historical_low":799,"target_drop_price":899,"is_historical_low":false,"discount_pct":35,"rating":4.6,"reviews_count":11200,"asin":"B09V7F3S78","product_url":"https://www.amazon.in/dp/B09V7F3S78?tag=dealon04-21","image_url":"https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=600&auto=format&fit=crop&q=80","badge":"OFFICIAL SPEED","features":["Supports 80W SUPERVOOC & 65W Warp Charge Flash Speeds","Signature Heavy-Duty Tangle-Free Flat Silicone Sheath","Reversible Type-C Connector with Integrated E-Marker Chip"],"price_history":[1199,1099,999,949,899,849]},{"id":"portronics-adapto-66w-gan","title":"Portronics Adapto 66W GaN Dual Port (Type-C PD + QC 3.0) Fast Charger","brand":"Portronics","category":"Charging Essentials","current_price":1699,"mrp":2999,"historical_low":1599,"target_drop_price":1799,"is_historical_low":false,"discount_pct":43,"rating":4.4,"reviews_count":3200,"asin":"B0CCV3719G","product_url":"https://www.amazon.in/dp/B0CCV3719G?tag=dealon04-21","image_url":"https://images.unsplash.com/photo-1583863788434-e58a36330cf0?w=600&auto=format&fit=crop&q=80","badge":"MADE IN INDIA","features":["66W Super-Fast Power Delivery 3.0 with Gallium Nitride (GaN) Chip","Simultaneous Dual Fast Charge for MacBook Air, iPhone & Android","Built-in Smart IC Protects Against Over-Current & Voltage Spikes"],"price_history":[2499,2199,1999,1899,1799,1699]},{"id":"ugreen-100w-right-angle-cable","title":"Ugreen 100W Right Angle 90-Degree Type-C to Type-C Braided Cable (2m)","brand":"Ugreen","category":"Charging Essentials","current_price":699,"mrp":1499,"historical_low":649,"target_drop_price":749,"is_historical_low":false,"discount_pct":53,"rating":4.6,"reviews_count":6310,"asin":"B083Q79Q8S","product_url":"https://www.amazon.in/dp/B083Q79Q8S?tag=dealon04-21","image_url":"https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=600&auto=format&fit=crop&q=80","badge":"53% OFF","features":["Ergonomic 90-Degree Right-Angle Plug Prevents Cord Bending While Gaming","E-Marker IC Guarantees Safe 100W (20V/5A) Ultra-Fast Laptop Power","High-Density Braided Cotton Jacket Withstands 10,000+ Bends"],"price_history":[1199,1049,899,799,749,699]},{"id":"kz-castor-dual-dynamic-iem","title":"KZ Castor Dual-Dynamic Driver Audiophile In-Ear Monitor (Harman Target)","brand":"KZ Acoustics","category":"Audio Gear","current_price":1899,"mrp":3499,"historical_low":1799,"target_drop_price":1999,"is_historical_low":false,"discount_pct":46,"rating":4.6,"reviews_count":4210,"asin":"B0CP27R6L4","product_url":"https://www.amazon.in/dp/B0CP27R6L4?tag=dealon04-21","image_url":"https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=600&auto=format&fit=crop&q=80","badge":"DUAL DRIVER","features":["Dual Dynamic Drivers (10mm Low-Frequency + 8mm Mid-High Unit)","Physical 4-Stage Tuning Dip Switches for Personalized Sound Signature","Zinc Alloy Acoustic Faceplate with Noise-Isolating Memory Foam Tips"],"price_history":[2699,2499,2299,2099,1999,1899]},{"id":"moondrop-chu-2-iem","title":"Moondrop Chu II High Performance 10mm Dynamic Driver Audiophile IEM","brand":"Moondrop","category":"Audio Gear","current_price":1999,"mrp":3299,"historical_low":1999,"target_drop_price":2199,"is_historical_low":true,"discount_pct":39,"rating":4.7,"reviews_count":7350,"asin":"B0CB8HSS88","product_url":"https://www.amazon.in/dp/B0CB8HSS88?tag=dealon04-21","image_url":"https://images.unsplash.com/photo-1484704849700-f032a568e944?w=600&auto=format&fit=crop&q=80","badge":"HISTORICAL LOW","features":["Aluminum-Magnesium Alloy Dome Composite Diaphragm","Detachable 0.78mm 2-Pin High Purity Oxygen-Free Copper Cable","CNC Brass Acoustic Nozzle with Replaceable Acoustic Filters"],"price_history":[2599,2499,2349,2199,2099,1999]},{"id":"boat-airdopes-141-anc","title":"boAt Airdopes 141 ANC True Wireless Earbuds with 32dB Active Noise Cancellation","brand":"boAt","category":"Audio Gear","current_price":1499,"mrp":5990,"historical_low":1499,"target_drop_price":1699,"is_historical_low":true,"discount_pct":75,"rating":4.2,"reviews_count":38400,"asin":"B0C3Q16B27","product_url":"https://www.amazon.in/dp/B0C3Q16B27?tag=dealon04-21","image_url":"https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=600&auto=format&fit=crop&q=80","badge":"DEAL OF THE DAY","features":["32dB Active Noise Cancellation with Ambient Transparency Mode","Up to 42 Hours Massive Playtime with ASAP Fast Charge (10m = 150m)","ENx Quad-Mic Tech for Crystal Clear Voice Calls in Heavy Traffic"],"price_history":[5990,1499]},{"id":"amazonbasics-aluminum-laptop-stand","title":"AmazonBasics Ergonomic Ventilated Aluminum Laptop Stand with 360° Swivel Base","brand":"AmazonBasics","category":"Desk Setup","current_price":1249,"mrp":2499,"historical_low":1199,"target_drop_price":1349,"is_historical_low":false,"discount_pct":50,"rating":4.5,"reviews_count":16200,"asin":"B01NA04C33","product_url":"https://www.amazon.in/dp/B01NA04C33?tag=dealon04-21","image_url":"https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=600&auto=format&fit=crop&q=80","badge":"50% OFF","features":["Aircraft-Grade Brushed Sandblasted Aluminum Dissipates Laptop Heat","Raises Display to Ergonomic Eye Level to Prevent Neck & Spinal Strain","Non-Slip Silicone Grip Pads Secure Laptops from 10 to 15.6 Inches"],"price_history":[1999,1799,1599,1449,1349,1249]},{"id":"orico-clip-on-monitor-usb-hub","title":"Orico 4-Port USB 3.0 Clip-on Aluminum Desk & Monitor Hub with Adjustable Clamp","brand":"Orico","category":"Desk Setup","current_price":1799,"mrp":3299,"historical_low":1699,"target_drop_price":1899,"is_historical_low":false,"discount_pct":45,"rating":4.4,"reviews_count":2430,"asin":"B07P7ZDTG9","product_url":"https://www.amazon.in/dp/B07P7ZDTG9?tag=dealon04-21","image_url":"https://images.unsplash.com/photo-1593062096033-9a26b09da705?w=600&auto=format&fit=crop&q=80","badge":"CLEAN SETUP","features":["Clamps Seamlessly to Monitor Edges or Desk Borders (10mm - 32mm)","4 SuperSpeed USB 3.0 Ports with Up to 5 Gbps Data Transfer Rate","Premium Anodized Aluminum Alloy Housing Matches Modern iMacs & Monitors"],"price_history":[2499,2299,2099,1999,1899,1799]},{"id":"tukzer-rgb-gaming-mousepad","title":"Tukzer Extended RGB Soft Gaming Mouse Pad (800x300x4 mm) with 14 Light Modes","brand":"Tukzer","category":"Desk Setup","current_price":899,"mrp":1999,"historical_low":799,"target_drop_price":999,"is_historical_low":false,"discount_pct":55,"rating":4.5,"reviews_count":7890,"asin":"B08NVN7W6N","product_url":"https://www.amazon.in/dp/B08NVN7W6N?tag=dealon04-21","image_url":"https://images.unsplash.com/photo-1541689592655-f5f52825a3b8?w=600&auto=format&fit=crop&q=80","badge":"55% OFF","features":["14 Customizable RGB Lighting Modes (7 Static Colors + 7 Dynamic Cycles)","Micro-Textured High-Density Cloth Surface for Precise Mouse Tracking","Heavy Anti-Slip Rubberized Base Keeps Pad Glued to Desk"],"price_history":[1499,1299,1149,1049,949,899]},{"id":"gizga-cable-management-sleeve","title":"Gizga Essentials Flexible Neoprene Cable Management Sleeve (4-Pack)","brand":"Gizga Essentials","category":"Desk Setup","current_price":499,"mrp":1299,"historical_low":449,"target_drop_price":549,"is_historical_low":false,"discount_pct":62,"rating":4.4,"reviews_count":5120,"asin":"B079Z44TY6","product_url":"https://www.amazon.in/dp/B079Z44TY6?tag=dealon04-21","image_url":"https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=600&auto=format&fit=crop&q=80","badge":"STEAL DEAL","features":["Durable High-Density Flexible Neoprene with Heavy-Duty Zipper Closure","Tidy Up Tangled PC, Monitor, Power & Gaming Cords in Under 2 Minutes","Reversible Black & White Styling to Blend with Any Wall or Desk Decor"],"price_history":[899,799,699,599,549,499]},{"id":"portronics-clean-d-8-in-1-kit","title":"Portronics Clean D Multifunctional 8-in-1 Electronic Cleaning Kit","brand":"Portronics","category":"Computing Peripherals","current_price":399,"mrp":999,"historical_low":349,"target_drop_price":449,"is_historical_low":false,"discount_pct":60,"rating":4.3,"reviews_count":14200,"asin":"B0BX76SQZ8","product_url":"https://www.amazon.in/dp/B0BX76SQZ8?tag=dealon04-21","image_url":"https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=600&auto=format&fit=crop&q=80","badge":"UNDER ₹400","features":["8 Integrated Tools: Keycap Puller, Flocking Sponge, High-Density Brush & Screen Sprayer","Deep Cleans Mechanical Keyboard Switches, Earbuds & Smartphone Ports","Pocket-Sized Slide-Out Protective Enclosure"],"price_history":[699,599,499,449,429,399]},{"id":"tp-link-archer-t3u-plus-wifi","title":"TP-Link Archer T3U Plus AC1300 High Gain Dual Band USB Wi-Fi Adapter","brand":"TP-Link","category":"Computing Peripherals","current_price":1199,"mrp":2399,"historical_low":1099,"target_drop_price":1299,"is_historical_low":false,"discount_pct":50,"rating":4.5,"reviews_count":22100,"asin":"B0859M539M","product_url":"https://www.amazon.in/dp/B0859M539M?tag=dealon04-21","image_url":"https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=600&auto=format&fit=crop&q=80","badge":"50% OFF","features":["High-Gain External Antenna Boosts Signal Reception for Laptops & Desktops","Dual Band Speeds up to 867 Mbps (5 GHz) + 400 Mbps (2.4 GHz)","MU-MIMO Tech Delivers Smooth 4K Streaming & Low-Latency Gaming"],"price_history":[1799,1599,1449,1349,1249,1199]}];
+
+    // ── State ─────────────────────────────────────
+    let products = [...PRODUCTS];
+    let filteredProducts = [...PRODUCTS];
+    let wishlist = JSON.parse(localStorage.getItem('dealon_wishlist') || '[]');
+
+    // ── DOM refs ──────────────────────────────────
+    const productsGrid   = document.getElementById('productsGrid');
+    const searchInput    = document.getElementById('searchInput');
+    const sortFilter     = document.getElementById('sortFilter');
+    const discountFilter = document.getElementById('discountFilter');
+    const histLowToggle  = document.getElementById('histLowToggle');
+    const resultsCount   = document.getElementById('resultsCount');
+    const categoryTabs   = document.getElementById('categoryTabs');
+    const alertModal     = document.getElementById('alertModal');
+    const alertForm      = document.getElementById('alertForm');
+    const alertProduct   = document.getElementById('alertProduct');
+    const toast          = document.getElementById('toast');
+    const toastMsg       = document.getElementById('toastMsg');
+    const dotdWrap       = document.getElementById('dotdWrap');
+
+    // ── Helpers ──────────────────────────────────
+    function esc(s) {
+      return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+    }
+
+    function stars(r) {
+      const full = Math.floor(r);
+      const half = r - full >= 0.5;
+      let s = '';
+      for(let i=0;i<full;i++) s+='★';
+      if(half) s+='½';
+      while(s.replace('½','*').length < 5) s+='☆';
+      return s;
+    }
+
+    function fmtNum(n) { return n.toLocaleString('en-IN'); }
+
+    function showToast(msg, icon = '✓') {
+      toastMsg.textContent = msg;
+      toast.querySelector('.toast-icon').textContent = icon;
+      toast.classList.add('show');
+      clearTimeout(window._toastTimer);
+      window._toastTimer = setTimeout(() => toast.classList.remove('show'), 3200);
+    }
+
+    // ── Link generation — direct product URL if available ──────────
+    function getBuyUrl(p) {
+      // Prefer direct product_url (uses /dp/ASIN), fallback to search
+      if (p.product_url) return p.product_url;
+      const q = encodeURIComponent(p.title);
+      return `https://www.amazon.in/s?k=${q}&tag=${AFFILIATE_TAG}`;
+    }
+
+    // ── Badge color helper ──────────────────────────────────────────
+    function getBadgeClass(p) {
+      const b = (p.badge || '').toLowerCase();
+      if (p.is_historical_low) return 'badge-historical';
+      if (b.includes('hot') || b.includes('steal')) return 'badge-hot';
+      if (b.includes('popular') || b.includes('bestsell')) return 'badge-popular';
+      if (b.includes('audiophile') || b.includes('gem')) return 'badge-popular';
+      if (b.includes('%') && p.discount_pct >= 50) return 'badge-steal';
+      return 'badge-deal';
+    }
+
+    // ── Sparkline ──────────────────────────────────────────────────
+    function drawSparkline(canvasId, history) {
+      const canvas = document.getElementById(canvasId);
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      const w = canvas.clientWidth || 120;
+      const h = canvas.height;
+      canvas.width = w;
+      const min = Math.min(...history);
+      const max = Math.max(...history);
+      const range = max - min || 1;
+      const pts = history.map((v, i) => ({
+        x: (i / (history.length - 1)) * w,
+        y: h - ((v - min) / range) * (h - 4) - 2
+      }));
+
+      ctx.clearRect(0, 0, w, h);
+      const grad = ctx.createLinearGradient(0, 0, 0, h);
+      grad.addColorStop(0, 'rgba(18,140,126,0.25)');
+      grad.addColorStop(1, 'rgba(18,140,126,0)');
+
+      ctx.beginPath();
+      pts.forEach((p, i) => i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y));
+      ctx.lineTo(w, h); ctx.lineTo(0, h); ctx.closePath();
+      ctx.fillStyle = grad; ctx.fill();
+
+      ctx.beginPath();
+      pts.forEach((p, i) => i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y));
+      ctx.strokeStyle = '#128C7E'; ctx.lineWidth = 1.5;
+      ctx.lineJoin = 'round'; ctx.stroke();
+
+      // Last point dot
+      const last = pts[pts.length-1];
+      ctx.beginPath();
+      ctx.arc(last.x, last.y, 3, 0, Math.PI*2);
+      ctx.fillStyle = '#128C7E'; ctx.fill();
+    }
+
+    // ── Deal of the Day ──────────────────────────────────────────
+    function renderDOTD() {
+      const top = [...products].sort((a,b) => b.discount_pct - a.discount_pct)[0];
+      if (!top) { dotdWrap.innerHTML = ''; return; }
+      const url = getBuyUrl(top);
+      const savings = top.mrp - top.current_price;
+      const wa = `https://api.whatsapp.com/send?text=${encodeURIComponent(`🔥 ${top.title}\n💰 ₹${fmtNum(top.current_price)} (${top.discount_pct}% OFF — MRP ₹${fmtNum(top.mrp)})\n👉 ${url}\n\nhttps://dealon.netlify.app/#${top.id}`)}`;
+
+      dotdWrap.innerHTML = `
+        <div class="dotd-card">
+          <div class="dotd-img-wrap">
+            <div class="dotd-strip"><span class="pulse"></span> ⚡ DEAL OF THE DAY</div>
+            <img src="${esc(top.image_url)}" alt="${esc(top.title)}" loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=600&auto=format&fit=crop&q=80'">
+          </div>
+          <div class="dotd-body">
+            <div class="dotd-meta">
+              <span class="section-badge badge-emerald">${esc(top.badge || 'TOP DEAL')}</span>
+              <span class="section-badge badge-indigo">${esc(top.category)}</span>
+            </div>
+            <div class="dotd-title">${esc(top.title)}</div>
+            <div class="star-row">
+              <span class="stars">${stars(top.rating)}</span>
+              <span class="rating-count">${top.rating} · ${fmtNum(top.reviews_count)} reviews</span>
+            </div>
+            <div class="dotd-prices">
+              <span class="dotd-price">₹${fmtNum(top.current_price)}</span>
+              <span class="dotd-mrp">₹${fmtNum(top.mrp)}</span>
+              <span class="dotd-save">Save ₹${fmtNum(savings)} · ${top.discount_pct}% OFF</span>
+            </div>
+            <div class="dotd-features">
+              ${(top.features||[]).slice(0,3).map(f=>`<div class="dotd-feature-item">${esc(f)}</div>`).join('')}
+            </div>
+            <div class="dotd-actions">
+              <a href="${esc(url)}" target="_blank" rel="noopener noreferrer" class="btn btn-emerald">
+                🛒 Buy on Amazon →
+              </a>
+              <a href="${esc(wa)}" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2z"/></svg>
+                Share
+              </a>
+              <button class="btn btn-ghost" onclick="copyLink('${esc(top.id)}')">🔗 Copy Link</button>
+            </div>
+          </div>
+        </div>`;
+    }
+
+    // ── Product Card ────────────────────────────────────────────────
+    function renderCard(p) {
+      const url = getBuyUrl(p);
+      const sid = `sp-${p.id}`;
+      const savings = p.mrp - p.current_price;
+      const wl = wishlist.includes(p.id);
+      const wa = `https://api.whatsapp.com/send?text=${encodeURIComponent(`🔥 ${p.title}\n💰 ₹${fmtNum(p.current_price)} (${p.discount_pct}% OFF)\n👉 ${url}\n\nhttps://dealon.netlify.app/#${p.id}`)}`;
+
+      return `
+        <article class="deal-card${p.is_historical_low ? ' historical-low' : ''}" id="${p.id}" data-id="${p.id}">
+          <div class="card-img-wrap">
+            <img src="${esc(p.image_url)}" alt="${esc(p.title)}" loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=600&auto=format&fit=crop&q=80'">
+            <span class="card-badge ${getBadgeClass(p)}">${esc(p.badge || p.discount_pct + '% OFF')}</span>
+            <span class="card-discount-chip">-${p.discount_pct}%</span>
+            <button class="card-wishlist ${wl ? 'active' : ''}" onclick="toggleWishlist('${p.id}',event)" title="Save to Wishlist">
+              <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+            </button>
+          </div>
+          <div class="card-body">
+            <div class="card-top">
+              <span class="card-brand">${esc(p.brand)}</span>
+              <span class="card-rating-mini">
+                <span class="star-icon">★</span>${p.rating} <span style="opacity:.5">(${fmtNum(p.reviews_count)})</span>
+              </span>
+            </div>
+            <div class="card-title">${esc(p.title)}</div>
+            <div class="card-features">
+              ${(p.features||[]).slice(0,2).map(f=>`<div class="card-feature-tag">${esc(f)}</div>`).join('')}
+            </div>
+            <div class="card-price-area">
+              <div>
+                <div class="card-price">₹${fmtNum(p.current_price)}</div>
+                <div class="card-mrp">₹${fmtNum(p.mrp)}</div>
+              </div>
+              <div style="text-align:right;">
+                <div class="card-savings">You save<br><strong>₹${fmtNum(savings)}</strong></div>
+              </div>
+            </div>
+            <div class="sparkline-row">
+              <span class="sparkline-label">30D trend</span>
+              <canvas id="${sid}" class="sparkline-canvas" height="22"></canvas>
+            </div>
+            <div class="card-actions">
+              <a href="${esc(url)}" target="_blank" rel="noopener noreferrer" class="buy-btn">
+                🛒 Buy on Amazon
+              </a>
+              <button class="card-icon-btn whatsapp-btn" title="Share on WhatsApp" onclick="openWhatsApp('${esc(wa)}')">
+                <svg viewBox="0 0 24 24" fill="#25D366" stroke="none"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2z"/></svg>
+              </button>
+              <button class="card-icon-btn copy-btn" title="Copy Link" onclick="copyLink('${p.id}')">
+                <svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+              </button>
+            </div>
+          </div>
+        </article>`;
+    }
+
+    // ── Render Deals Grid ─────────────────────────────────────────
+    function renderDeals() {
+      const q    = searchInput.value.toLowerCase().trim();
+      const disc = parseInt(discountFilter.value);
+      const sort = sortFilter.value;
+      const histOnly = histLowToggle.checked;
+
+      filteredProducts = products.filter(p => {
+        if (currentCategory !== 'all' && p.category !== currentCategory) return false;
+        if (p.discount_pct < disc) return false;
+        if (histOnly && !p.is_historical_low) return false;
+        if (q) {
+          const haystack = `${p.title} ${p.brand} ${p.category} ${(p.features||[]).join(' ')} ${p.badge||''}`.toLowerCase();
+          if (!haystack.includes(q)) return false;
+        }
+        return true;
+      });
+
+      if (sort === 'price_asc') filteredProducts.sort((a,b) => a.current_price - b.current_price);
+      else if (sort === 'price_desc') filteredProducts.sort((a,b) => b.current_price - a.current_price);
+      else if (sort === 'rating') filteredProducts.sort((a,b) => b.rating - a.rating);
+      else if (sort === 'popular') filteredProducts.sort((a,b) => b.reviews_count - a.reviews_count);
+      else filteredProducts.sort((a,b) => b.discount_pct - a.discount_pct);
+
+      resultsCount.textContent = `${filteredProducts.length} deal${filteredProducts.length !== 1 ? 's' : ''}`;
+
+      if (filteredProducts.length === 0) {
+        productsGrid.innerHTML = `
+          <div class="empty-state" style="grid-column:1/-1">
+            <div class="empty-icon">🔍</div>
+            <h3>No deals found</h3>
+            <p>Try adjusting your filters or search term.</p>
+            <button class="btn btn-ghost" onclick="resetFilters()">Reset All Filters</button>
+          </div>`;
+        return;
+      }
+
+      productsGrid.innerHTML = filteredProducts.map(p => renderCard(p)).join('');
+
+      requestAnimationFrame(() => {
+        filteredProducts.forEach(p => {
+          drawSparkline(`sp-${p.id}`, p.price_history || [p.mrp, p.current_price]);
+        });
+      });
+    }
+
+    // ── Stats ────────────────────────────────────────────────────
+    function updateStats() {
+      document.getElementById('statCount').textContent = products.length;
+      const avg = Math.round(products.reduce((a,p) => a + p.discount_pct, 0) / products.length);
+      document.getElementById('statAvgDiscount').textContent = avg + '%';
+      document.getElementById('statHistoricalLows').textContent = products.filter(p => p.is_historical_low).length;
+    }
+
+    // ── Alert modal product list ──────────────────────────────────
+    function populateAlertSelect() {
+      alertProduct.innerHTML = products.map(p =>
+        `<option value="${p.id}">[${esc(p.brand)}] ${esc(p.title.slice(0,55))}… (₹${fmtNum(p.current_price)})</option>`
+      ).join('');
+    }
+
+    // ── Wishlist ────────────────────────────────────────────────
+    window.toggleWishlist = (id, e) => {
+      e.preventDefault(); e.stopPropagation();
+      const i = wishlist.indexOf(id);
+      if (i === -1) { wishlist.push(id); showToast('Added to wishlist ❤️', '❤️'); }
+      else { wishlist.splice(i, 1); showToast('Removed from wishlist'); }
+      localStorage.setItem('dealon_wishlist', JSON.stringify(wishlist));
+      const btn = document.querySelector(`[data-id="${id}"] .card-wishlist`);
+      if (btn) btn.classList.toggle('active', wishlist.includes(id));
+    };
+
+    // ── Copy link ───────────────────────────────────────────────
+    window.copyLink = (id) => {
+      const url = `https://dealon.netlify.app/#${id}`;
+      navigator.clipboard.writeText(url)
+        .then(() => showToast(`Link copied! dealon.netlify.app/#${id.slice(0,20)}…`))
+        .catch(() => showToast(url));
+    };
+
+    // ── WhatsApp share ─────────────────────────────────────────
+    window.openWhatsApp = (url) => window.open(url, '_blank');
+
+    // ── Reset filters ───────────────────────────────────────────
+    window.resetFilters = () => {
+      searchInput.value = '';
+      discountFilter.value = '0';
+      sortFilter.value = 'discount';
+      histLowToggle.checked = false;
+      currentCategory = 'all';
+      document.querySelectorAll('.cat-btn').forEach(b => b.classList.toggle('active', b.dataset.cat === 'all'));
+      renderDeals();
+    };
+
+    // ── Event listeners ─────────────────────────────────────────
+    searchInput.addEventListener('input', renderDeals);
+    sortFilter.addEventListener('change', renderDeals);
+    discountFilter.addEventListener('change', renderDeals);
+    histLowToggle.addEventListener('change', renderDeals);
+
+    categoryTabs.addEventListener('click', e => {
+      const btn = e.target.closest('.cat-btn');
+      if (!btn) return;
+      document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentCategory = btn.dataset.cat;
+      renderDeals();
+    });
+
+    // Keyboard shortcut: / to search
+    window.addEventListener('keydown', e => {
+      if (e.key === '/' && !['INPUT','TEXTAREA','SELECT'].includes(document.activeElement.tagName)) {
+        e.preventDefault();
+        searchInput.focus(); searchInput.select();
+      }
+      if (e.key === 'Escape') alertModal.classList.remove('active');
+    });
+
+    // Mobile search button
+    document.getElementById('mobileSearchBtn').addEventListener('click', () => {
+      searchInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      setTimeout(() => searchInput.focus(), 350);
+    });
+
+    // Alert modal
+    const openAlertModalBtn = document.getElementById('openAlertModalBtn');
+    const openAlertBtn2 = document.getElementById('openAlertBtn2');
+    const closeAlertModal = document.getElementById('closeAlertModal');
+
+    [openAlertModalBtn, openAlertBtn2].forEach(b => {
+      if (b) b.addEventListener('click', () => alertModal.classList.add('active'));
+    });
+    closeAlertModal.addEventListener('click', () => alertModal.classList.remove('active'));
+    alertModal.addEventListener('click', e => { if (e.target === alertModal) alertModal.classList.remove('active'); });
+
+    alertForm.addEventListener('submit', e => {
+      e.preventDefault();
+      const p = products.find(x => x.id === alertProduct.value);
+      const price = document.getElementById('alertTargetPrice').value;
+      showToast(`✓ Alert set for ${p?.brand || ''} at ₹${price}!`, '🔔');
+      alertModal.classList.remove('active');
+      alertForm.reset();
+    });
+
+    // Open alert for specific product (called from elsewhere)
+    window.openAlertFor = (id) => {
+      const p = products.find(x => x.id === id);
+      if (p) {
+        alertProduct.value = id;
+        document.getElementById('alertTargetPrice').value = Math.round(p.current_price * 0.9);
+      }
+      alertModal.classList.add('active');
+    };
+
+    // ── Footer filter shortcuts ────────────────────────────────
+    window.filterCategory = (cat) => {
+      currentCategory = cat;
+      document.querySelectorAll('.cat-btn').forEach(b => b.classList.toggle('active', b.dataset.cat === cat));
+      const el = document.getElementById('dealsSection');
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      renderDeals();
+    };
+
+    window.filterHistLows = () => {
+      histLowToggle.checked = true;
+      const el = document.getElementById('dealsSection');
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      renderDeals();
+    };
+
+    window.filterDiscounts = (minDisc) => {
+      discountFilter.value = String(minDisc);
+      const el = document.getElementById('dealsSection');
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      renderDeals();
+    };
+
+    window.showSavedWishlist = () => {
+      if (wishlist.length === 0) {
+        showToast('Your wishlist is currently empty! Click ❤️ on any deal.', '❤️');
+        return;
+      }
+      filteredProducts = products.filter(p => wishlist.includes(p.id));
+      const el = document.getElementById('dealsSection');
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      resultsCount.textContent = `${filteredProducts.length} saved wishlist deal${filteredProducts.length !== 1 ? 's' : ''}`;
+      productsGrid.innerHTML = filteredProducts.map(p => renderCard(p)).join('');
+      requestAnimationFrame(() => {
+        filteredProducts.forEach(p => {
+          drawSparkline(`sp-${p.id}`, p.price_history || [p.mrp, p.current_price]);
+        });
+      });
+      showToast(`Showing ${filteredProducts.length} saved deals ❤️`, '❤️');
+    };
+
+    // ── Init ─────────────────────────────────────────────────────
+    function init() {
+      updateStats();
+      populateAlertSelect();
+      renderDOTD();
+      renderDeals();
+    }
+
+    init();
+  </script>
+</body>
+</html>
