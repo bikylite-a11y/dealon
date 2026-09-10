@@ -6,6 +6,7 @@
   <title>DealOn — Smart Tech Deals. Automated Savings.</title>
   <meta name="description" content="Curated daily tech deals tracking verified historical lows across charging essentials, audiophile gear, and desk setups.">
   <meta name="theme-color" content="#F0F0E0">
+  <meta name="referrer" content="no-referrer">
   <link rel="canonical" href="https://dealon.netlify.app/">
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="shortcut icon" href="favicon.png">
@@ -1770,8 +1771,8 @@
         <div class="dotd-card">
           <div class="dotd-img-wrap">
             <div class="dotd-strip"><span class="pulse"></span> ⚡ DEAL OF THE DAY</div>
-            <img src="${esc(top.image_url)}" alt="${esc(top.title)}" loading="lazy"
-              onerror="this.src='https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=600&auto=format&fit=crop&q=80'">
+            <img src="${esc(top.image_url)}" alt="${esc(top.title)}" loading="lazy" referrerpolicy="no-referrer"
+              onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&auto=format&fit=crop&q=80';">
           </div>
           <div class="dotd-body">
             <div class="dotd-meta">
@@ -1816,8 +1817,8 @@
       return `
         <article class="deal-card${p.is_historical_low ? ' historical-low' : ''}" id="${p.id}" data-id="${p.id}">
           <div class="card-img-wrap">
-            <img src="${esc(p.image_url)}" alt="${esc(p.title)}" loading="lazy"
-              onerror="this.src='https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=600&auto=format&fit=crop&q=80'">
+            <img src="${esc(p.image_url)}" alt="${esc(p.title)}" loading="lazy" referrerpolicy="no-referrer"
+              onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&auto=format&fit=crop&q=80';">
             <span class="card-badge ${getBadgeClass(p)}">${esc(p.badge || p.discount_pct + '% OFF')}</span>
             <span class="card-discount-chip">-${p.discount_pct}%</span>
             <button class="card-wishlist ${wl ? 'active' : ''}" onclick="toggleWishlist('${p.id}',event)" title="Save to Wishlist">
