@@ -1,6 +1,7 @@
 [
   {
     "id": "boat-airdopes-141-anc",
+    "asin": "B0C3Q16B27",
     "title": "boAt Airdopes 141 ANC True Wireless Earbuds with 32dB Active Noise Cancellation",
     "brand": "boAt",
     "price": 1499,
@@ -8,7 +9,7 @@
     "discount": 75,
     "rating": 4.2,
     "reviews_count": 38400,
-    "deal_url": "https://www.amazon.in/dp/B0C3Q16B27?tag=dealon04-21",
+    "deal_url": "https://www.amazon.in/dp/B0C3Q16B27/?tag=dealon04-21&linkCode=ll1&language=en_IN",
     "image_url": "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=600&auto=format&fit=crop&q=80",
     "category": "Audio Gear",
     "features": [
@@ -17,26 +18,594 @@
       "ENx Quad-Mic Tech for Crystal Clear Voice Calls in Heavy Traffic"
     ],
     "is_deal_of_the_day": true,
-    "date_added": "2026-09-05T15:31:23.478Z"
+    "date_added": "2026-09-10T18:11:42.785Z"
   },
   {
-    "id": "boat-airdopes-141-anc",
-    "title": "boAt Airdopes 141 ANC True Wireless Earbuds with 32dB Active Noise Cancellation",
-    "brand": "boAt",
-    "price": 1499,
-    "original_price": 5990,
-    "discount": 75,
-    "rating": 4.2,
-    "reviews_count": 38400,
-    "deal_url": "https://www.amazon.in/dp/B0C3Q16B27?tag=dealon04-21",
-    "image_url": "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=600&auto=format&fit=crop&q=80",
-    "category": "Audio Gear",
+    "id": "cmf-nothing-65w-gan",
+    "asin": "B0CFV8ZJ6Q",
+    "title": "CMF by Nothing 65W GaN 3-Port Fast Charger",
+    "brand": "CMF by Nothing",
+    "price": 2499,
+    "original_price": 3999,
+    "discount": 38,
+    "rating": 4.5,
+    "reviews_count": 4120,
+    "category": "Charging Essentials",
+    "deal_url": "https://www.amazon.in/dp/B0CFV8ZJ6Q/?tag=dealon04-21&linkCode=ll1&language=en_IN",
+    "image_url": "https://images.unsplash.com/photo-1583863788434-e58a36330cf0?w=600&auto=format&fit=crop&q=80",
     "features": [
-      "32dB Active Noise Cancellation with Ambient Transparency Mode",
-      "Up to 42 Hours Massive Playtime with ASAP Fast Charge (10m = 150m)",
-      "ENx Quad-Mic Tech for Crystal Clear Voice Calls in Heavy Traffic"
+      "65W High-Speed GaN Charging",
+      "2x USB-C + 1x USB-A Ports",
+      "Compatible with MacBooks, Laptops & Phones"
     ],
     "is_deal_of_the_day": false,
-    "date_added": "2026-09-05T15:31:11.822Z"
+    "date_added": "2026-09-10T18:09:48.277Z"
+  },
+  {
+    "id": "stuffcool-neutron-33w",
+    "asin": "B09MLQ39S2",
+    "title": "Stuffcool Neutron 33W Dual Port Tiny GaN Charger",
+    "brand": "Stuffcool",
+    "price": 1299,
+    "original_price": 2299,
+    "discount": 43,
+    "rating": 4.4,
+    "reviews_count": 1890,
+    "category": "Charging Essentials",
+    "deal_url": "https://www.amazon.in/dp/B09MLQ39S2/?tag=dealon04-21&linkCode=ll1&language=en_IN",
+    "image_url": "https://images.unsplash.com/photo-1622445268047-97d84bcfeb03?w=600&auto=format&fit=crop&q=80",
+    "features": [
+      "Ultra-compact GaN micro-footprint",
+      "Type-C PD 33W + PPS Support",
+      "Safe fast-charge for iPhone & Galaxy"
+    ],
+    "is_deal_of_the_day": false,
+    "date_added": "2026-09-10T18:09:48.279Z"
+  },
+  {
+    "id": "anker-735-ganprime-65w",
+    "asin": "B09W2PNLX7",
+    "title": "Anker 735 GaNPrime 65W Foldable 3-Port Wall Charger",
+    "brand": "Anker",
+    "price": 3799,
+    "original_price": 5999,
+    "discount": 37,
+    "rating": 4.7,
+    "reviews_count": 6730,
+    "category": "Charging Essentials",
+    "deal_url": "https://www.amazon.in/dp/B09W2PNLX7/?tag=dealon04-21&linkCode=ll1&language=en_IN",
+    "image_url": "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=600&auto=format&fit=crop&q=80",
+    "features": [
+      "PowerIQ 4.0 Dynamic Power Distribution",
+      "ActiveShield 2.0 Temperature Monitoring",
+      "Powers laptop, phone & earbuds simultaneously"
+    ],
+    "is_deal_of_the_day": false,
+    "date_added": "2026-09-10T18:09:48.279Z"
+  },
+  {
+    "id": "ambrane-100w-braided-cable",
+    "asin": "B09V7N7R5P",
+    "title": "Ambrane 100W Fast Charging Type-C to Type-C Braided Cable",
+    "brand": "Ambrane",
+    "price": 299,
+    "original_price": 699,
+    "discount": 57,
+    "rating": 4.3,
+    "reviews_count": 12850,
+    "category": "Charging Essentials",
+    "deal_url": "https://www.amazon.in/dp/B09V7N7R5P/?tag=dealon04-21&linkCode=ll1&language=en_IN",
+    "image_url": "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=600&auto=format&fit=crop&q=80",
+    "features": [
+      "100W Power Delivery E-Marker Chip",
+      "Tangle-Free Rugged Nylon Braiding",
+      "480 Mbps High-Speed Data Sync"
+    ],
+    "is_deal_of_the_day": false,
+    "date_added": "2026-09-10T18:09:48.279Z"
+  },
+  {
+    "id": "realme-buds-t300-anc",
+    "asin": "B0CG2QG5Y9",
+    "title": "Realme Buds T300 Active Noise Cancelling TWS Earbuds",
+    "brand": "Realme",
+    "price": 1999,
+    "original_price": 3999,
+    "discount": 50,
+    "rating": 4.4,
+    "reviews_count": 8940,
+    "category": "Audio Gear",
+    "deal_url": "https://www.amazon.in/dp/B0CG2QG5Y9/?tag=dealon04-21&linkCode=ll1&language=en_IN",
+    "image_url": "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=600&auto=format&fit=crop&q=80",
+    "features": [
+      "30dB Active Noise Cancellation",
+      "12.4mm Dynamic Bass Boost Drivers",
+      "40 Hours Total Playback with Fast Charging"
+    ],
+    "is_deal_of_the_day": false,
+    "date_added": "2026-09-10T18:09:48.279Z"
+  },
+  {
+    "id": "soundcore-q20i-anc",
+    "asin": "B0C6B8DVS4",
+    "title": "Soundcore by Anker Q20i Hybrid Active Noise Cancelling Headphones",
+    "brand": "Soundcore",
+    "price": 4499,
+    "original_price": 7999,
+    "discount": 44,
+    "rating": 4.6,
+    "reviews_count": 14200,
+    "category": "Audio Gear",
+    "deal_url": "https://www.amazon.in/dp/B0C6B8DVS4/?tag=dealon04-21&linkCode=ll1&language=en_IN",
+    "image_url": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&auto=format&fit=crop&q=80",
+    "features": [
+      "Hybrid ANC reduces ambient noise by up to 90%",
+      "40 Hours ANC Playtime & 60 Hours Normal",
+      "Hi-Res Audio Certified with Custom EQ App"
+    ],
+    "is_deal_of_the_day": false,
+    "date_added": "2026-09-10T18:09:48.279Z"
+  },
+  {
+    "id": "tangzu-waner-sg-iem",
+    "asin": "B0BNL41V9H",
+    "title": "Tangzu Wan'er S.G Audiophile In-Ear Monitor (IEM)",
+    "brand": "Tangzu",
+    "price": 1699,
+    "original_price": 2999,
+    "discount": 43,
+    "rating": 4.7,
+    "reviews_count": 3120,
+    "category": "Audio Gear",
+    "deal_url": "https://www.amazon.in/dp/B0BNL41V9H/?tag=dealon04-21&linkCode=ll1&language=en_IN",
+    "image_url": "https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=600&auto=format&fit=crop&q=80",
+    "features": [
+      "10mm PET Diaphragm Dynamic Driver",
+      "Detachable 0.78mm 2-Pin OFC Cable",
+      "Exceptional soundstage & vocal clarity"
+    ],
+    "is_deal_of_the_day": false,
+    "date_added": "2026-09-10T18:09:48.279Z"
+  },
+  {
+    "id": "7hz-salnotes-zero-iem",
+    "asin": "B0B8CBPJ7C",
+    "title": "7Hz Salnotes Zero HiFi 10mm Dynamic In-Ear Earphones",
+    "brand": "7Hz",
+    "price": 1599,
+    "original_price": 2499,
+    "discount": 36,
+    "rating": 4.6,
+    "reviews_count": 5210,
+    "category": "Audio Gear",
+    "deal_url": "https://www.amazon.in/dp/B0B8CBPJ7C/?tag=dealon04-21&linkCode=ll1&language=en_IN",
+    "image_url": "https://images.unsplash.com/photo-1484704849700-f032a568e944?w=600&auto=format&fit=crop&q=80",
+    "features": [
+      "Tuned by Crinacle Harman Target curve",
+      "10mm Composite Metal Diaphragm",
+      "Detachable high-purity silver-plated cable"
+    ],
+    "is_deal_of_the_day": false,
+    "date_added": "2026-09-10T18:09:48.279Z"
+  },
+  {
+    "id": "scarters-vegan-leather-desk-mat",
+    "asin": "B0892DRB9N",
+    "title": "Scarters Vegan Leather Extended Desk Mat (90x45 cm)",
+    "brand": "Scarters",
+    "price": 1199,
+    "original_price": 2495,
+    "discount": 52,
+    "rating": 4.5,
+    "reviews_count": 4820,
+    "category": "Desk Setup",
+    "deal_url": "https://www.amazon.in/dp/B0892DRB9N/?tag=dealon04-21&linkCode=ll1&language=en_IN",
+    "image_url": "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=600&auto=format&fit=crop&q=80",
+    "features": [
+      "Dual-sided waterproof vegan leather finish",
+      "Smooth mouse glide & keyboard cushioning",
+      "Anti-fray perimeter stitching & easy wipe clean"
+    ],
+    "is_deal_of_the_day": false,
+    "date_added": "2026-09-10T18:09:48.279Z"
+  },
+  {
+    "id": "baseus-screen-light-bar",
+    "asin": "B08C7KG5LP",
+    "title": "Baseus Magnetic Stepless Dimming Monitor Light Bar",
+    "brand": "Baseus",
+    "price": 2899,
+    "original_price": 4999,
+    "discount": 42,
+    "rating": 4.6,
+    "reviews_count": 3950,
+    "category": "Desk Setup",
+    "deal_url": "https://www.amazon.in/dp/B08C7KG5LP/?tag=dealon04-21&linkCode=ll1&language=en_IN",
+    "image_url": "https://images.unsplash.com/photo-1593062096033-9a26b09da705?w=600&auto=format&fit=crop&q=80",
+    "features": [
+      "Zero screen glare asymmetrical optical design",
+      "3 Color Temperatures (2800K - 5500K)",
+      "Touch sensor stepless brightness control"
+    ],
+    "is_deal_of_the_day": false,
+    "date_added": "2026-09-10T18:09:48.279Z"
+  },
+  {
+    "id": "tukzer-headphone-hanger",
+    "asin": "B08MVV6C7R",
+    "title": "Tukzer Foldable Under-Desk Aluminum Headphone Hanger",
+    "brand": "Tukzer",
+    "price": 499,
+    "original_price": 999,
+    "discount": 50,
+    "rating": 4.4,
+    "reviews_count": 2100,
+    "category": "Desk Setup",
+    "deal_url": "https://www.amazon.in/dp/B08MVV6C7R/?tag=dealon04-21&linkCode=ll1&language=en_IN",
+    "image_url": "https://images.unsplash.com/photo-1541689592655-f5f52825a3b8?w=600&auto=format&fit=crop&q=80",
+    "features": [
+      "360 Degree rotating arm with cable loop",
+      "Universal clamp fit for desk thickness up to 50mm",
+      "Soft silicone padding prevents headphone denting"
+    ],
+    "is_deal_of_the_day": false,
+    "date_added": "2026-09-10T18:09:48.279Z"
+  },
+  {
+    "id": "royal-kludge-rk61",
+    "asin": "B0832CZNS5",
+    "title": "Royal Kludge RK61 60% Tri-Mode Wireless Mechanical Keyboard",
+    "brand": "Royal Kludge",
+    "price": 3899,
+    "original_price": 6999,
+    "discount": 44,
+    "rating": 4.5,
+    "reviews_count": 7890,
+    "category": "Computing Peripherals",
+    "deal_url": "https://www.amazon.in/dp/B0832CZNS5/?tag=dealon04-21&linkCode=ll1&language=en_IN",
+    "image_url": "https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=600&auto=format&fit=crop&q=80",
+    "features": [
+      "Tri-mode: Bluetooth 5.0, 2.4Ghz Dongle & USB-C",
+      "Hot-Swappable Quiet Red Mechanical Switches",
+      "Dynamic RGB Backlight with software macro support"
+    ],
+    "is_deal_of_the_day": false,
+    "date_added": "2026-09-10T18:09:48.279Z"
+  },
+  {
+    "id": "verilux-8-in-1-usb-c-hub",
+    "asin": "B0B68TRP2T",
+    "title": "Verilux 8-in-1 Aluminum USB-C Hub & Docking Adapter",
+    "brand": "Verilux",
+    "price": 1499,
+    "original_price": 2999,
+    "discount": 50,
+    "rating": 4.3,
+    "reviews_count": 3410,
+    "category": "Computing Peripherals",
+    "deal_url": "https://www.amazon.in/dp/B0B68TRP2T/?tag=dealon04-21&linkCode=ll1&language=en_IN",
+    "image_url": "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=600&auto=format&fit=crop&q=80",
+    "features": [
+      "4K@30Hz HDMI Video Output",
+      "100W Power Delivery Pass-through",
+      "SD/TF Card Reader + 3x USB 3.0 Ports"
+    ],
+    "is_deal_of_the_day": false,
+    "date_added": "2026-09-10T18:09:48.279Z"
+  },
+  {
+    "id": "logitech-pebble-combo",
+    "asin": "B0CHW61M6K",
+    "title": "Logitech Pebble Keys 2 K380s & M350s Slim Silent Combo",
+    "brand": "Logitech",
+    "price": 2995,
+    "original_price": 4495,
+    "discount": 33,
+    "rating": 4.6,
+    "reviews_count": 11400,
+    "category": "Computing Peripherals",
+    "deal_url": "https://www.amazon.in/dp/B0CHW61M6K/?tag=dealon04-21&linkCode=ll1&language=en_IN",
+    "image_url": "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=600&auto=format&fit=crop&q=80",
+    "features": [
+      "SilentTouch 90% Noise Reduction Clicks",
+      "Easy-Switch between 3 devices (Mac, iPad, Windows)",
+      "Up to 36-month keyboard & 24-month mouse battery life"
+    ],
+    "is_deal_of_the_day": false,
+    "date_added": "2026-09-10T18:09:48.279Z"
+  },
+  {
+    "id": "ant-esports-km540-combo",
+    "asin": "B0892B1M9F",
+    "title": "Ant Esports KM540 Ergonomic Rainbow LED Gaming Keyboard and Mouse Combo",
+    "brand": "Ant Esports",
+    "price": 1199,
+    "original_price": 2999,
+    "discount": 60,
+    "rating": 4.3,
+    "reviews_count": 5410,
+    "category": "Gaming Gadgets",
+    "deal_url": "https://www.amazon.in/dp/B0892B1M9F/?tag=dealon04-21&linkCode=ll1&language=en_IN",
+    "image_url": "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=600&auto=format&fit=crop&q=80",
+    "features": [
+      "Tactile Membrane Key Feel with Double-Injected Keycaps",
+      "7-Color Rainbow Breathing LED Backlight Modes",
+      "Ergonomic Gaming Mouse with Up to 3200 DPI Adjustability"
+    ],
+    "is_deal_of_the_day": false,
+    "date_added": "2026-09-10T18:09:48.279Z"
+  },
+  {
+    "id": "cosmic-byte-cb-gk-16-firefly",
+    "asin": "B084G47W6G",
+    "title": "Cosmic Byte CB-GK-16 Firefly TKL Mechanical Keyboard (Outemu Blue)",
+    "brand": "Cosmic Byte",
+    "price": 2199,
+    "original_price": 3499,
+    "discount": 37,
+    "rating": 4.4,
+    "reviews_count": 8920,
+    "category": "Gaming Gadgets",
+    "deal_url": "https://www.amazon.in/dp/B084G47W6G/?tag=dealon04-21&linkCode=ll1&language=en_IN",
+    "image_url": "https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=600&auto=format&fit=crop&q=80",
+    "features": [
+      "Compact Tenkeyless (87 Keys) Sturdy Aluminum Top Plate",
+      "Outemu Clicky Blue Mechanical Switches with 50M Keypress Life",
+      "Rainbow LED Backlight with 11 Dynamic Lighting Effects"
+    ],
+    "is_deal_of_the_day": false,
+    "date_added": "2026-09-10T18:09:48.279Z"
+  },
+  {
+    "id": "redragon-m601-centrophorus",
+    "asin": "B00HTK1NCS",
+    "title": "Redragon M601 RGB Centrophorus Ergonomic 3200 DPI Gaming Mouse",
+    "brand": "Redragon",
+    "price": 999,
+    "original_price": 1990,
+    "discount": 50,
+    "rating": 4.5,
+    "reviews_count": 14600,
+    "category": "Gaming Gadgets",
+    "deal_url": "https://www.amazon.in/dp/B00HTK1NCS/?tag=dealon04-21&linkCode=ll1&language=en_IN",
+    "image_url": "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=600&auto=format&fit=crop&q=80",
+    "features": [
+      "Precision Optical Sensor with 4 On-the-Fly DPI Levels (800-3200)",
+      "6 Programmable Buttons & 8-Piece Weight Tuning Set (2.4g x 8)",
+      "Durable TEFLON Feet Pads & Braided Fiber Cable"
+    ],
+    "is_deal_of_the_day": false,
+    "date_added": "2026-09-10T18:09:48.279Z"
+  },
+  {
+    "id": "oneplus-warp-supervooc-cable",
+    "asin": "B09V7F3S78",
+    "title": "OnePlus SUPERVOOC 80W / 65W Fast Charging Type-A to Type-C Cable",
+    "brand": "OnePlus",
+    "price": 849,
+    "original_price": 1299,
+    "discount": 35,
+    "rating": 4.6,
+    "reviews_count": 11200,
+    "category": "Charging Essentials",
+    "deal_url": "https://www.amazon.in/dp/B09V7F3S78/?tag=dealon04-21&linkCode=ll1&language=en_IN",
+    "image_url": "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=600&auto=format&fit=crop&q=80",
+    "features": [
+      "Supports 80W SUPERVOOC & 65W Warp Charge Flash Speeds",
+      "Signature Heavy-Duty Tangle-Free Flat Silicone Sheath",
+      "Reversible Type-C Connector with Integrated E-Marker Chip"
+    ],
+    "is_deal_of_the_day": false,
+    "date_added": "2026-09-10T18:09:48.279Z"
+  },
+  {
+    "id": "portronics-adapto-66w-gan",
+    "asin": "B0CCV3719G",
+    "title": "Portronics Adapto 66W GaN Dual Port (Type-C PD + QC 3.0) Fast Charger",
+    "brand": "Portronics",
+    "price": 1699,
+    "original_price": 2999,
+    "discount": 43,
+    "rating": 4.4,
+    "reviews_count": 3200,
+    "category": "Charging Essentials",
+    "deal_url": "https://www.amazon.in/dp/B0CCV3719G/?tag=dealon04-21&linkCode=ll1&language=en_IN",
+    "image_url": "https://images.unsplash.com/photo-1583863788434-e58a36330cf0?w=600&auto=format&fit=crop&q=80",
+    "features": [
+      "66W Super-Fast Power Delivery 3.0 with Gallium Nitride (GaN) Chip",
+      "Simultaneous Dual Fast Charge for MacBook Air, iPhone & Android",
+      "Built-in Smart IC Protects Against Over-Current & Voltage Spikes"
+    ],
+    "is_deal_of_the_day": false,
+    "date_added": "2026-09-10T18:09:48.279Z"
+  },
+  {
+    "id": "ugreen-100w-right-angle-cable",
+    "asin": "B083Q79Q8S",
+    "title": "Ugreen 100W Right Angle 90-Degree Type-C to Type-C Braided Cable (2m)",
+    "brand": "Ugreen",
+    "price": 699,
+    "original_price": 1499,
+    "discount": 53,
+    "rating": 4.6,
+    "reviews_count": 6310,
+    "category": "Charging Essentials",
+    "deal_url": "https://www.amazon.in/dp/B083Q79Q8S/?tag=dealon04-21&linkCode=ll1&language=en_IN",
+    "image_url": "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=600&auto=format&fit=crop&q=80",
+    "features": [
+      "Ergonomic 90-Degree Right-Angle Plug Prevents Cord Bending While Gaming",
+      "E-Marker IC Guarantees Safe 100W (20V/5A) Ultra-Fast Laptop Power",
+      "High-Density Braided Cotton Jacket Withstands 10,000+ Bends"
+    ],
+    "is_deal_of_the_day": false,
+    "date_added": "2026-09-10T18:09:48.279Z"
+  },
+  {
+    "id": "kz-castor-dual-dynamic-iem",
+    "asin": "B0CP27R6L4",
+    "title": "KZ Castor Dual-Dynamic Driver Audiophile In-Ear Monitor (Harman Target)",
+    "brand": "KZ Acoustics",
+    "price": 1899,
+    "original_price": 3499,
+    "discount": 46,
+    "rating": 4.6,
+    "reviews_count": 4210,
+    "category": "Audio Gear",
+    "deal_url": "https://www.amazon.in/dp/B0CP27R6L4/?tag=dealon04-21&linkCode=ll1&language=en_IN",
+    "image_url": "https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=600&auto=format&fit=crop&q=80",
+    "features": [
+      "Dual Dynamic Drivers (10mm Low-Frequency + 8mm Mid-High Unit)",
+      "Physical 4-Stage Tuning Dip Switches for Personalized Sound Signature",
+      "Zinc Alloy Acoustic Faceplate with Noise-Isolating Memory Foam Tips"
+    ],
+    "is_deal_of_the_day": false,
+    "date_added": "2026-09-10T18:09:48.279Z"
+  },
+  {
+    "id": "moondrop-chu-2-iem",
+    "asin": "B0CB8HSS88",
+    "title": "Moondrop Chu II High Performance 10mm Dynamic Driver Audiophile IEM",
+    "brand": "Moondrop",
+    "price": 1999,
+    "original_price": 3299,
+    "discount": 39,
+    "rating": 4.7,
+    "reviews_count": 7350,
+    "category": "Audio Gear",
+    "deal_url": "https://www.amazon.in/dp/B0CB8HSS88/?tag=dealon04-21&linkCode=ll1&language=en_IN",
+    "image_url": "https://images.unsplash.com/photo-1484704849700-f032a568e944?w=600&auto=format&fit=crop&q=80",
+    "features": [
+      "Aluminum-Magnesium Alloy Dome Composite Diaphragm",
+      "Detachable 0.78mm 2-Pin High Purity Oxygen-Free Copper Cable",
+      "CNC Brass Acoustic Nozzle with Replaceable Acoustic Filters"
+    ],
+    "is_deal_of_the_day": false,
+    "date_added": "2026-09-10T18:09:48.279Z"
+  },
+  {
+    "id": "amazonbasics-aluminum-laptop-stand",
+    "asin": "B01NA04C33",
+    "title": "AmazonBasics Ergonomic Ventilated Aluminum Laptop Stand with 360° Swivel Base",
+    "brand": "AmazonBasics",
+    "price": 1249,
+    "original_price": 2499,
+    "discount": 50,
+    "rating": 4.5,
+    "reviews_count": 16200,
+    "category": "Desk Setup",
+    "deal_url": "https://www.amazon.in/dp/B01NA04C33/?tag=dealon04-21&linkCode=ll1&language=en_IN",
+    "image_url": "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=600&auto=format&fit=crop&q=80",
+    "features": [
+      "Aircraft-Grade Brushed Sandblasted Aluminum Dissipates Laptop Heat",
+      "Raises Display to Ergonomic Eye Level to Prevent Neck & Spinal Strain",
+      "Non-Slip Silicone Grip Pads Secure Laptops from 10 to 15.6 Inches"
+    ],
+    "is_deal_of_the_day": false,
+    "date_added": "2026-09-10T18:09:48.279Z"
+  },
+  {
+    "id": "orico-clip-on-monitor-usb-hub",
+    "asin": "B07P7ZDTG9",
+    "title": "Orico 4-Port USB 3.0 Clip-on Aluminum Desk & Monitor Hub with Adjustable Clamp",
+    "brand": "Orico",
+    "price": 1799,
+    "original_price": 3299,
+    "discount": 45,
+    "rating": 4.4,
+    "reviews_count": 2430,
+    "category": "Desk Setup",
+    "deal_url": "https://www.amazon.in/dp/B07P7ZDTG9/?tag=dealon04-21&linkCode=ll1&language=en_IN",
+    "image_url": "https://images.unsplash.com/photo-1593062096033-9a26b09da705?w=600&auto=format&fit=crop&q=80",
+    "features": [
+      "Clamps Seamlessly to Monitor Edges or Desk Borders (10mm - 32mm)",
+      "4 SuperSpeed USB 3.0 Ports with Up to 5 Gbps Data Transfer Rate",
+      "Premium Anodized Aluminum Alloy Housing Matches Modern iMacs & Monitors"
+    ],
+    "is_deal_of_the_day": false,
+    "date_added": "2026-09-10T18:09:48.279Z"
+  },
+  {
+    "id": "tukzer-rgb-gaming-mousepad",
+    "asin": "B08NVN7W6N",
+    "title": "Tukzer Extended RGB Soft Gaming Mouse Pad (800x300x4 mm) with 14 Light Modes",
+    "brand": "Tukzer",
+    "price": 899,
+    "original_price": 1999,
+    "discount": 55,
+    "rating": 4.5,
+    "reviews_count": 7890,
+    "category": "Desk Setup",
+    "deal_url": "https://www.amazon.in/dp/B08NVN7W6N/?tag=dealon04-21&linkCode=ll1&language=en_IN",
+    "image_url": "https://images.unsplash.com/photo-1541689592655-f5f52825a3b8?w=600&auto=format&fit=crop&q=80",
+    "features": [
+      "14 Customizable RGB Lighting Modes (7 Static Colors + 7 Dynamic Cycles)",
+      "Micro-Textured High-Density Cloth Surface for Precise Mouse Tracking",
+      "Heavy Anti-Slip Rubberized Base Keeps Pad Glued to Desk"
+    ],
+    "is_deal_of_the_day": false,
+    "date_added": "2026-09-10T18:09:48.279Z"
+  },
+  {
+    "id": "gizga-cable-management-sleeve",
+    "asin": "B079Z44TY6",
+    "title": "Gizga Essentials Flexible Neoprene Cable Management Sleeve (4-Pack)",
+    "brand": "Gizga Essentials",
+    "price": 499,
+    "original_price": 1299,
+    "discount": 62,
+    "rating": 4.4,
+    "reviews_count": 5120,
+    "category": "Desk Setup",
+    "deal_url": "https://www.amazon.in/dp/B079Z44TY6/?tag=dealon04-21&linkCode=ll1&language=en_IN",
+    "image_url": "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=600&auto=format&fit=crop&q=80",
+    "features": [
+      "Durable High-Density Flexible Neoprene with Heavy-Duty Zipper Closure",
+      "Tidy Up Tangled PC, Monitor, Power & Gaming Cords in Under 2 Minutes",
+      "Reversible Black & White Styling to Blend with Any Wall or Desk Decor"
+    ],
+    "is_deal_of_the_day": false,
+    "date_added": "2026-09-10T18:09:48.279Z"
+  },
+  {
+    "id": "portronics-clean-d-8-in-1-kit",
+    "asin": "B0BX76SQZ8",
+    "title": "Portronics Clean D Multifunctional 8-in-1 Electronic Cleaning Kit",
+    "brand": "Portronics",
+    "price": 399,
+    "original_price": 999,
+    "discount": 60,
+    "rating": 4.3,
+    "reviews_count": 14200,
+    "category": "Computing Peripherals",
+    "deal_url": "https://www.amazon.in/dp/B0BX76SQZ8/?tag=dealon04-21&linkCode=ll1&language=en_IN",
+    "image_url": "https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=600&auto=format&fit=crop&q=80",
+    "features": [
+      "8 Integrated Tools: Keycap Puller, Flocking Sponge, High-Density Brush & Screen Sprayer",
+      "Deep Cleans Mechanical Keyboard Switches, Earbuds & Smartphone Ports",
+      "Pocket-Sized Slide-Out Protective Enclosure"
+    ],
+    "is_deal_of_the_day": false,
+    "date_added": "2026-09-10T18:09:48.279Z"
+  },
+  {
+    "id": "tp-link-archer-t3u-plus-wifi",
+    "asin": "B0859M539M",
+    "title": "TP-Link Archer T3U Plus AC1300 High Gain Dual Band USB Wi-Fi Adapter",
+    "brand": "TP-Link",
+    "price": 1199,
+    "original_price": 2399,
+    "discount": 50,
+    "rating": 4.5,
+    "reviews_count": 22100,
+    "category": "Computing Peripherals",
+    "deal_url": "https://www.amazon.in/dp/B0859M539M/?tag=dealon04-21&linkCode=ll1&language=en_IN",
+    "image_url": "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=600&auto=format&fit=crop&q=80",
+    "features": [
+      "High-Gain External Antenna Boosts Signal Reception for Laptops & Desktops",
+      "Dual Band Speeds up to 867 Mbps (5 GHz) + 400 Mbps (2.4 GHz)",
+      "MU-MIMO Tech Delivers Smooth 4K Streaming & Low-Latency Gaming"
+    ],
+    "is_deal_of_the_day": false,
+    "date_added": "2026-09-10T18:09:48.279Z"
   }
 ]
