@@ -25,6 +25,7 @@ const fs = require('fs');
 const path = require('path');
 const https = require('https');
 const { execSync } = require('child_process');
+const { formatAmazonUrl, AMAZON_TAG } = require('./affiliate_utils');
 
 const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
 const TELEGRAM_CHANNEL_ID = process.env.TELEGRAM_CHANNEL_ID || '@dealon_offers';
@@ -61,13 +62,14 @@ function postJSON(url, payload) {
 async function publishTelegram(deal) {
   if (!TELEGRAM_BOT_TOKEN) return console.log('⚠️ Telegram Token missing');
   const safeChannel = TELEGRAM_CHANNEL_ID.replace(/_/g, '\\_');
+  const dealUrl = formatAmazonUrl(deal.deal_url || deal.asin, AMAZON_TAG);
   const caption = 
 `🔥 *DEAL OF THE DAY: ${deal.title}*
 
 🏷 *Deal Price:* ₹${Number(deal.price).toLocaleString('en-IN')} ~₹${Number(deal.original_price).toLocaleString('en-IN')}~ (*${deal.discount}% OFF*)
 ⭐ *Rating:* ${deal.rating || '4.5'}★ (${deal.reviews_count ? Number(deal.reviews_count).toLocaleString('en-IN') : '1,000+'} reviews)
 
-🛒 *Direct Deal Link:* [Grab Offer Here](${deal.deal_url})
+🛒 *Direct Deal Link:* [Grab Offer Here](${dealUrl})
 
 ⚡ Join ${safeChannel} for instant hourly price drops!`;
 
@@ -90,13 +92,14 @@ async function publishTelegram(deal) {
 // 2. Facebook Auto-Post
 async function publishFacebook(deal) {
   if (!META_ACCESS_TOKEN || !FB_PAGE_ID) return console.log('⚠️ Meta/FB keys missing');
+  const dealUrl = formatAmazonUrl(deal.deal_url || deal.asin, AMAZON_TAG);
   const message = 
 `🔥 DAILY SMART DEAL: ${deal.title}
 
 💰 Deal Price: ₹${Number(deal.price).toLocaleString('en-IN')} (MRP ₹${Number(deal.original_price).toLocaleString('en-IN')}) — Save ${deal.discount}%!
 ⭐ Verified Historical Low
 
-🛒 Buy Now: ${deal.deal_url}
+🛒 Buy Now: ${dealUrl}
 🌐 Browse 30+ Tech Steals: https://dealon.netlify.app/
 
 #dealon #techdeals #amazondeals #discount #lootdeal`;
@@ -145,6 +148,16 @@ async function publishInstagram(deal) {
 // 4. Update Site Data & Trigger Netlify Deployment
 function updateSiteDeals(deal) {
   const dealsPath = path.join(__dirname, 'deals.json');
+  const productsPath = path.join(__dirname, 'products.json');
+  const indexPath = path.join(__dirname, 'index.html');
+
+  // Format canonical affiliate URL
+  deal.deal_url = formatAmazonUrl(deal.deal_url || deal.asin, AMAZON_TAG);
+  if (!deal.asin && deal.deal_url) {
+    const m = deal.deal_url.match(/(?:dp|gp\/product|\/d\/)\/([A-Z0-9]{10})/i);
+    if (m) deal.asin = m[1].toUpperCase();
+  }
+
   let deals = [];
   if (fs.existsSync(dealsPath)) {
     try {
@@ -158,18 +171,22 @@ function updateSiteDeals(deal) {
   deals = deals.map(d => ({ ...d, is_deal_of_the_day: false }));
   deal.is_deal_of_the_day = true;
   deal.date_added = new Date().toISOString();
+
+  // Remove existing duplicate if present
+  const existingIndex = deals.findIndex(d => d.id === deal.id || (d.asin && d.asin === deal.asin));
+  if (existingIndex >= 0) {
+    deals.splice(existingIndex, 1);
+  }
   deals.unshift(deal);
 
   fs.writeFileSync(dealsPath, JSON.stringify(deals, null, 2));
-  console.log('[Website] deals.json updated with new featured deal.');
+  console.log('[Website] deals.json updated with new featured deal (' + deals.length + ' active deals).');
 
-  // Also sync to products.json and index.html if products.json exists
-  const productsPath = path.join(__dirname, 'products.json');
-  const indexPath = path.join(__dirname, 'index.html');
+  // Also sync to products.json and index.html
   if (fs.existsSync(productsPath)) {
     try {
       let catalog = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
-      const existingIdx = catalog.findIndex(x => x.id === deal.id);
+      const existingIdx = catalog.findIndex(x => x.id === deal.id || (x.asin && x.asin === deal.asin));
       const productObj = {
         id: deal.id,
         title: deal.title,
@@ -182,7 +199,7 @@ function updateSiteDeals(deal) {
         discount_pct: Number(deal.discount),
         rating: deal.rating || 4.5,
         reviews_count: deal.reviews_count || 1000,
-        asin: deal.asin || (deal.deal_url && deal.deal_url.match(/\/dp\/([A-Z0-9]{10})/)?.[1]) || '',
+        asin: deal.asin,
         product_url: deal.deal_url,
         image_url: deal.image_url,
         badge: 'DEAL OF THE DAY',
@@ -229,7 +246,10 @@ function updateSiteDeals(deal) {
 
 // Master Omnichannel Dispatch
 async function runDailyOmnichannel(deal) {
+  // Ensure canonical affiliate URL
+  deal.deal_url = formatAmazonUrl(deal.deal_url || deal.asin, AMAZON_TAG);
   console.log(`\n🚀 Starting Omnichannel Publishing for: "${deal.title}"\n`);
+  console.log(`🛒 Canonical Affiliate Link: ${deal.deal_url}\n`);
   updateSiteDeals(deal);
   await publishTelegram(deal);
   await publishFacebook(deal);
@@ -260,6 +280,7 @@ if (require.main === module) {
           const top = sorted[0];
           selectedDeal = {
             id: top.id,
+            asin: top.asin,
             title: top.title,
             brand: top.brand,
             price: top.current_price,
@@ -267,7 +288,7 @@ if (require.main === module) {
             discount: top.discount_pct,
             rating: top.rating || 4.5,
             reviews_count: top.reviews_count || 1000,
-            deal_url: top.product_url || `https://www.amazon.in/dp/${top.asin}?tag=dealon04-21`,
+            deal_url: formatAmazonUrl(top.product_url || top.asin, AMAZON_TAG),
             image_url: top.image_url,
             category: top.category || "Tech Gear",
             features: top.features || []
@@ -278,21 +299,29 @@ if (require.main === module) {
   }
 
   if (!selectedDeal) {
+    // Verified real Indian tech product fallback (Sony WH-1000XM5)
     selectedDeal = {
-      id: "daily-" + Date.now(),
-      title: "Anker Prime 67W GaN 3-Port Fast Wall Charger",
-      price: 3499,
-      original_price: 5999,
-      discount: 42,
-      rating: 4.7,
-      reviews_count: 2450,
-      deal_url: "https://amazon.in/dp/B0C4D5N123?tag=dealon04-21",
-      image_url: "https://m.media-amazon.com/images/I/61KNJav3S9L._SL1500_.jpg",
-      category: "GaN Tech"
+      id: "sony-wh1000xm5",
+      asin: "B09XS7JWHH",
+      title: "Sony WH-1000XM5 Wireless Industry Leading Noise Canceling Headphones",
+      brand: "Sony",
+      price: 26990,
+      original_price: 34990,
+      discount: 23,
+      rating: 4.5,
+      reviews_count: 4820,
+      deal_url: formatAmazonUrl("B09XS7JWHH", AMAZON_TAG),
+      image_url: "https://m.media-amazon.com/images/I/61vJtKbAssL._SL1500_.jpg",
+      category: "HiFi Audio",
+      features: [
+        "Industry-Leading Active Noise Cancelling with 8 Microphones",
+        "Up to 30-Hour Battery Life with Quick Charging (3 min = 3 hours)",
+        "Ultra-Comfortable Lightweight Soft-Fit Leather Design"
+      ]
     };
   }
 
   runDailyOmnichannel(selectedDeal);
 }
 
-module.exports = { runDailyOmnichannel };
+module.exports = { runDailyOmnichannel, formatAmazonUrl };

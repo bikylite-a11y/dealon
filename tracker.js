@@ -9,6 +9,7 @@
 const fs = require('fs');
 const path = require('path');
 const https = require('https');
+const { formatAmazonUrl } = require('./affiliate_utils');
 
 const CATALOG_PATH = path.join(__dirname, 'products.json');
 const DEFAULT_AFFILIATE_TAG = process.env.AMAZON_AFFILIATE_TAG || 'dealon04-21';
@@ -27,8 +28,7 @@ function formatMessage(product, tag) {
   const mrp = product.mrp;
   const savings = mrp - current;
   const discount = product.discount_pct || Math.round(((mrp - current) / mrp) * 100);
-  const isLow = product.is_historical_low || current <= product.historical_low;
-  const url = product.product_url || (product.asin ? `https://www.amazon.in/dp/${product.asin}?tag=${encodeURIComponent(tag)}` : `https://www.amazon.in/s?k=${encodeURIComponent(product.title)}&tag=${encodeURIComponent(tag)}`);
+  const url = formatAmazonUrl(product.product_url || product.asin, tag) || `https://www.amazon.in/s?k=${encodeURIComponent(product.title)}&tag=${encodeURIComponent(tag)}&linkCode=ll1&language=en_IN`;
 
   const header = isLow ? '🔥 *HISTORICAL ALL-TIME LOW ALERT*' : '⚡ *PRICE DROP ALERT*';
   const categoryTag = '#' + product.category.replace(/\s+/g, '');
@@ -50,7 +50,7 @@ function formatMessage(product, tag) {
 
 function sendTelegramMessage(token, chatId, text, product, tag) {
   return new Promise((resolve, reject) => {
-    const url = product.product_url || (product.asin ? `https://www.amazon.in/dp/${product.asin}?tag=${encodeURIComponent(tag)}` : `https://www.amazon.in/s?k=${encodeURIComponent(product.title)}&tag=${encodeURIComponent(tag)}`);
+    const url = formatAmazonUrl(product.product_url || product.asin, tag) || `https://www.amazon.in/s?k=${encodeURIComponent(product.title)}&tag=${encodeURIComponent(tag)}&linkCode=ll1&language=en_IN`;
     const payload = JSON.stringify({
       chat_id: chatId,
       text: text,

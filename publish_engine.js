@@ -23,6 +23,7 @@ const fs = require('fs');
 const path = require('path');
 const https = require('https');
 const http = require('http');
+const { formatAmazonUrl } = require('./affiliate_utils');
 
 // ── Load .env ────────────────────────────────────────────────────
 function loadEnv() {
@@ -68,9 +69,8 @@ function isoDate() { return new Date().toISOString().slice(0, 10); }
 function isoTimestamp() { return new Date().toISOString(); }
 
 function getDealUrl(product) {
-  return product.product_url ||
-    (product.asin ? `https://www.amazon.in/dp/${product.asin}?tag=${CONFIG.affiliateTag}` :
-    `https://www.amazon.in/s?k=${encodeURIComponent(product.title)}&tag=${CONFIG.affiliateTag}`);
+  return formatAmazonUrl(product.product_url || product.asin || product.deal_url, CONFIG.affiliateTag) ||
+    `https://www.amazon.in/s?k=${encodeURIComponent(product.title)}&tag=${CONFIG.affiliateTag}&linkCode=ll1&language=en_IN`;
 }
 
 function loadCatalog() {
