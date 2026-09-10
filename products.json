@@ -16,8 +16,19 @@
     "product_url": "https://www.amazon.in/dp/B0DDHM6D3L/?tag=dealon04-21&linkCode=ll1&language=en_IN",
     "image_url": "https://m.media-amazon.com/images/I/51GGwjwSr0L._SL1500_.jpg",
     "badge": "BESTSELLER #1",
-    "features": ["14.2mm Powerful Audio Driver","Type-C Jack - No Adapter Needed","In-Line HD Mic & Controls"],
-    "price_history": [799, 599, 499, 399, 349, 322]
+    "features": [
+      "14.2mm Powerful Audio Driver",
+      "Type-C Jack - No Adapter Needed",
+      "In-Line HD Mic & Controls"
+    ],
+    "price_history": [
+      799,
+      599,
+      499,
+      399,
+      349,
+      322
+    ]
   },
   {
     "id": "oneplus-nord-buds-3r",
@@ -36,8 +47,19 @@
     "product_url": "https://www.amazon.in/dp/B0FMDL81GS/?tag=dealon04-21&linkCode=ll1&language=en_IN",
     "image_url": "https://m.media-amazon.com/images/I/51nBTTG3hNL._SL1500_.jpg",
     "badge": "BESTSELLER #2",
-    "features": ["54 Hours Total Playback","3D Spatial Audio + AI Translation","Dual-Device Connectivity & 47ms Low Latency"],
-    "price_history": [2999, 2699, 2499, 2299, 2199, 1999]
+    "features": [
+      "54 Hours Total Playback",
+      "3D Spatial Audio + AI Translation",
+      "Dual-Device Connectivity & 47ms Low Latency"
+    ],
+    "price_history": [
+      2999,
+      2699,
+      2499,
+      2299,
+      2199,
+      1999
+    ]
   },
   {
     "id": "apple-earpods-usb-c",
@@ -56,8 +78,19 @@
     "product_url": "https://www.amazon.in/dp/B0DCNWN8NZ/?tag=dealon04-21&linkCode=ll1&language=en_IN",
     "image_url": "https://m.media-amazon.com/images/I/513OSdW4elL._SL1500_.jpg",
     "badge": "BESTSELLER #3",
-    "features": ["USB-C Connector for iPhone 15+","Apple-Tuned High-Quality Audio","Built-in Remote & Microphone"],
-    "price_history": [1900, 1899, 1850, 1799, 1750, 1705]
+    "features": [
+      "USB-C Connector for iPhone 15+",
+      "Apple-Tuned High-Quality Audio",
+      "Built-in Remote & Microphone"
+    ],
+    "price_history": [
+      1900,
+      1899,
+      1850,
+      1799,
+      1750,
+      1705
+    ]
   },
   {
     "id": "oneplus-bullets-wireless-z3",
@@ -76,8 +109,19 @@
     "product_url": "https://www.amazon.in/dp/B0FBRGKXHG/?tag=dealon04-21&linkCode=ll1&language=en_IN",
     "image_url": "https://m.media-amazon.com/images/I/51vT4GzBObL._SL1500_.jpg",
     "badge": "BESTSELLER #4",
-    "features": ["10 Mins Quick Charge = 27 Hrs Playback","4 EQ Presets + Dynamic Bass Enhancement","BT 5.4 for Ultra-Stable Connection"],
-    "price_history": [2799, 2599, 2399, 2199, 2099, 1999]
+    "features": [
+      "10 Mins Quick Charge = 27 Hrs Playback",
+      "4 EQ Presets + Dynamic Bass Enhancement",
+      "BT 5.4 for Ultra-Stable Connection"
+    ],
+    "price_history": [
+      2799,
+      2599,
+      2399,
+      2199,
+      2099,
+      1999
+    ]
   },
   {
     "id": "boat-bassheads-300c",
@@ -90,14 +134,25 @@
     "target_drop_price": 599,
     "is_historical_low": false,
     "discount_pct": 63,
-    "rating": 4.0,
+    "rating": 4,
     "reviews_count": 120756,
     "asin": "B0FM38916Y",
     "product_url": "https://www.amazon.in/dp/B0FM38916Y/?tag=dealon04-21&linkCode=ll1&language=en_IN",
     "image_url": "https://m.media-amazon.com/images/I/51sxI5xpalL._SL1500_.jpg",
     "badge": "BESTSELLER #5",
-    "features": ["Type-C Jack with 10mm Drivers","boAt Signature Sound","In-Line Mic + Integrated Controls"],
-    "price_history": [1499, 999, 799, 699, 599, 549]
+    "features": [
+      "Type-C Jack with 10mm Drivers",
+      "boAt Signature Sound",
+      "In-Line Mic + Integrated Controls"
+    ],
+    "price_history": [
+      1499,
+      999,
+      799,
+      699,
+      599,
+      549
+    ]
   },
   {
     "id": "kratos-tw02-earbuds",
@@ -110,14 +165,25 @@
     "target_drop_price": 749,
     "is_historical_low": false,
     "discount_pct": 72,
-    "rating": 4.0,
+    "rating": 4,
     "reviews_count": 8920,
     "asin": "B0G2H4R5YB",
     "product_url": "https://www.amazon.in/dp/B0G2H4R5YB/?tag=dealon04-21&linkCode=ll1&language=en_IN",
     "image_url": "https://m.media-amazon.com/images/I/61IgAVQe1yL._SL1500_.jpg",
     "badge": "BESTSELLER #6",
-    "features": ["60 Hours Total Playtime","Noise Isolation Technology","Voice Assistant Compatible"],
-    "price_history": [2499, 1499, 999, 849, 749, 699]
+    "features": [
+      "60 Hours Total Playtime",
+      "Noise Isolation Technology",
+      "Voice Assistant Compatible"
+    ],
+    "price_history": [
+      2499,
+      1499,
+      999,
+      849,
+      749,
+      699
+    ]
   },
   {
     "id": "boat-rockerz-113-neckband",
@@ -136,8 +202,19 @@
     "product_url": "https://www.amazon.in/dp/B0DNPWJLQC/?tag=dealon04-21&linkCode=ll1&language=en_IN",
     "image_url": "https://m.media-amazon.com/images/I/61B5hIAmvdL._SL1500_.jpg",
     "badge": "BESTSELLER #7",
-    "features": ["40 Hours Battery with Fast Charge","Dual Pair - Two Neckbands in One Box","IWP Instant Wake & Pair Technology"],
-    "price_history": [2990, 1999, 1499, 1199, 1099, 999]
+    "features": [
+      "40 Hours Battery with Fast Charge",
+      "Dual Pair - Two Neckbands in One Box",
+      "IWP Instant Wake & Pair Technology"
+    ],
+    "price_history": [
+      2990,
+      1999,
+      1499,
+      1199,
+      1099,
+      999
+    ]
   },
   {
     "id": "zebronics-bro-earphones",
@@ -150,14 +227,25 @@
     "target_drop_price": 219,
     "is_historical_low": false,
     "discount_pct": 72,
-    "rating": 4.0,
+    "rating": 4,
     "reviews_count": 89500,
     "asin": "B08TV2P1N8",
     "product_url": "https://www.amazon.in/dp/B08TV2P1N8/?tag=dealon04-21&linkCode=ll1&language=en_IN",
     "image_url": "https://m.media-amazon.com/images/I/51D37uhFFBL._SL1500_.jpg",
     "badge": "BUDGET PICK",
-    "features": ["Deep Bass 3.5mm Jack Earphones","Built-in Mic for Hands-Free Calls","Lightweight Ergonomic Design"],
-    "price_history": [699, 499, 349, 279, 229, 199]
+    "features": [
+      "Deep Bass 3.5mm Jack Earphones",
+      "Built-in Mic for Hands-Free Calls",
+      "Lightweight Ergonomic Design"
+    ],
+    "price_history": [
+      699,
+      499,
+      349,
+      279,
+      229,
+      199
+    ]
   },
   {
     "id": "oneplus-nord-buds-3-pro",
@@ -176,8 +264,19 @@
     "product_url": "https://www.amazon.in/dp/B0D7HZ3KK9/?tag=dealon04-21&linkCode=ll1&language=en_IN",
     "image_url": "https://m.media-amazon.com/images/I/51RaySTbIVL._SL1500_.jpg",
     "badge": "RECOMMENDED",
-    "features": ["Hybrid Active Noise Cancellation","49dB Max ANC for Deep Silence","Gaming Mode 26ms Low Latency"],
-    "price_history": [5999, 5499, 4999, 4499, 4199, 3999]
+    "features": [
+      "Hybrid Active Noise Cancellation",
+      "49dB Max ANC for Deep Silence",
+      "Gaming Mode 26ms Low Latency"
+    ],
+    "price_history": [
+      5999,
+      5499,
+      4999,
+      4499,
+      4199,
+      3999
+    ]
   },
   {
     "id": "boat-airdopes-proclip",
@@ -196,8 +295,19 @@
     "product_url": "https://www.amazon.in/dp/B0H4ZB5NQV/?tag=dealon04-21&linkCode=ll1&language=en_IN",
     "image_url": "https://m.media-amazon.com/images/I/61qm6ZzMmwL._SL1500_.jpg",
     "badge": "NEW LAUNCH",
-    "features": ["Air Conduction Technology - No Ear Block","Featherweight 9g Design","Open-Ear for Situational Awareness"],
-    "price_history": [4990, 3999, 3299, 2899, 2699, 2499]
+    "features": [
+      "Air Conduction Technology - No Ear Block",
+      "Featherweight 9g Design",
+      "Open-Ear for Situational Awareness"
+    ],
+    "price_history": [
+      4990,
+      3999,
+      3299,
+      2899,
+      2699,
+      2499
+    ]
   },
   {
     "id": "boat-airdopes-219",
@@ -216,8 +326,19 @@
     "product_url": "https://www.amazon.in/dp/B0FC2Y3XGV/?tag=dealon04-21&linkCode=ll1&language=en_IN",
     "image_url": "https://m.media-amazon.com/images/I/71FOccCOQmL._SL1500_.jpg",
     "badge": "BESTSELLER #15",
-    "features": ["4 Mics ENx Technology for Crystal Calls","40 Hours Total Battery Life","Best in Segment Audio Performance"],
-    "price_history": [3990, 2990, 1999, 1599, 1399, 1299]
+    "features": [
+      "4 Mics ENx Technology for Crystal Calls",
+      "40 Hours Total Battery Life",
+      "Best in Segment Audio Performance"
+    ],
+    "price_history": [
+      3990,
+      2990,
+      1999,
+      1599,
+      1399,
+      1299
+    ]
   },
   {
     "id": "boat-airdopes-plus-222",
@@ -236,8 +357,19 @@
     "product_url": "https://www.amazon.in/dp/B0GXBG2MNF/?tag=dealon04-21&linkCode=ll1&language=en_IN",
     "image_url": "https://m.media-amazon.com/images/I/619e8rXtoiL._SL1500_.jpg",
     "badge": "NEW LAUNCH 2026",
-    "features": ["Immersive Spatial Audio","Advanced ENx Noise Cancellation","50 Hours Extended Playtime"],
-    "price_history": [4990, 3490, 2799, 2399, 2199, 1999]
+    "features": [
+      "Immersive Spatial Audio",
+      "Advanced ENx Noise Cancellation",
+      "50 Hours Extended Playtime"
+    ],
+    "price_history": [
+      4990,
+      3490,
+      2799,
+      2399,
+      2199,
+      1999
+    ]
   },
   {
     "id": "realme-buds-t310",
@@ -256,8 +388,19 @@
     "product_url": "https://www.amazon.in/dp/B0DBGP48NW/?tag=dealon04-21&linkCode=ll1&language=en_IN",
     "image_url": "https://m.media-amazon.com/images/I/61dj32WdrxL._SL1500_.jpg",
     "badge": "RECOMMENDED",
-    "features": ["46dB Hybrid Active Noise Cancellation","38 Hours Total Battery Life","Dolby Atmos Spatial Audio"],
-    "price_history": [3999, 3499, 2999, 2499, 2199, 1999]
+    "features": [
+      "46dB Hybrid Active Noise Cancellation",
+      "38 Hours Total Battery Life",
+      "Dolby Atmos Spatial Audio"
+    ],
+    "price_history": [
+      3999,
+      3499,
+      2999,
+      2499,
+      2199,
+      1999
+    ]
   },
   {
     "id": "jbl-c100si",
@@ -276,8 +419,19 @@
     "product_url": "https://www.amazon.in/dp/B01DEWVZ2C/?tag=dealon04-21&linkCode=ll1&language=en_IN",
     "image_url": "https://m.media-amazon.com/images/I/51Q8DUDT2eL._SL1500_.jpg",
     "badge": "ICONIC",
-    "features": ["JBL Pure Bass Sound","1-Button Remote with Microphone","4 Pair of Ear Tips for Best Fit"],
-    "price_history": [1299, 1099, 999, 849, 749, 699]
+    "features": [
+      "JBL Pure Bass Sound",
+      "1-Button Remote with Microphone",
+      "4 Pair of Ear Tips for Best Fit"
+    ],
+    "price_history": [
+      1299,
+      1099,
+      999,
+      849,
+      749,
+      699
+    ]
   },
   {
     "id": "samsung-galaxy-buds-core",
@@ -290,14 +444,25 @@
     "target_drop_price": 3299,
     "is_historical_low": false,
     "discount_pct": 50,
-    "rating": 4.0,
+    "rating": 4,
     "reviews_count": 7840,
     "asin": "B0FDGVNSLH",
     "product_url": "https://www.amazon.in/dp/B0FDGVNSLH/?tag=dealon04-21&linkCode=ll1&language=en_IN",
     "image_url": "https://m.media-amazon.com/images/I/61WRrNa6BIL._SL1500_.jpg",
     "badge": "GALAXY AI",
-    "features": ["Galaxy AI Enabled Real-Time Features","Active Noise Cancellation","Seamless Galaxy Ecosystem Integration"],
-    "price_history": [5999, 4999, 3999, 3499, 3299, 2999]
+    "features": [
+      "Galaxy AI Enabled Real-Time Features",
+      "Active Noise Cancellation",
+      "Seamless Galaxy Ecosystem Integration"
+    ],
+    "price_history": [
+      5999,
+      4999,
+      3999,
+      3499,
+      3299,
+      2999
+    ]
   },
   {
     "id": "boat-airdopes-joy-v2",
@@ -306,18 +471,25 @@
     "category": "Audio Gear",
     "current_price": 799,
     "mrp": 2990,
-    "historical_low": 699,
+    "historical_low": 799,
     "target_drop_price": 899,
-    "is_historical_low": false,
+    "is_historical_low": true,
     "discount_pct": 73,
-    "rating": 4.0,
+    "rating": 4,
     "reviews_count": 4210,
     "asin": "B0GZMYP6Y6",
     "product_url": "https://www.amazon.in/dp/B0GZMYP6Y6/?tag=dealon04-21&linkCode=ll1&language=en_IN",
     "image_url": "https://m.media-amazon.com/images/I/61ha05nY0kL._SL1500_.jpg",
-    "badge": "NEW 2026",
-    "features": ["35 Hours Battery Life","Ultra-Pocketable Compact Design","Voice Assistant Compatible"],
-    "price_history": [2990, 1999, 1299, 999, 899, 799]
+    "badge": "DEAL OF THE DAY",
+    "features": [
+      "35 Hours Battery Life",
+      "Ultra-Pocketable Compact Design",
+      "Voice Assistant Compatible"
+    ],
+    "price_history": [
+      2990,
+      799
+    ]
   },
   {
     "id": "ambrane-type-c-cable-3a",
@@ -336,8 +508,19 @@
     "product_url": "https://www.amazon.in/dp/B098NS6PVG/?tag=dealon04-21&linkCode=ll1&language=en_IN",
     "image_url": "https://m.media-amazon.com/images/I/61W8xeZTwxL._SL1500_.jpg",
     "badge": "BESTSELLER CABLE",
-    "features": ["3A Fast Charging Support","Unbreakable Braided 1.5M Length","Anti-Tangle Design with Strain Relief"],
-    "price_history": [699, 499, 399, 329, 279, 249]
+    "features": [
+      "3A Fast Charging Support",
+      "Unbreakable Braided 1.5M Length",
+      "Anti-Tangle Design with Strain Relief"
+    ],
+    "price_history": [
+      699,
+      499,
+      399,
+      329,
+      279,
+      249
+    ]
   },
   {
     "id": "portronics-konnect-x-type-c",
@@ -356,8 +539,19 @@
     "product_url": "https://www.amazon.in/dp/B0CR6JQT6F/?tag=dealon04-21&linkCode=ll1&language=en_IN",
     "image_url": "https://m.media-amazon.com/images/I/71lJnttqcML._SL1500_.jpg",
     "badge": "TOP SELLER",
-    "features": ["3A Fast Charging for Smartphones","480Mbps High-Speed Data Transfer","Durable Braided Nylon Jacket"],
-    "price_history": [799, 599, 499, 399, 329, 299]
+    "features": [
+      "3A Fast Charging for Smartphones",
+      "480Mbps High-Speed Data Transfer",
+      "Durable Braided Nylon Jacket"
+    ],
+    "price_history": [
+      799,
+      599,
+      499,
+      399,
+      329,
+      299
+    ]
   },
   {
     "id": "wayona-65w-type-c-cable",
@@ -376,8 +570,19 @@
     "product_url": "https://www.amazon.in/dp/B09QGZFBPM/?tag=dealon04-21&linkCode=ll1&language=en_IN",
     "image_url": "https://m.media-amazon.com/images/I/61K3e5X2vDL._SL1500_.jpg",
     "badge": "TOP RATED",
-    "features": ["65W PD Fast Charging","2 Metre Long Cable for Comfort","Compatible with Laptops & Phones"],
-    "price_history": [999, 799, 649, 549, 449, 399]
+    "features": [
+      "65W PD Fast Charging",
+      "2 Metre Long Cable for Comfort",
+      "Compatible with Laptops & Phones"
+    ],
+    "price_history": [
+      999,
+      799,
+      649,
+      549,
+      449,
+      399
+    ]
   },
   {
     "id": "xiaomi-33w-type-c-cable",
@@ -396,8 +601,19 @@
     "product_url": "https://www.amazon.in/dp/B0C4PVS224/?tag=dealon04-21&linkCode=ll1&language=en_IN",
     "image_url": "https://m.media-amazon.com/images/I/51AMGrSb7lL._SL1500_.jpg",
     "badge": "HOT DEAL",
-    "features": ["33W SonicCharge 4.0 Fast Charging","480Mbps Rapid Data Transfer","Strong Braided Cable Build"],
-    "price_history": [799, 649, 549, 449, 399, 349]
+    "features": [
+      "33W SonicCharge 4.0 Fast Charging",
+      "480Mbps Rapid Data Transfer",
+      "Strong Braided Cable Build"
+    ],
+    "price_history": [
+      799,
+      649,
+      549,
+      449,
+      399,
+      349
+    ]
   },
   {
     "id": "boat-type-c-65w-cable",
@@ -416,8 +632,19 @@
     "product_url": "https://www.amazon.in/dp/B0FMRLJ9LF/?tag=dealon04-21&linkCode=ll1&language=en_IN",
     "image_url": "https://m.media-amazon.com/images/I/61wXjeWobPL._SL1500_.jpg",
     "badge": "STEAL DEAL",
-    "features": ["65W Fast Charging with PD Support","480 Mbps High-Speed Data Sync","Tangle-Free Braided Design"],
-    "price_history": [999, 799, 649, 549, 449, 399]
+    "features": [
+      "65W Fast Charging with PD Support",
+      "480 Mbps High-Speed Data Sync",
+      "Tangle-Free Braided Design"
+    ],
+    "price_history": [
+      999,
+      799,
+      649,
+      549,
+      449,
+      399
+    ]
   },
   {
     "id": "portronics-konnect-l-60w",
@@ -436,8 +663,19 @@
     "product_url": "https://www.amazon.in/dp/B09Q8WQ5QJ/?tag=dealon04-21&linkCode=ll1&language=en_IN",
     "image_url": "https://m.media-amazon.com/images/I/51weupiOMZL._SL1500_.jpg",
     "badge": "POPULAR",
-    "features": ["60W Power Delivery Fast Charging","LED Glow Cable for Night Visibility","Compatible with MacBook, iPad & Phones"],
-    "price_history": [1099, 899, 699, 599, 499, 449]
+    "features": [
+      "60W Power Delivery Fast Charging",
+      "LED Glow Cable for Night Visibility",
+      "Compatible with MacBook, iPad & Phones"
+    ],
+    "price_history": [
+      1099,
+      899,
+      699,
+      599,
+      499,
+      449
+    ]
   },
   {
     "id": "portronics-konnect-view-100w",
@@ -456,8 +694,19 @@
     "product_url": "https://www.amazon.in/dp/B0H7NSFNT6/?tag=dealon04-21&linkCode=ll1&language=en_IN",
     "image_url": "https://m.media-amazon.com/images/I/61a4yNDQCBL._SL1500_.jpg",
     "badge": "SMART CABLE",
-    "features": ["100W Superfast PD Charging","LED Power Display Shows Wattage","5A Current for Laptop Charging"],
-    "price_history": [1499, 1199, 999, 849, 749, 699]
+    "features": [
+      "100W Superfast PD Charging",
+      "LED Power Display Shows Wattage",
+      "5A Current for Laptop Charging"
+    ],
+    "price_history": [
+      1499,
+      1199,
+      999,
+      849,
+      749,
+      699
+    ]
   },
   {
     "id": "zebronics-igloo-1-speaker",
@@ -470,14 +719,25 @@
     "target_drop_price": 549,
     "is_historical_low": false,
     "discount_pct": 62,
-    "rating": 4.0,
+    "rating": 4,
     "reviews_count": 24500,
     "asin": "B0DB29X1YX",
     "product_url": "https://www.amazon.in/dp/B0DB29X1YX/?tag=dealon04-21&linkCode=ll1&language=en_IN",
     "image_url": "https://m.media-amazon.com/images/I/71gqSJ1uGIL._SL1500_.jpg",
     "badge": "DESK BESTSELLER",
-    "features": ["8W Stereo Sound Output","Multicolor RGB LED Lighting","USB Powered - No Adapter Needed"],
-    "price_history": [1299, 999, 799, 649, 549, 499]
+    "features": [
+      "8W Stereo Sound Output",
+      "Multicolor RGB LED Lighting",
+      "USB Powered - No Adapter Needed"
+    ],
+    "price_history": [
+      1299,
+      999,
+      799,
+      649,
+      549,
+      499
+    ]
   },
   {
     "id": "zebronics-fame-speaker",
@@ -496,8 +756,19 @@
     "product_url": "https://www.amazon.in/dp/B07ZZCBQZD/?tag=dealon04-21&linkCode=ll1&language=en_IN",
     "image_url": "https://m.media-amazon.com/images/I/81SHKIaQDXL._SL1500_.jpg",
     "badge": "BUDGET PICK",
-    "features": ["5W USB Powered Stereo Speakers","3.5mm AUX Input Connectivity","Compact Design for Any Desk"],
-    "price_history": [999, 799, 649, 549, 449, 399]
+    "features": [
+      "5W USB Powered Stereo Speakers",
+      "3.5mm AUX Input Connectivity",
+      "Compact Design for Any Desk"
+    ],
+    "price_history": [
+      999,
+      799,
+      649,
+      549,
+      449,
+      399
+    ]
   },
   {
     "id": "zebronics-zeb-warrior-ii",
@@ -516,8 +787,19 @@
     "product_url": "https://www.amazon.in/dp/B0BNJH8DJP/?tag=dealon04-21&linkCode=ll1&language=en_IN",
     "image_url": "https://m.media-amazon.com/images/I/71YE6C0dtZL._SL1500_.jpg",
     "badge": "GAMING",
-    "features": ["10W Powerful Audio Output","RGB LED Gaming Aesthetics","Dual Connectivity: USB + AUX"],
-    "price_history": [1799, 1399, 1099, 899, 749, 699]
+    "features": [
+      "10W Powerful Audio Output",
+      "RGB LED Gaming Aesthetics",
+      "Dual Connectivity: USB + AUX"
+    ],
+    "price_history": [
+      1799,
+      1399,
+      1099,
+      899,
+      749,
+      699
+    ]
   },
   {
     "id": "ant-esports-gs170-speaker",
@@ -530,14 +812,25 @@
     "target_drop_price": 699,
     "is_historical_low": false,
     "discount_pct": 57,
-    "rating": 4.0,
+    "rating": 4,
     "reviews_count": 18900,
     "asin": "B0C4B6DT63",
     "product_url": "https://www.amazon.in/dp/B0C4B6DT63/?tag=dealon04-21&linkCode=ll1&language=en_IN",
     "image_url": "https://m.media-amazon.com/images/I/611hOaZ2MVL._SL1500_.jpg",
     "badge": "GAMING PICK",
-    "features": ["Stereo 2.0 USB Powered Gaming Audio","Premium Driver for Clear Highs & Lows","RGB Glow Gaming Aesthetics"],
-    "price_history": [1499, 1199, 999, 849, 699, 649]
+    "features": [
+      "Stereo 2.0 USB Powered Gaming Audio",
+      "Premium Driver for Clear Highs & Lows",
+      "RGB Glow Gaming Aesthetics"
+    ],
+    "price_history": [
+      1499,
+      1199,
+      999,
+      849,
+      699,
+      649
+    ]
   },
   {
     "id": "zebronics-zeb-warrior-speaker",
@@ -550,14 +843,25 @@
     "target_drop_price": 499,
     "is_historical_low": false,
     "discount_pct": 63,
-    "rating": 4.0,
+    "rating": 4,
     "reviews_count": 52600,
     "asin": "B07ZZBYWKF",
     "product_url": "https://www.amazon.in/dp/B07ZZBYWKF/?tag=dealon04-21&linkCode=ll1&language=en_IN",
     "image_url": "https://m.media-amazon.com/images/I/71kIRMs8nQL._SL1500_.jpg",
     "badge": "BESTSELLER",
-    "features": ["2.0 Stereo Multimedia Speaker","3.5mm AUX Input","Compact Desk-Friendly Design"],
-    "price_history": [1199, 999, 799, 649, 499, 449]
+    "features": [
+      "2.0 Stereo Multimedia Speaker",
+      "3.5mm AUX Input",
+      "Compact Desk-Friendly Design"
+    ],
+    "price_history": [
+      1199,
+      999,
+      799,
+      649,
+      499,
+      449
+    ]
   },
   {
     "id": "creative-pebble-pro",
@@ -576,7 +880,18 @@
     "product_url": "https://www.amazon.in/dp/B0DXW25R3D/?tag=dealon04-21&linkCode=ll1&language=en_IN",
     "image_url": "https://m.media-amazon.com/images/I/51iOHHsfZfL._SL1500_.jpg",
     "badge": "PREMIUM",
-    "features": ["USB-C Powered Minimalist Speakers","Far-Field Drivers for Wide Sound Stage","Two-Tone Design for Modern Desks"],
-    "price_history": [3999, 3499, 2999, 2499, 2199, 1999]
+    "features": [
+      "USB-C Powered Minimalist Speakers",
+      "Far-Field Drivers for Wide Sound Stage",
+      "Two-Tone Design for Modern Desks"
+    ],
+    "price_history": [
+      3999,
+      3499,
+      2999,
+      2499,
+      2199,
+      1999
+    ]
   }
 ]
