@@ -93,55 +93,81 @@ async function publishTelegram(deal) {
 async function publishFacebook(deal) {
   if (!META_ACCESS_TOKEN || !FB_PAGE_ID) return console.log('⚠️ Meta/FB keys missing');
   const dealUrl = formatAmazonUrl(deal.deal_url || deal.asin, AMAZON_TAG);
-  const message = 
+  const caption = 
 `🔥 DAILY SMART DEAL: ${deal.title}
 
 💰 Deal Price: ₹${Number(deal.price).toLocaleString('en-IN')} (MRP ₹${Number(deal.original_price).toLocaleString('en-IN')}) — Save ${deal.discount}%!
 ⭐ Verified Historical Low
 
 🛒 Buy Now: ${dealUrl}
-🌐 Browse 30+ Tech Steals: https://dealon.netlify.app/
+🌐 Browse 100+ Tech Steals: https://dealon.netlify.app/
 
 #dealon #techdeals #amazondeals #discount #lootdeal`;
 
-  const url = `https://graph.facebook.com/v19.0/${FB_PAGE_ID}/photos?access_token=${encodeURIComponent(META_ACCESS_TOKEN)}`;
+  const url = `https://graph.facebook.com/v19.0/${FB_PAGE_ID}/photos`;
   const res = await postJSON(url, {
     url: deal.image_url,
-    message: message
+    caption: caption,
+    access_token: META_ACCESS_TOKEN
   });
-  console.log(`[Facebook] Response status: ${res.status}`);
+  
+  let data = {};
+  try { data = JSON.parse(res.data); } catch (e) { data = res.data; }
+  if (res.status === 200) {
+    console.log(`[Facebook] Published photo successfully. Post ID: ${data.id || 'ok'}`);
+  } else {
+    console.log(`[Facebook Error] Status: ${res.status}, Body: ${JSON.stringify(data)}`);
+  }
 }
 
 // 3. Instagram Auto-Post (Two-step container publish)
 async function publishInstagram(deal) {
   if (!META_ACCESS_TOKEN || !IG_ACCOUNT_ID) return console.log('⚠️ Instagram keys missing');
+  const dealUrl = formatAmazonUrl(deal.deal_url || deal.asin, AMAZON_TAG);
   const caption = 
 `🔥 DEAL ALERT: ${deal.title}
 
 💰 Price: ₹${Number(deal.price).toLocaleString('en-IN')} (Was ₹${Number(deal.original_price).toLocaleString('en-IN')})
 🏷️ Discount: ${deal.discount}% OFF
 
+🛒 Direct Link: ${dealUrl}
 👉 Grab the link in our bio (dealon.netlify.app) or join our Telegram channel @dealon_offers!
 
 #dealon #techdeals #discounts #gadgets #dealsindia #audiophile #desksetup`;
 
   // Step A: Create Media Container
-  const containerUrl = `https://graph.facebook.com/v19.0/${IG_ACCOUNT_ID}/media?access_token=${encodeURIComponent(META_ACCESS_TOKEN)}`;
+  const containerUrl = `https://graph.facebook.com/v19.0/${IG_ACCOUNT_ID}/media`;
   const containerRes = await postJSON(containerUrl, {
     image_url: deal.image_url,
-    caption: caption
+    caption: caption,
+    access_token: META_ACCESS_TOKEN
   });
   
-  const containerData = JSON.parse(containerRes.data || '{}');
-  if (containerData.id) {
+  let containerData = {};
+  try { containerData = JSON.parse(containerRes.data || '{}'); } catch (e) { containerData = containerRes.data; }
+  
+  if (containerRes.status === 200 && containerData.id) {
+    console.log(`[Instagram] Media container created ID: ${containerData.id}. Waiting 3s...`);
     // Wait 3 seconds for Meta media processing
     await new Promise(r => setTimeout(r, 3000));
+    
     // Step B: Publish Container
-    const publishUrl = `https://graph.facebook.com/v19.0/${IG_ACCOUNT_ID}/media_publish?access_token=${encodeURIComponent(META_ACCESS_TOKEN)}`;
-    const pubRes = await postJSON(publishUrl, { creation_id: containerData.id });
-    console.log(`[Instagram] Published media ID: ${containerData.id}, status: ${pubRes.status}`);
+    const publishUrl = `https://graph.facebook.com/v19.0/${IG_ACCOUNT_ID}/media_publish`;
+    const pubRes = await postJSON(publishUrl, {
+      creation_id: containerData.id,
+      access_token: META_ACCESS_TOKEN
+    });
+    
+    let pubData = {};
+    try { pubData = JSON.parse(pubRes.data || '{}'); } catch (e) { pubData = pubRes.data; }
+    
+    if (pubRes.status === 200 && pubData.id) {
+      console.log(`[Instagram] Published media ID: ${pubData.id}, status: ${pubRes.status}`);
+    } else {
+      console.log(`[Instagram Error] Publish failed. Status: ${pubRes.status}, Body: ${JSON.stringify(pubData)}`);
+    }
   } else {
-    console.log('[Instagram] Container creation failed:', containerRes.data);
+    console.log(`[Instagram Error] Container creation failed. Status: ${containerRes.status}, Body: ${JSON.stringify(containerData)}`);
   }
 }
 

@@ -9,6 +9,7 @@
     "engine": "node publish_engine.js"
   },
   "dependencies": {
-    "dotenv": "^16.4.5"
+    "dotenv": "^16.4.5",
+    "xlsx": "^0.18.5"
   }
 }
