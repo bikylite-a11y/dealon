@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const indexPath = path.join(__dirname, 'index.html');
-const content = fs.readFileSync(indexPath, 'utf-8');
+const content = fs.readFileSync(indexPath, 'utf-8').replace(/\r\n/g, '\n');
 
 const checks = [
   { name: 'Base Background (#F0F0E0)', pass: content.includes('--bg-main: #F0F0E0') },
