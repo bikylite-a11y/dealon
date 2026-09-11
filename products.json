@@ -1836,7 +1836,7 @@
     "category": "Tech Gadgets",
     "current_price": 1199,
     "mrp": 9999,
-    "historical_low": 1139,
+    "historical_low": 1199,
     "target_drop_price": 1175,
     "is_historical_low": true,
     "discount_pct": 88,
@@ -1845,7 +1845,7 @@
     "asin": "B0BF57RN3K",
     "product_url": "https://www.amazon.in/dp/B0BF57RN3K/?tag=dealon04-21&linkCode=ll1&language=en_IN",
     "image_url": "https://m.media-amazon.com/images/I/61y2VVWcGBL._SL1500_.jpg",
-    "badge": "50%+ OFF",
+    "badge": "DEAL OF THE DAY",
     "features": [
       "1.83-inch HD display, 100+ sports modes, voice assistant",
       "Sub-₹1500 Smartwatch",
@@ -1853,9 +1853,6 @@
     ],
     "price_history": [
       9999,
-      8999,
-      1295,
-      1247,
       1199
     ]
   },
