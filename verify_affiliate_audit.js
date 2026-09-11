@@ -7,7 +7,7 @@ let failed = 0;
 
 // Test 1: formatAmazonUrl canonical structure
 const testUrl = formatAmazonUrl('https://www.amazon.in/dp/B0CFV8ZJ6Q?tag=oldtag-21&ref=something');
-const expectedPattern = /^https:\/\/www\.amazon\.in\/(dp\/[A-Z0-9]{10}\/\?tag=dealon04-21|s\?k=.+&tag=dealon04-21)/;
+const expectedPattern = /^https:\/\/www\.amazon\.in\/dp\/[A-Z0-9]{10}\/\?tag=dealon04-21&linkCode=ll1&language=en_IN$/;
 if (expectedPattern.test(testUrl)) {
   console.log('✅ PASS: Canonical affiliate URL formatting works: ' + testUrl);
 } else {
@@ -19,7 +19,7 @@ if (expectedPattern.test(testUrl)) {
 const products = JSON.parse(fs.readFileSync('./products.json', 'utf-8'));
 let invalidProducts = 0;
 products.forEach(p => {
-  if (!p.asin || !/^[A-Z0-9]{10}$/i.test(p.asin) || (!p.product_url.includes('tag=dealon04-21'))) {
+  if (!p.asin || !/^[A-Z0-9]{10}$/i.test(p.asin) || !expectedPattern.test(p.product_url)) {
     invalidProducts++;
   }
 });
@@ -35,7 +35,7 @@ const deals = JSON.parse(fs.readFileSync('./deals.json', 'utf-8'));
 let invalidDeals = 0;
 let dotdCount = 0;
 deals.forEach(d => {
-  if (!d.asin || !/^[A-Z0-9]{10}$/i.test(d.asin) || (!d.deal_url.includes('tag=dealon04-21'))) {
+  if (!d.asin || !/^[A-Z0-9]{10}$/i.test(d.asin) || !expectedPattern.test(d.deal_url)) {
     invalidDeals++;
   }
   if (d.is_deal_of_the_day) dotdCount++;

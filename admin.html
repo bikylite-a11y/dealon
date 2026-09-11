@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-[#F0F0E0]">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="no-referrer">
+  <title>DealOn — Admin Dashboard & Affiliate Monitor</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- PapaParse for CSV parsing -->
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              orange: '#FF8C00',
+              'orange-hover': '#E67E00',
+              teal: '#128C7E',
+              'teal-dark': '#0E6B60',
+              dark: '#1C2321',
+              muted: '#596562',
+              bg: '#F0F0E0',
+              card: '#FFFFFF',
+              card2: '#F9F9F2',
+              border: '#DCDCC8',
+              crimson: '#E34234'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+            mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Custom scrollbars */
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: #F0F0E0; }
+    ::-webkit-scrollbar-thumb { background: #DCDCC8; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #596562; }
+    .badge-glow { box-shadow: 0 0 10px rgba(18, 140, 126, 0.2); }
+  </style>
+</head>
+<body class="min-h-full font-sans text-brand-dark flex flex-col antialiased selection:bg-brand-orange selection:text-white">
+
+  <!-- ================================================================= -->
+  <!-- 1. SECURITY & SESSION AUTH GATE (PASSWORD/PIN BARRIER)             -->
+  <!-- ================================================================= -->
+  <div id="authGate" class="fixed inset-0 z-50 flex items-center justify-center bg-brand-dark/80 backdrop-blur-sm p-4">
+    <div class="bg-white border border-brand-border rounded-2xl shadow-2xl max-w-md w-full p-8 text-center relative overflow-hidden">
+      <div class="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-brand-orange via-brand-teal to-brand-orange"></div>
+      
+      <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-brand-bg mb-4 border border-brand-border">
+        <img src="logo.png" alt="DealOn" class="w-12 h-auto" referrerpolicy="no-referrer">
+      </div>
+      
+      <h2 class="text-2xl font-black text-brand-dark tracking-tight mb-1">DealOn Admin Console</h2>
+      <p class="text-sm text-brand-muted mb-6">Restricted management portal for affiliate catalog & monitoring</p>
+      
+      <form id="authForm" onsubmit="handleAuthSubmit(event)" class="space-y-4">
+        <div class="text-left">
+          <label class="block text-xs font-bold uppercase tracking-wider text-brand-muted mb-2">Enter Admin PIN / Passphrase</label>
+          <div class="relative">
+            <input type="password" id="adminPinInput" placeholder="Default: dealon2026" required
+              class="w-full px-4 py-3 bg-brand-bg/50 border border-brand-border rounded-xl text-center text-lg font-mono tracking-widest focus:outline-none focus:ring-2 focus:ring-brand-orange focus:border-brand-orange transition">
+            <button type="button" onclick="togglePinVisibility()" class="absolute right-3 top-1/2 -translate-y-1/2 text-brand-muted hover:text-brand-dark p-1 text-xs font-semibold">
+              👁️
+            </button>
+          </div>
+          <p id="authErrorMsg" class="hidden text-xs text-brand-crimson font-medium mt-2 text-center">❌ Invalid PIN. Please try again.</p>
+        </div>
+        
+        <button type="submit"
+          class="w-full py-3.5 px-6 bg-brand-orange hover:bg-brand-orange-hover text-white font-bold rounded-xl shadow-lg shadow-brand-orange/25 transition transform active:scale-95 flex items-center justify-center gap-2">
+          <span>Unlock Dashboard</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        </button>
+      </form>
+      
+      <div class="mt-6 pt-4 border-t border-brand-border text-xs text-brand-muted flex justify-between items-center">
+        <span>Default PIN: <code class="font-mono bg-brand-bg px-1.5 py-0.5 rounded text-brand-dark">dealon2026</code></span>
+        <a href="/" class="text-brand-teal hover:underline font-semibold">← Return to Storefront</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================================================================= -->
+  <!-- 2. MAIN ADMIN DASHBOARD INTERFACE                                 -->
+  <!-- ================================================================= -->
+  <div id="mainDashboard" class="flex-1 flex flex-col hidden">
+    
+    <!-- Top Bar -->
+    <header class="bg-white border-b border-brand-border sticky top-0 z-30 shadow-sm">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
+        <div class="flex items-center gap-3">
+          <a href="/" class="flex items-center gap-2 group" title="Open Storefront">
+            <img src="logo.png" alt="DealOn" class="h-8 w-auto" referrerpolicy="no-referrer">
+          </a>
+          <div class="h-5 w-px bg-brand-border"></div>
+          <div class="flex items-center gap-2">
+            <span class="text-xs font-black uppercase tracking-wider bg-brand-orange/10 text-brand-orange px-2.5 py-1 rounded-md border border-brand-orange/20">
+              Admin Console
+            </span>
+            <span class="hidden sm:inline-flex items-center gap-1.5 text-xs font-semibold bg-emerald-50 text-brand-teal px-2.5 py-1 rounded-md border border-emerald-200 badge-glow">
+              <span class="w-2 h-2 rounded-full bg-brand-teal animate-pulse"></span>
+              Tag: <code class="font-mono font-bold">dealon04-21</code>
+            </span>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <a href="/" target="_blank"
+            class="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-brand-muted hover:text-brand-dark bg-brand-bg border border-brand-border rounded-lg transition">
+            <span>🌐 View Storefront</span>
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+          </a>
+          <button onclick="openChangePinModal()"
+            class="px-3 py-1.5 text-xs font-semibold text-brand-muted hover:text-brand-dark bg-brand-bg border border-brand-border rounded-lg transition">
+            🔒 Change PIN
+          </button>
+          <button onclick="handleLogout()"
+            class="px-3 py-1.5 text-xs font-semibold text-brand-crimson hover:bg-brand-crimson/10 border border-brand-crimson/30 rounded-lg transition">
+            🚪 Sign Out
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Subheader Notice -->
+    <div class="bg-brand-card2 border-b border-brand-border px-4 py-2 text-xs text-brand-muted">
+      <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
+        <div class="flex items-center gap-2">
+          <span>⚡ <strong>Affiliate Engine:</strong> Canonical Amazon.in associates attribution is automatically applied to all 100 products.</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <button onclick="resetToStorefrontDefault()" class="text-brand-teal hover:underline font-semibold">
+            🔄 Reset to Default Catalog
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content Container -->
+    <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-6">
+
+      <!-- ============================================================= -->
+      <!-- 3. REAL-TIME CATALOG METRICS WIDGET (4 CARDS)                 -->
+      <!-- ============================================================= -->
+      <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <!-- Metric 1: Total Products -->
+        <div class="bg-white p-5 rounded-2xl border border-brand-border shadow-sm flex flex-col justify-between">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs font-bold uppercase tracking-wider text-brand-muted">Total Products</span>
+            <span class="w-8 h-8 rounded-xl bg-orange-50 text-brand-orange flex items-center justify-center text-sm font-bold">📦</span>
+          </div>
+          <div class="flex items-baseline gap-2">
+            <span id="metricTotalProducts" class="text-3xl font-black text-brand-dark">100</span>
+            <span class="text-xs text-brand-teal font-semibold">100% Active</span>
+          </div>
+          <div class="mt-3 w-full bg-brand-bg h-1.5 rounded-full overflow-hidden">
+            <div class="bg-brand-orange h-full rounded-full" style="width: 100%"></div>
+          </div>
+        </div>
+
+        <!-- Metric 2: Category Breakdown -->
+        <div class="bg-white p-5 rounded-2xl border border-brand-border shadow-sm flex flex-col justify-between">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs font-bold uppercase tracking-wider text-brand-muted">Categories</span>
+            <span class="w-8 h-8 rounded-xl bg-teal-50 text-brand-teal flex items-center justify-center text-sm font-bold">🏷️</span>
+          </div>
+          <div class="grid grid-cols-2 gap-1.5 text-xs mt-1">
+            <div class="flex justify-between bg-brand-bg/50 px-2 py-1 rounded">
+              <span class="text-brand-muted">💻 Laptops:</span>
+              <strong id="metricCatLaptops" class="text-brand-dark">25</strong>
+            </div>
+            <div class="flex justify-between bg-brand-bg/50 px-2 py-1 rounded">
+              <span class="text-brand-muted">📱 Phones:</span>
+              <strong id="metricCatPhones" class="text-brand-dark">25</strong>
+            </div>
+            <div class="flex justify-between bg-brand-bg/50 px-2 py-1 rounded">
+              <span class="text-brand-muted">🎧 Gadgets:</span>
+              <strong id="metricCatGadgets" class="text-brand-dark">25</strong>
+            </div>
+            <div class="flex justify-between bg-brand-bg/50 px-2 py-1 rounded">
+              <span class="text-brand-muted">🏠 Home:</span>
+              <strong id="metricCatHome" class="text-brand-dark">25</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Metric 3: Average Discount -->
+        <div class="bg-white p-5 rounded-2xl border border-brand-border shadow-sm flex flex-col justify-between">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs font-bold uppercase tracking-wider text-brand-muted">Avg Discount</span>
+            <span class="w-8 h-8 rounded-xl bg-red-50 text-brand-crimson flex items-center justify-center text-sm font-bold">🔥</span>
+          </div>
+          <div class="flex items-baseline gap-2">
+            <span id="metricAvgDiscount" class="text-3xl font-black text-brand-dark">34%</span>
+            <span class="text-xs text-brand-crimson font-semibold">Max 70% Off</span>
+          </div>
+          <p class="text-xs text-brand-muted mt-2">
+            <span id="metricHistoricalLows" class="font-bold text-brand-dark">18</span> deals at 90-day historic lows
+          </p>
+        </div>
+
+        <!-- Metric 4: Deal of the Day Spotlight -->
+        <div class="bg-white p-5 rounded-2xl border border-brand-border shadow-sm flex flex-col justify-between">
+          <div class="flex items-center justify-between mb-1">
+            <span class="text-xs font-bold uppercase tracking-wider text-brand-muted">Deal of the Day</span>
+            <span class="px-2 py-0.5 text-[10px] font-black uppercase tracking-wider bg-brand-orange text-white rounded-full">SPOTLIGHT</span>
+          </div>
+          <div class="flex items-center gap-3 my-2">
+            <img id="metricDotdImg" src="" alt="" class="w-10 h-10 object-contain rounded-lg border border-brand-border bg-brand-bg" referrerpolicy="no-referrer">
+            <div class="min-w-0 flex-1">
+              <p id="metricDotdTitle" class="text-xs font-bold text-brand-dark truncate">Apple MacBook Air M3</p>
+              <p id="metricDotdPrice" class="text-xs text-brand-teal font-bold">₹99,990</p>
+            </div>
+          </div>
+          <div class="mt-1">
+            <select id="dotdSelector" onchange="handleDotdChange(this.value)"
+              class="w-full text-xs py-1.5 px-2 bg-brand-bg border border-brand-border rounded-lg text-brand-dark font-medium focus:ring-1 focus:ring-brand-orange focus:outline-none">
+              <!-- populated dynamically -->
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================= -->
+      <!-- 4. BULK CSV IMPORTER & EXPORTER TOOLBOX                       -->
+      <!-- ============================================================= -->
+      <section class="bg-white border border-brand-border rounded-2xl p-6 shadow-sm">
+        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 pb-5 border-b border-brand-border">
+          <div>
+            <h3 class="text-lg font-black text-brand-dark flex items-center gap-2">
+              <span>📂 Bulk CSV Importer & Export Center</span>
+            </h3>
+            <p class="text-xs text-brand-muted mt-0.5">
+              Upload custom product CSVs with automatic Amazon tag sanitization (<code class="font-mono text-brand-teal font-bold">dealon04-21</code>), or export clean JSON payloads.
+            </p>
+          </div>
+          <div class="flex flex-wrap items-center gap-2.5">
+            <button onclick="downloadJsonFiles()"
+              class="inline-flex items-center gap-1.5 px-3.5 py-2 bg-brand-teal hover:bg-brand-teal-dark text-white text-xs font-bold rounded-xl shadow-sm transition">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+              <span>Download JSON Files</span>
+            </button>
+            <button onclick="openJsonCopyModal()"
+              class="inline-flex items-center gap-1.5 px-3.5 py-2 bg-brand-bg hover:bg-brand-border/60 text-brand-dark border border-brand-border text-xs font-bold rounded-xl transition">
+              <svg class="w-4 h-4 text-brand-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/></svg>
+              <span>Copy JSON</span>
+            </button>
+            <button onclick="exportCurrentCatalogCsv()"
+              class="inline-flex items-center gap-1.5 px-3.5 py-2 bg-brand-bg hover:bg-brand-border/60 text-brand-dark border border-brand-border text-xs font-bold rounded-xl transition">
+              <span>Export CSV</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Drag & Drop Zone -->
+        <div class="mt-5 grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div class="lg:col-span-2">
+            <div id="dropZone" ondragover="handleDragOver(event)" ondragleave="handleDragLeave(event)" ondrop="handleFileDrop(event)"
+              class="border-2 border-dashed border-brand-border hover:border-brand-orange rounded-xl p-6 text-center cursor-pointer transition bg-brand-card2/50">
+              <input type="file" id="csvFileInput" accept=".csv" class="hidden" onchange="handleFileSelect(event)">
+              <div onclick="document.getElementById('csvFileInput').click()">
+                <div class="w-12 h-12 rounded-full bg-brand-orange/10 text-brand-orange flex items-center justify-center mx-auto mb-2 text-xl font-bold">
+                  📄
+                </div>
+                <p class="text-sm font-bold text-brand-dark">Click to browse or drag & drop CSV catalog</p>
+                <p class="text-xs text-brand-muted mt-1">Supports UTF-8 CSV with headers: title, category, brand, asin, price, original_price, discount, rating, reviews_count, image_url</p>
+              </div>
+            </div>
+            
+            <!-- Import Feedback Alert -->
+            <div id="importAlert" class="hidden mt-3 p-3 rounded-xl text-xs flex items-center justify-between">
+              <span id="importAlertText"></span>
+              <button onclick="document.getElementById('importAlert').classList.add('hidden')" class="font-bold ml-2">✕</button>
+            </div>
+          </div>
+
+          <!-- Expected Schema Guide -->
+          <div class="bg-brand-bg/40 border border-brand-border rounded-xl p-4 text-xs">
+            <h4 class="font-bold text-brand-dark uppercase tracking-wider mb-2 flex items-center gap-1.5">
+              <span>📋 Auto-Sanitization Rules</span>
+            </h4>
+            <ul class="space-y-1.5 text-brand-muted">
+              <li>• <strong>ASIN Validation:</strong> Must be 10 alphanumeric characters.</li>
+              <li>• <strong>Affiliate URL:</strong> Auto-built to <code class="font-mono text-brand-teal">https://www.amazon.in/dp/{ASIN}/?tag=dealon04-21...</code></li>
+              <li>• <strong>Image CDN:</strong> Accepts Amazon CDN or validated HTTPS image URLs.</li>
+              <li>• <strong>Fallback Safety:</strong> Missing images inherit official Amazon logo placeholder.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================= -->
+      <!-- 5. AFFILIATE LINK MONITOR & HEALTH CENTER (DATA TABLE)        -->
+      <!-- ============================================================= -->
+      <section class="bg-white border border-brand-border rounded-2xl shadow-sm overflow-hidden flex flex-col">
+        <!-- Table Controls Toolbar -->
+        <div class="p-4 sm:p-5 border-b border-brand-border flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4">
+          <div class="flex flex-1 flex-col sm:flex-row items-stretch sm:items-center gap-3">
+            <!-- Search -->
+            <div class="relative flex-1 min-w-[200px]">
+              <input type="text" id="catalogSearch" oninput="handleSearch(this.value)" placeholder="Search by title, brand, ASIN..."
+                class="w-full pl-9 pr-4 py-2 bg-brand-bg/50 border border-brand-border rounded-xl text-xs focus:outline-none focus:ring-2 focus:ring-brand-orange focus:border-brand-orange transition">
+              <span class="absolute left-3 top-1/2 -translate-y-1/2 text-brand-muted text-xs">🔍</span>
+            </div>
+
+            <!-- Category Filter -->
+            <select id="categoryFilter" onchange="handleCategoryFilter(this.value)"
+              class="text-xs py-2 px-3 bg-brand-bg/50 border border-brand-border rounded-xl text-brand-dark font-medium focus:outline-none focus:ring-2 focus:ring-brand-orange">
+              <option value="all">All Categories (100)</option>
+              <option value="Laptops">💻 Laptops (25)</option>
+              <option value="Mobile Phones">📱 Mobile Phones (25)</option>
+              <option value="Tech Gadgets">🎧 Tech Gadgets (25)</option>
+              <option value="Home Décor Tech">🏠 Home Décor Tech (25)</option>
+            </select>
+
+            <!-- Status Filter -->
+            <select id="statusFilter" onchange="handleStatusFilter(this.value)"
+              class="text-xs py-2 px-3 bg-brand-bg/50 border border-brand-border rounded-xl text-brand-dark font-medium focus:outline-none focus:ring-2 focus:ring-brand-orange">
+              <option value="all">All Status</option>
+              <option value="active">Active Only</option>
+              <option value="inactive">Inactive Only</option>
+            </select>
+          </div>
+
+          <div class="flex items-center gap-2 justify-end">
+            <button onclick="openAddProductModal()"
+              class="px-3.5 py-2 bg-brand-orange hover:bg-brand-orange-hover text-white text-xs font-bold rounded-xl shadow-sm transition flex items-center gap-1.5">
+              <span>➕ Add Product</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Data Table -->
+        <div class="overflow-x-auto flex-1">
+          <table class="w-full text-left text-xs">
+            <thead class="bg-brand-card2/80 border-b border-brand-border text-brand-muted font-bold uppercase tracking-wider">
+              <tr>
+                <th class="py-3.5 px-4 w-12 text-center">#</th>
+                <th class="py-3.5 px-4 w-16">Image</th>
+                <th class="py-3.5 px-4 min-w-[220px]">Product Details</th>
+                <th class="py-3.5 px-4">Category</th>
+                <th class="py-3.5 px-4">ASIN</th>
+                <th class="py-3.5 px-4 text-right">Price</th>
+                <th class="py-3.5 px-4 text-center">Discount</th>
+                <th class="py-3.5 px-4">Tag Compliance</th>
+                <th class="py-3.5 px-4 text-center">Status</th>
+                <th class="py-3.5 px-4 text-right">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="catalogTableBody" class="divide-y divide-brand-border">
+              <!-- Dynamically populated via renderCatalogTable() -->
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Pagination & Summary Footer -->
+        <div class="p-4 border-t border-brand-border bg-brand-card2/50 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-brand-muted">
+          <div class="flex items-center gap-2">
+            <span>Rows per page:</span>
+            <select id="pageSizeSelect" onchange="handlePageSizeChange(Number(this.value))"
+              class="bg-white border border-brand-border rounded-lg px-2 py-1 text-xs font-bold focus:outline-none">
+              <option value="10">10</option>
+              <option value="25" selected>25</option>
+              <option value="50">50</option>
+              <option value="100">100</option>
+            </select>
+            <span class="text-brand-dark font-medium ml-2" id="tableSummaryText">Showing 1 to 25 of 100 products</span>
+          </div>
+
+          <div class="flex items-center gap-1.5" id="paginationControls">
+            <!-- Dynamically populated -->
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Admin Footer -->
+    <footer class="bg-white border-t border-brand-border py-4 text-center text-xs text-brand-muted">
+      <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2">
+        <span>DealOn Affiliate Engine · Canonical Store Tag: <code class="font-mono font-bold text-brand-dark">dealon04-21</code></span>
+        <span>Made with pride for India 🇮🇳 · Secure Client-Side Console</span>
+      </div>
+    </footer>
+  </div>
+
+  <!-- ================================================================= -->
+  <!-- 6. MODALS                                                         -->
+  <!-- ================================================================= -->
+
+  <!-- A. Edit Product Modal -->
+  <div id="editModal" class="fixed inset-0 z-50 flex items-center justify-center bg-brand-dark/70 backdrop-blur-sm p-4 hidden">
+    <div class="bg-white border border-brand-border rounded-2xl shadow-2xl max-w-lg w-full p-6 relative max-h-[90vh] overflow-y-auto">
+      <div class="flex items-center justify-between pb-3 border-b border-brand-border mb-4">
+        <h3 class="text-base font-bold text-brand-dark flex items-center gap-2">
+          <span>✏️ Edit Product Details</span>
+        </h3>
+        <button onclick="closeEditModal()" class="text-brand-muted hover:text-brand-dark text-lg font-bold">✕</button>
+      </div>
+
+      <form id="editForm" onsubmit="handleSaveEdit(event)" class="space-y-3.5 text-xs">
+        <input type="hidden" id="editProductId">
+        
+        <div>
+          <label class="block font-bold text-brand-dark mb-1">Product Title</label>
+          <input type="text" id="editTitle" required class="w-full px-3 py-2 border border-brand-border rounded-lg focus:ring-1 focus:ring-brand-orange focus:outline-none">
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block font-bold text-brand-dark mb-1">Brand</label>
+            <input type="text" id="editBrand" required class="w-full px-3 py-2 border border-brand-border rounded-lg focus:ring-1 focus:ring-brand-orange focus:outline-none">
+          </div>
+          <div>
+            <label class="block font-bold text-brand-dark mb-1">Category</label>
+            <select id="editCategory" class="w-full px-3 py-2 border border-brand-border rounded-lg focus:ring-1 focus:ring-brand-orange focus:outline-none">
+              <option value="Laptops">Laptops</option>
+              <option value="Mobile Phones">Mobile Phones</option>
+              <option value="Tech Gadgets">Tech Gadgets</option>
+              <option value="Home Décor Tech">Home Décor Tech</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block font-bold text-brand-dark mb-1">ASIN (10 Characters)</label>
+            <input type="text" id="editAsin" required maxlength="10" class="w-full px-3 py-2 border border-brand-border rounded-lg font-mono uppercase focus:ring-1 focus:ring-brand-orange focus:outline-none">
+          </div>
+          <div>
+            <label class="block font-bold text-brand-dark mb-1">Status</label>
+            <select id="editStatus" class="w-full px-3 py-2 border border-brand-border rounded-lg focus:ring-1 focus:ring-brand-orange focus:outline-none">
+              <option value="active">Active</option>
+              <option value="inactive">Inactive</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-3 gap-3">
+          <div>
+            <label class="block font-bold text-brand-dark mb-1">Price (₹)</label>
+            <input type="number" id="editPrice" required min="1" class="w-full px-3 py-2 border border-brand-border rounded-lg focus:ring-1 focus:ring-brand-orange focus:outline-none">
+          </div>
+          <div>
+            <label class="block font-bold text-brand-dark mb-1">MRP (₹)</label>
+            <input type="number" id="editMrp" required min="1" class="w-full px-3 py-2 border border-brand-border rounded-lg focus:ring-1 focus:ring-brand-orange focus:outline-none">
+          </div>
+          <div>
+            <label class="block font-bold text-brand-dark mb-1">Discount (%)</label>
+            <input type="number" id="editDiscount" required min="0" max="99" class="w-full px-3 py-2 border border-brand-border rounded-lg focus:ring-1 focus:ring-brand-orange focus:outline-none">
+          </div>
+        </div>
+
+        <div>
+          <label class="block font-bold text-brand-dark mb-1">Image URL (Amazon Media CDN)</label>
+          <input type="url" id="editImageUrl" required class="w-full px-3 py-2 border border-brand-border rounded-lg focus:ring-1 focus:ring-brand-orange focus:outline-none font-mono text-[11px]">
+        </div>
+
+        <div class="pt-3 border-t border-brand-border flex justify-end gap-2">
+          <button type="button" onclick="closeEditModal()" class="px-4 py-2 bg-brand-bg text-brand-dark rounded-xl border border-brand-border font-bold">Cancel</button>
+          <button type="submit" class="px-4 py-2 bg-brand-orange hover:bg-brand-orange-hover text-white rounded-xl font-bold shadow-sm">Save Changes</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- B. Copy JSON Modal -->
+  <div id="jsonCopyModal" class="fixed inset-0 z-50 flex items-center justify-center bg-brand-dark/70 backdrop-blur-sm p-4 hidden">
+    <div class="bg-white border border-brand-border rounded-2xl shadow-2xl max-w-2xl w-full p-6 relative flex flex-col max-h-[85vh]">
+      <div class="flex items-center justify-between pb-3 border-b border-brand-border mb-3">
+        <h3 class="text-base font-bold text-brand-dark flex items-center gap-2">
+          <span>📋 Export & Copy JSON Payload</span>
+        </h3>
+        <button onclick="closeJsonCopyModal()" class="text-brand-muted hover:text-brand-dark text-lg font-bold">✕</button>
+      </div>
+
+      <!-- Tab Selectors -->
+      <div class="flex items-center gap-2 mb-3">
+        <button id="tabProductsBtn" onclick="switchJsonTab('products')" class="px-3 py-1.5 text-xs font-bold rounded-lg bg-brand-orange text-white">products.json</button>
+        <button id="tabDealsBtn" onclick="switchJsonTab('deals')" class="px-3 py-1.5 text-xs font-bold rounded-lg bg-brand-bg text-brand-dark border border-brand-border">deals.json</button>
+      </div>
+
+      <div class="flex-1 overflow-hidden relative">
+        <textarea id="jsonPreviewTextarea" readonly class="w-full h-80 p-3 bg-brand-dark text-emerald-400 font-mono text-[11px] rounded-xl border border-brand-border resize-none focus:outline-none"></textarea>
+      </div>
+
+      <div class="pt-4 mt-2 border-t border-brand-border flex items-center justify-between">
+        <span id="copyFeedback" class="text-xs font-bold text-brand-teal hidden">✓ Copied to clipboard!</span>
+        <div class="flex gap-2 ml-auto">
+          <button type="button" onclick="closeJsonCopyModal()" class="px-4 py-2 bg-brand-bg text-brand-dark rounded-xl border border-brand-border text-xs font-bold">Close</button>
+          <button type="button" onclick="copyCurrentJsonTab()" class="px-4 py-2 bg-brand-orange hover:bg-brand-orange-hover text-white rounded-xl text-xs font-bold shadow-sm">
+            📋 Copy JSON
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- C. Change PIN Modal -->
+  <div id="changePinModal" class="fixed inset-0 z-50 flex items-center justify-center bg-brand-dark/70 backdrop-blur-sm p-4 hidden">
+    <div class="bg-white border border-brand-border rounded-2xl shadow-2xl max-w-sm w-full p-6 relative">
+      <div class="flex items-center justify-between pb-3 border-b border-brand-border mb-4">
+        <h3 class="text-base font-bold text-brand-dark">🔒 Update Admin PIN</h3>
+        <button onclick="closeChangePinModal()" class="text-brand-muted hover:text-brand-dark text-lg font-bold">✕</button>
+      </div>
+      <form onsubmit="handleSavePin(event)" class="space-y-3 text-xs">
+        <div>
+          <label class="block font-bold text-brand-dark mb-1">New PIN / Passphrase</label>
+          <input type="password" id="newPinInput" required minlength="4" class="w-full px-3 py-2 border border-brand-border rounded-lg focus:ring-1 focus:ring-brand-orange focus:outline-none font-mono">
+        </div>
+        <div>
+          <label class="block font-bold text-brand-dark mb-1">Confirm New PIN</label>
+          <input type="password" id="confirmPinInput" required minlength="4" class="w-full px-3 py-2 border border-brand-border rounded-lg focus:ring-1 focus:ring-brand-orange focus:outline-none font-mono">
+        </div>
+        <p id="pinErrorMsg" class="text-xs text-brand-crimson hidden">PINs do not match or too short.</p>
+        <div class="pt-3 border-t border-brand-border flex justify-end gap-2">
+          <button type="button" onclick="closeChangePinModal()" class="px-3.5 py-2 bg-brand-bg rounded-xl font-bold">Cancel</button>
+          <button type="submit" class="px-3.5 py-2 bg-brand-teal text-white rounded-xl font-bold">Save New PIN</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ================================================================= -->
+  <!-- 7. CLIENT-SIDE DASHBOARD CONTROLLER SCRIPT                        -->
+  <!-- ================================================================= -->
+  <script>
+    // State
+    const DEFAULT_PIN = 'dealon2026';
+    const AFFILIATE_TAG = 'dealon04-21';
+    let catalog = [];
+    let filteredCatalog = [];
+    let currentPage = 1;
+    let pageSize = 25;
+    let activeJsonTab = 'products';
+
+    // ── 1. Authentication & Session ──────────────────────────────────
+    function isUserAuthenticated() {
+      return sessionStorage.getItem('dealon_auth') === 'true';
+    }
+
+    function initAuth() {
+      if (isUserAuthenticated()) {
+        document.getElementById('authGate').classList.add('hidden');
+        document.getElementById('mainDashboard').classList.remove('hidden');
+        loadCatalogData();
+      } else {
+        document.getElementById('authGate').classList.remove('hidden');
+        document.getElementById('mainDashboard').classList.add('hidden');
+      }
+    }
+
+    function handleAuthSubmit(e) {
+      e.preventDefault();
+      const enteredPin = document.getElementById('adminPinInput').value.trim();
+      const savedPin = localStorage.getItem('dealon_admin_pin') || DEFAULT_PIN;
+      
+      if (enteredPin === savedPin) {
+        sessionStorage.setItem('dealon_auth', 'true');
+        document.getElementById('authGate').classList.add('hidden');
+        document.getElementById('mainDashboard').classList.remove('hidden');
+        loadCatalogData();
+      } else {
+        document.getElementById('authErrorMsg').classList.remove('hidden');
+      }
+    }
+
+    function handleLogout() {
+      sessionStorage.removeItem('dealon_auth');
+      window.location.reload();
+    }
+
+    function togglePinVisibility() {
+      const input = document.getElementById('adminPinInput');
+      input.type = input.type === 'password' ? 'text' : 'password';
+    }
+
+    function openChangePinModal() {
+      document.getElementById('changePinModal').classList.remove('hidden');
+    }
+    function closeChangePinModal() {
+      document.getElementById('changePinModal').classList.add('hidden');
+    }
+    function handleSavePin(e) {
+      e.preventDefault();
+      const newPin = document.getElementById('newPinInput').value.trim();
+      const confirmPin = document.getElementById('confirmPinInput').value.trim();
+      if (!newPin || newPin.length < 4 || newPin !== confirmPin) {
+        document.getElementById('pinErrorMsg').classList.remove('hidden');
+        return;
+      }
+      localStorage.setItem('dealon_admin_pin', newPin);
+      closeChangePinModal();
+      alert('Admin PIN updated successfully!');
+    }
+
+    // ── 2. Catalog Data Loader ───────────────────────────────────────
+    async function loadCatalogData() {
+      // Check localStorage first
+      const localData = localStorage.getItem('dealon_admin_catalog');
+      if (localData) {
+        try {
+          catalog = JSON.parse(localData);
+          finalizeCatalogLoad();
+          return;
+        } catch (e) {
+          console.warn('Failed parsing cached catalog:', e);
+        }
+      }
+
+      // Fetch from products.json
+      try {
+        const res = await fetch('products.json?v=' + Date.now());
+        if (res.ok) {
+          catalog = await res.json();
+          finalizeCatalogLoad();
+        } else {
+          throw new Error('HTTP ' + res.status);
+        }
+      } catch (err) {
+        console.error('Failed fetching products.json:', err);
+        catalog = [];
+        finalizeCatalogLoad();
+      }
+    }
+
+    function finalizeCatalogLoad() {
+      // Ensure each item has status property (default active)
+      catalog.forEach(item => {
+        if (item.status === undefined) item.status = 'active';
+        // Ensure canonical URL
+        item.product_url = buildCanonicalUrl(item.asin);
+      });
+      filteredCatalog = [...catalog];
+      updateMetricsWidget();
+      renderCatalogTable();
+      populateDotdSelector();
+    }
+
+    function saveCatalogToStorage() {
+      localStorage.setItem('dealon_admin_catalog', JSON.stringify(catalog));
+      updateMetricsWidget();
+      renderCatalogTable();
+      populateDotdSelector();
+    }
+
+    function resetToStorefrontDefault() {
+      if (confirm('Reset catalog to the default 100 products from products.json? Any unsaved manual edits will be overwritten.')) {
+        localStorage.removeItem('dealon_admin_catalog');
+        loadCatalogData();
+      }
+    }
+
+    function buildCanonicalUrl(asin) {
+      const cleanAsin = String(asin || '').trim().toUpperCase();
+      return `https://www.amazon.in/dp/${cleanAsin}/?tag=${AFFILIATE_TAG}&linkCode=ll1&language=en_IN`;
+    }
+
+    // ── 3. Metrics Widget ────────────────────────────────────────────
+    function updateMetricsWidget() {
+      const total = catalog.length;
+      const activeCount = catalog.filter(p => p.status !== 'inactive').length;
+      document.getElementById('metricTotalProducts').textContent = total;
+
+      // Category breakdown
+      const laptops = catalog.filter(p => p.category === 'Laptops').length;
+      const phones = catalog.filter(p => p.category === 'Mobile Phones' || p.category === 'Smartphones').length;
+      const gadgets = catalog.filter(p => p.category === 'Tech Gadgets').length;
+      const home = catalog.filter(p => p.category === 'Home Décor Tech' || p.category === 'Smart Home').length;
+
+      document.getElementById('metricCatLaptops').textContent = laptops;
+      document.getElementById('metricCatPhones').textContent = phones;
+      document.getElementById('metricCatGadgets').textContent = gadgets;
+      document.getElementById('metricCatHome').textContent = home;
+
+      // Average discount
+      if (total > 0) {
+        const avg = Math.round(catalog.reduce((sum, p) => sum + (p.discount_pct || 0), 0) / total);
+        document.getElementById('metricAvgDiscount').textContent = avg + '%';
+        const lows = catalog.filter(p => p.is_historical_low).length;
+        document.getElementById('metricHistoricalLows').textContent = lows;
+      }
+
+      // DOTD spotlight preview
+      const dotdIndex = Number(localStorage.getItem('dealon_dotd_index') || 0);
+      const dotd = catalog[dotdIndex] || catalog[0];
+      if (dotd) {
+        document.getElementById('metricDotdImg').src = dotd.image_url || '';
+        document.getElementById('metricDotdTitle').textContent = dotd.title || '';
+        document.getElementById('metricDotdPrice').textContent = '₹' + Number(dotd.current_price).toLocaleString('en-IN');
+      }
+    }
+
+    function populateDotdSelector() {
+      const select = document.getElementById('dotdSelector');
+      select.innerHTML = catalog.map((p, i) => 
+        `<option value="${i}">[${p.asin}] ${(p.title || '').slice(0, 35)}… (₹${Number(p.current_price).toLocaleString('en-IN')})</option>`
+      ).join('');
+      
+      const currentIdx = Number(localStorage.getItem('dealon_dotd_index') || 0);
+      select.value = currentIdx;
+    }
+
+    function handleDotdChange(indexStr) {
+      const idx = Number(indexStr);
+      localStorage.setItem('dealon_dotd_index', idx);
+      updateMetricsWidget();
+    }
+
+    // ── 4. Table Rendering & Pagination ──────────────────────────────
+    function renderCatalogTable() {
+      const tbody = document.getElementById('catalogTableBody');
+      const totalFiltered = filteredCatalog.length;
+
+      // Pagination math
+      const totalPages = Math.ceil(totalFiltered / pageSize) || 1;
+      if (currentPage > totalPages) currentPage = totalPages;
+      const startIndex = (currentPage - 1) * pageSize;
+      const endIndex = Math.min(startIndex + pageSize, totalFiltered);
+      const pageItems = filteredCatalog.slice(startIndex, endIndex);
+
+      // Summary text
+      document.getElementById('tableSummaryText').textContent = 
+        totalFiltered === 0 ? 'No products match your filters' : `Showing ${startIndex + 1} to ${endIndex} of ${totalFiltered} products`;
+
+      // Render rows
+      if (pageItems.length === 0) {
+        tbody.innerHTML = `
+          <tr>
+            <td colspan="10" class="py-12 text-center text-brand-muted">
+              <span class="text-3xl block mb-2">🔍</span>
+              <p class="font-bold text-sm">No products found matching filters</p>
+              <button onclick="resetFilters()" class="mt-2 text-brand-teal underline font-semibold">Reset Search & Filters</button>
+            </td>
+          </tr>
+        `;
+      } else {
+        tbody.innerHTML = pageItems.map((item, idx) => {
+          const globalIdx = startIndex + idx;
+          const isActive = item.status !== 'inactive';
+          const isCompliant = (item.product_url || '').includes('tag=' + AFFILIATE_TAG);
+
+          return `
+            <tr class="hover:bg-brand-bg/30 transition group">
+              <td class="py-3 px-4 text-center font-mono text-brand-muted text-[11px]">${globalIdx + 1}</td>
+              <td class="py-3 px-4">
+                <img src="${item.image_url}" alt="" class="w-10 h-10 object-contain rounded-lg border border-brand-border bg-white"
+                  loading="lazy" referrerpolicy="no-referrer"
+                  onerror="this.onerror=null; this.src='https://m.media-amazon.com/images/G/31/social_share/amazon_logo._CB633266945_.png';">
+              </td>
+              <td class="py-3 px-4">
+                <div class="font-bold text-brand-dark group-hover:text-brand-orange transition line-clamp-1" title="${item.title}">
+                  ${item.title}
+                </div>
+                <div class="flex items-center gap-2 text-[11px] text-brand-muted mt-0.5">
+                  <span class="font-semibold text-brand-dark">${item.brand || 'Generic'}</span>
+                  <span>•</span>
+                  <span>${(item.badge || '')}</span>
+                </div>
+              </td>
+              <td class="py-3 px-4">
+                <span class="inline-block px-2 py-0.5 text-[10px] font-bold rounded-md bg-brand-bg border border-brand-border text-brand-dark">
+                  ${item.category}
+                </span>
+              </td>
+              <td class="py-3 px-4 font-mono font-bold text-brand-dark">
+                <span class="bg-brand-bg px-1.5 py-0.5 rounded text-[11px]">${item.asin}</span>
+              </td>
+              <td class="py-3 px-4 text-right">
+                <div class="font-bold text-brand-dark">₹${Number(item.current_price).toLocaleString('en-IN')}</div>
+                <div class="text-[10px] text-brand-muted line-through">₹${Number(item.mrp).toLocaleString('en-IN')}</div>
+              </td>
+              <td class="py-3 px-4 text-center">
+                <span class="px-2 py-0.5 text-[11px] font-extrabold rounded-md ${item.discount_pct >= 50 ? 'bg-red-50 text-brand-crimson border border-red-200' : 'bg-orange-50 text-brand-orange border border-orange-200'}">
+                  -${item.discount_pct}%
+                </span>
+              </td>
+              <td class="py-3 px-4">
+                <span class="inline-flex items-center gap-1 px-2 py-0.5 text-[10px] font-bold rounded-md bg-emerald-50 text-brand-teal border border-emerald-200">
+                  <span class="w-1.5 h-1.5 rounded-full bg-brand-teal"></span>
+                  dealon04-21
+                </span>
+              </td>
+              <td class="py-3 px-4 text-center">
+                <button onclick="toggleProductStatus('${item.id}')"
+                  class="px-2 py-0.5 text-[10px] font-bold rounded-full transition ${isActive ? 'bg-emerald-100 text-emerald-800' : 'bg-gray-100 text-gray-600'}">
+                  ${isActive ? 'Active' : 'Inactive'}
+                </button>
+              </td>
+              <td class="py-3 px-4 text-right">
+                <div class="inline-flex items-center gap-1.5">
+                  <a href="${item.product_url}" target="_blank" rel="noopener noreferrer"
+                    title="Test Amazon Affiliate Link"
+                    class="p-1.5 text-brand-teal hover:bg-brand-teal/10 rounded-lg transition border border-brand-teal/20">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                  </a>
+                  <button onclick="openEditModal('${item.id}')" title="Edit Product"
+                    class="p-1.5 text-brand-orange hover:bg-brand-orange/10 rounded-lg transition border border-brand-orange/20">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/></svg>
+                  </button>
+                  <button onclick="deleteProduct('${item.id}')" title="Delete Product"
+                    class="p-1.5 text-brand-crimson hover:bg-brand-crimson/10 rounded-lg transition border border-brand-crimson/20">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          `;
+        }).join('');
+      }
+
+      renderPaginationControls(totalPages);
+    }
+
+    function renderPaginationControls(totalPages) {
+      const container = document.getElementById('paginationControls');
+      if (totalPages <= 1) {
+        container.innerHTML = '';
+        return;
+      }
+
+      let html = `
+        <button onclick="changePage(${currentPage - 1})" ${currentPage === 1 ? 'disabled' : ''}
+          class="px-2.5 py-1 text-xs font-bold rounded-lg border border-brand-border bg-white disabled:opacity-40 disabled:cursor-not-allowed hover:bg-brand-bg transition">
+          ‹ Prev
+        </button>
+      `;
+
+      for (let p = 1; p <= totalPages; p++) {
+        if (p === 1 || p === totalPages || (p >= currentPage - 1 && p <= currentPage + 1)) {
+          html += `
+            <button onclick="changePage(${p})"
+              class="px-2.5 py-1 text-xs font-bold rounded-lg border ${p === currentPage ? 'bg-brand-orange text-white border-brand-orange' : 'border-brand-border bg-white hover:bg-brand-bg'} transition">
+              ${p}
+            </button>
+          `;
+        } else if (p === currentPage - 2 || p === currentPage + 2) {
+          html += '<span class="px-1 text-brand-muted">…</span>';
+        }
+      }
+
+      html += `
+        <button onclick="changePage(${currentPage + 1})" ${currentPage === totalPages ? 'disabled' : ''}
+          class="px-2.5 py-1 text-xs font-bold rounded-lg border border-brand-border bg-white disabled:opacity-40 disabled:cursor-not-allowed hover:bg-brand-bg transition">
+          Next ›
+        </button>
+      `;
+
+      container.innerHTML = html;
+    }
+
+    function changePage(newPage) {
+      currentPage = newPage;
+      renderCatalogTable();
+    }
+
+    function handlePageSizeChange(newSize) {
+      pageSize = newSize;
+      currentPage = 1;
+      renderCatalogTable();
+    }
+
+    // ── 5. Search & Filters ──────────────────────────────────────────
+    function applyFilters() {
+      const q = document.getElementById('catalogSearch').value.toLowerCase().trim();
+      const cat = document.getElementById('categoryFilter').value;
+      const status = document.getElementById('statusFilter').value;
+
+      filteredCatalog = catalog.filter(item => {
+        // Category
+        if (cat !== 'all') {
+          const matchPhones = (cat === 'Mobile Phones') && (item.category === 'Mobile Phones' || item.category === 'Smartphones');
+          const matchHome = (cat === 'Home Décor Tech') && (item.category === 'Home Décor Tech' || item.category === 'Smart Home');
+          if (!matchPhones && !matchHome && item.category !== cat) return false;
+        }
+
+        // Status
+        if (status === 'active' && item.status === 'inactive') return false;
+        if (status === 'inactive' && item.status !== 'inactive') return false;
+
+        // Search query
+        if (q) {
+          const haystack = `${item.title || ''} ${item.brand || ''} ${item.asin || ''} ${item.category || ''}`.toLowerCase();
+          if (!haystack.includes(q)) return false;
+        }
+
+        return true;
+      });
+
+      currentPage = 1;
+      renderCatalogTable();
+    }
+
+    function handleSearch() { applyFilters(); }
+    function handleCategoryFilter() { applyFilters(); }
+    function handleStatusFilter() { applyFilters(); }
+    function resetFilters() {
+      document.getElementById('catalogSearch').value = '';
+      document.getElementById('categoryFilter').value = 'all';
+      document.getElementById('statusFilter').value = 'all';
+      applyFilters();
+    }
+
+    // ── 6. Product Actions (Toggle, Edit, Delete, Add) ────────────────
+    function toggleProductStatus(id) {
+      const item = catalog.find(p => p.id === id);
+      if (item) {
+        item.status = item.status === 'inactive' ? 'active' : 'inactive';
+        saveCatalogToStorage();
+      }
+    }
+
+    function deleteProduct(id) {
+      const item = catalog.find(p => p.id === id);
+      if (!item) return;
+      if (confirm(`Delete product "${item.title}" (${item.asin}) from catalog?`)) {
+        catalog = catalog.filter(p => p.id !== id);
+        saveCatalogToStorage();
+      }
+    }
+
+    function openEditModal(id) {
+      const item = catalog.find(p => p.id === id);
+      if (!item) return;
+
+      document.getElementById('editProductId').value = item.id;
+      document.getElementById('editTitle').value = item.title || '';
+      document.getElementById('editBrand').value = item.brand || '';
+      document.getElementById('editCategory').value = item.category || 'Laptops';
+      document.getElementById('editAsin').value = item.asin || '';
+      document.getElementById('editStatus').value = item.status || 'active';
+      document.getElementById('editPrice').value = item.current_price || '';
+      document.getElementById('editMrp').value = item.mrp || '';
+      document.getElementById('editDiscount').value = item.discount_pct || '';
+      document.getElementById('editImageUrl').value = item.image_url || '';
+
+      document.getElementById('editModal').classList.remove('hidden');
+    }
+
+    function closeEditModal() {
+      document.getElementById('editModal').classList.add('hidden');
+    }
+
+    function handleSaveEdit(e) {
+      e.preventDefault();
+      const id = document.getElementById('editProductId').value;
+      const item = catalog.find(p => p.id === id);
+      if (!item) return;
+
+      const asin = document.getElementById('editAsin').value.trim().toUpperCase();
+      if (!/^[A-Z0-9]{10}$/i.test(asin)) {
+        alert('Invalid ASIN! Must be exactly 10 alphanumeric characters.');
+        return;
+      }
+
+      item.title = document.getElementById('editTitle').value.trim();
+      item.brand = document.getElementById('editBrand').value.trim();
+      item.category = document.getElementById('editCategory').value;
+      item.asin = asin;
+      item.status = document.getElementById('editStatus').value;
+      item.current_price = Number(document.getElementById('editPrice').value);
+      item.mrp = Number(document.getElementById('editMrp').value);
+      item.discount_pct = Number(document.getElementById('editDiscount').value);
+      item.image_url = document.getElementById('editImageUrl').value.trim();
+      item.product_url = buildCanonicalUrl(asin);
+
+      saveCatalogToStorage();
+      closeEditModal();
+    }
+
+    function openAddProductModal() {
+      const tempId = 'prod-' + Date.now();
+      const newProduct = {
+        id: tempId,
+        title: 'New Product Sample',
+        brand: 'Brand',
+        category: 'Laptops',
+        asin: 'B0' + String(Date.now()).slice(-8),
+        current_price: 9999,
+        mrp: 14999,
+        discount_pct: 33,
+        historical_low: 9499,
+        is_historical_low: false,
+        rating: 4.2,
+        reviews_count: 500,
+        image_url: 'https://m.media-amazon.com/images/G/31/social_share/amazon_logo._CB633266945_.png',
+        badge: 'NEW',
+        status: 'active'
+      };
+      catalog.unshift(newProduct);
+      saveCatalogToStorage();
+      openEditModal(tempId);
+    }
+
+    // ── 7. CSV Importer Engine ───────────────────────────────────────
+    function handleDragOver(e) {
+      e.preventDefault();
+      document.getElementById('dropZone').classList.add('border-brand-orange', 'bg-orange-50/20');
+    }
+    function handleDragLeave(e) {
+      e.preventDefault();
+      document.getElementById('dropZone').classList.remove('border-brand-orange', 'bg-orange-50/20');
+    }
+    function handleFileDrop(e) {
+      e.preventDefault();
+      document.getElementById('dropZone').classList.remove('border-brand-orange', 'bg-orange-50/20');
+      if (e.dataTransfer.files && e.dataTransfer.files.length > 0) {
+        parseCsvFile(e.dataTransfer.files[0]);
+      }
+    }
+    function handleFileSelect(e) {
+      if (e.target.files && e.target.files.length > 0) {
+        parseCsvFile(e.target.files[0]);
+      }
+    }
+
+    function parseCsvFile(file) {
+      if (!file.name.endsWith('.csv')) {
+        showImportAlert('Please upload a valid .csv file.', false);
+        return;
+      }
+
+      Papa.parse(file, {
+        header: true,
+        skipEmptyLines: true,
+        complete: function(results) {
+          processCsvRows(results.data);
+        },
+        error: function(err) {
+          showImportAlert('CSV Parsing error: ' + err.message, false);
+        }
+      });
+    }
+
+    function processCsvRows(rows) {
+      if (!rows || rows.length === 0) {
+        showImportAlert('No rows found in uploaded CSV.', false);
+        return;
+      }
+
+      let validCount = 0;
+      let invalidCount = 0;
+      const newItems = [];
+
+      rows.forEach((row, i) => {
+        const title = (row.title || row.Title || row['Product Name'] || '').trim();
+        const asin = (row.asin || row.ASIN || '').trim().toUpperCase();
+        
+        if (!title || !/^[A-Z0-9]{10}$/i.test(asin)) {
+          invalidCount++;
+          return;
+        }
+
+        const brand = (row.brand || row.Brand || row['Brand / Make'] || 'Generic').trim();
+        const category = (row.category || row.Category || 'Tech Gadgets').trim();
+        const price = Number(row.price || row.current_price || row.Price || 999);
+        const mrp = Number(row.original_price || row.mrp || row.MRP || Math.round(price * 1.3));
+        const discount = Number(row.discount || row.discount_pct || Math.round(((mrp - price) / mrp) * 100));
+        const rating = Number(row.rating || 4.2);
+        const reviews = Number(row.reviews_count || row.reviews || 500);
+        const imageUrl = (row.image_url || row['Image URL'] || 'https://m.media-amazon.com/images/G/31/social_share/amazon_logo._CB633266945_.png').trim();
+
+        newItems.push({
+          id: title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '') + '-' + asin.slice(-4),
+          title,
+          brand,
+          category,
+          asin,
+          current_price: price,
+          mrp,
+          discount_pct: discount,
+          historical_low: Math.round(price * 0.95),
+          is_historical_low: false,
+          rating,
+          reviews_count: reviews,
+          image_url: imageUrl,
+          product_url: buildCanonicalUrl(asin),
+          badge: discount >= 50 ? `${discount}% OFF` : 'VERIFIED',
+          status: 'active'
+        });
+        validCount++;
+      });
+
+      if (validCount > 0) {
+        // Merge or replace
+        const mode = confirm(`Parsed ${validCount} valid products (${invalidCount} skipped due to invalid ASIN/Title).\n\nClick OK to REPLACE catalog, or CANCEL to MERGE with current catalog.`);
+        if (mode) {
+          catalog = newItems;
+        } else {
+          // Merge by ASIN
+          newItems.forEach(item => {
+            const idx = catalog.findIndex(c => c.asin === item.asin);
+            if (idx !== -1) catalog[idx] = item;
+            else catalog.push(item);
+          });
+        }
+        saveCatalogToStorage();
+        showImportAlert(`Successfully imported ${validCount} products with canonical tag dealon04-21.`, true);
+      } else {
+        showImportAlert(`Failed: All ${rows.length} rows were missing valid titles or 10-char ASINs.`, false);
+      }
+    }
+
+    function showImportAlert(msg, success) {
+      const el = document.getElementById('importAlert');
+      const text = document.getElementById('importAlertText');
+      el.className = `mt-3 p-3 rounded-xl text-xs flex items-center justify-between ${success ? 'bg-emerald-50 text-emerald-800 border border-emerald-200' : 'bg-red-50 text-brand-crimson border border-red-200'}`;
+      text.textContent = msg;
+      el.classList.remove('hidden');
+    }
+
+    // ── 8. JSON & CSV Exporters ──────────────────────────────────────
+    function generateDealsArray() {
+      const dotdIndex = Number(localStorage.getItem('dealon_dotd_index') || 0);
+      return catalog.map((p, i) => ({
+        id: p.id,
+        title: p.title,
+        brand: p.brand,
+        category: p.category,
+        price: p.current_price,
+        original_price: p.mrp,
+        historical_low: p.historical_low,
+        is_historical_low: p.is_historical_low,
+        discount: p.discount_pct,
+        rating: p.rating,
+        reviews_count: p.reviews_count,
+        asin: p.asin,
+        deal_url: p.product_url,
+        image_url: p.image_url,
+        badge: i === dotdIndex ? 'DEAL OF THE DAY' : p.badge,
+        is_deal_of_the_day: i === dotdIndex,
+        features: p.features || [p.title, p.brand, `Save ${p.discount_pct}%`],
+        price_history: p.price_history || [p.mrp, p.current_price]
+      }));
+    }
+
+    function downloadJsonFiles() {
+      // 1. Download products.json
+      const productsJsonStr = JSON.stringify(catalog, null, 2);
+      downloadBlob(productsJsonStr, 'products.json', 'application/json');
+
+      // 2. Download deals.json
+      setTimeout(() => {
+        const deals = generateDealsArray();
+        const dealsJsonStr = JSON.stringify(deals, null, 2);
+        downloadBlob(dealsJsonStr, 'deals.json', 'application/json');
+      }, 300);
+    }
+
+    function downloadBlob(content, filename, contentType) {
+      const blob = new Blob([content], { type: contentType });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
+
+    function exportCurrentCatalogCsv() {
+      const headers = ['title', 'category', 'brand', 'asin', 'price', 'original_price', 'discount', 'rating', 'reviews_count', 'image_url', 'product_url'];
+      const rows = catalog.map(p => [
+        `"${(p.title || '').replace(/"/g, '""')}"`,
+        `"${p.category || ''}"`,
+        `"${p.brand || ''}"`,
+        p.asin || '',
+        p.current_price || 0,
+        p.mrp || 0,
+        p.discount_pct || 0,
+        p.rating || 4.2,
+        p.reviews_count || 500,
+        `"${p.image_url || ''}"`,
+        `"${p.product_url || ''}"`
+      ].join(','));
+
+      const csvContent = [headers.join(','), ...rows].join('\n');
+      downloadBlob(csvContent, 'dealon_catalog_export.csv', 'text/csv;charset=utf-8;');
+    }
+
+    // ── 9. JSON Copy Modal ───────────────────────────────────────────
+    function openJsonCopyModal() {
+      switchJsonTab('products');
+      document.getElementById('jsonCopyModal').classList.remove('hidden');
+    }
+    function closeJsonCopyModal() {
+      document.getElementById('jsonCopyModal').classList.add('hidden');
+    }
+    function switchJsonTab(tab) {
+      activeJsonTab = tab;
+      const productsBtn = document.getElementById('tabProductsBtn');
+      const dealsBtn = document.getElementById('tabDealsBtn');
+      const textarea = document.getElementById('jsonPreviewTextarea');
+
+      if (tab === 'products') {
+        productsBtn.className = 'px-3 py-1.5 text-xs font-bold rounded-lg bg-brand-orange text-white';
+        dealsBtn.className = 'px-3 py-1.5 text-xs font-bold rounded-lg bg-brand-bg text-brand-dark border border-brand-border';
+        textarea.value = JSON.stringify(catalog, null, 2);
+      } else {
+        dealsBtn.className = 'px-3 py-1.5 text-xs font-bold rounded-lg bg-brand-orange text-white';
+        productsBtn.className = 'px-3 py-1.5 text-xs font-bold rounded-lg bg-brand-bg text-brand-dark border border-brand-border';
+        const deals = generateDealsArray();
+        textarea.value = JSON.stringify(deals, null, 2);
+      }
+    }
+
+    function copyCurrentJsonTab() {
+      const textarea = document.getElementById('jsonPreviewTextarea');
+      navigator.clipboard.writeText(textarea.value).then(() => {
+        const feedback = document.getElementById('copyFeedback');
+        feedback.classList.remove('hidden');
+        setTimeout(() => feedback.classList.add('hidden'), 2000);
+      });
+    }
+
+    // Initialize on DOM load
+    document.addEventListener('DOMContentLoaded', initAuth);
+  </script>
+</body>
+</html>

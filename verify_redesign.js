@@ -11,6 +11,6 @@ console.log('5. Product images on every card:', html.includes('image_url') ? '�
 console.log('6. Deal of the Day spotlight:', html.includes('dotdWrap') ? '✓ PASS' : '✗ FAIL');
 console.log('7. Interactive Wishlist (❤️):', html.includes('toggleWishlist') && html.includes('showSavedWishlist') ? '✓ PASS' : '✗ FAIL');
 console.log('8. Functional footer category & tool links:', html.includes('filterCategory(') && html.includes('filterHistLows(') ? '✓ PASS' : '✗ FAIL');
-console.log('9. Amazon affiliate links:', ((html.match(/amazon\.in\/dp\//g) || []).length >= 20 || (html.match(/amazon\.in\/s\?k=/g) || []).length >= 20) ? '✓ PASS' : '✗ FAIL');
+console.log('9. Direct Amazon /dp/ links:', (html.match(/amazon\.in\/dp\//g) || []).length >= 20 ? '✓ PASS' : '✗ FAIL');
 console.log('10. Affiliate Tag (dealon04-21) integrity:', !html.includes('dealon-21') || html.includes('dealon04-21') ? '✓ PASS' : '✗ FAIL');
 console.log('---------------------------------------------------------');
