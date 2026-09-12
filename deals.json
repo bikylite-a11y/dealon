@@ -1,5 +1,26 @@
 [
   {
+    "id": "fire-boltt-ninja-call-pro-plus",
+    "asin": "B0BF55P8NW",
+    "title": "Fire-Boltt Ninja Call Pro Plus",
+    "brand": "Fire-Boltt",
+    "price": 1299,
+    "original_price": 7999,
+    "discount": 84,
+    "rating": 4.3,
+    "reviews_count": 6314,
+    "deal_url": "https://www.amazon.in/dp/B0BF55P8NW/?tag=dealon04-21&linkCode=ll1&language=en_IN",
+    "image_url": "https://m.media-amazon.com/images/I/61S9aVnRZDL._SL1500_.jpg",
+    "category": "Tech Gadgets",
+    "features": [
+      "1.83-inch HD display, 100+ sports modes, voice assistant",
+      "Sub-₹1500 Smartwatch",
+      "Best for: Impulse Online Buyers"
+    ],
+    "is_deal_of_the_day": true,
+    "date_added": "2026-09-12T08:02:15.436Z"
+  },
+  {
     "id": "apple-macbook-air-m3-13-inch",
     "title": "Apple MacBook Air M3 (13-inch)",
     "brand": "Apple",
@@ -15,7 +36,7 @@
     "deal_url": "https://www.amazon.in/dp/B0CX234P92/?tag=dealon04-21&linkCode=ll1&language=en_IN",
     "image_url": "https://m.media-amazon.com/images/I/71TPda7cwUL._SL1500_.jpg",
     "badge": "DEAL OF THE DAY",
-    "is_deal_of_the_day": true,
+    "is_deal_of_the_day": false,
     "features": [
       "Fanless silent design, M3 chip, up to 18-hr battery life",
       "Ultrabook / Everyday Productivity",
@@ -1827,36 +1848,6 @@
       3239,
       3119,
       2999
-    ]
-  },
-  {
-    "id": "fire-boltt-ninja-call-pro-plus",
-    "title": "Fire-Boltt Ninja Call Pro Plus",
-    "brand": "Fire-Boltt",
-    "category": "Tech Gadgets",
-    "price": 1299,
-    "original_price": 7999,
-    "historical_low": 1099,
-    "is_historical_low": false,
-    "discount": 84,
-    "rating": 4.3,
-    "reviews_count": 6314,
-    "asin": "B0BF55P8NW",
-    "deal_url": "https://www.amazon.in/dp/B0BF55P8NW/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/61S9aVnRZDL._SL1500_.jpg",
-    "badge": "MEGA DEAL",
-    "is_deal_of_the_day": false,
-    "features": [
-      "1.83-inch HD display, 100+ sports modes, voice assistant",
-      "Sub-₹1500 Smartwatch",
-      "Best for: Impulse Online Buyers"
-    ],
-    "price_history": [
-      7999,
-      7199,
-      1403,
-      1351,
-      1299
     ]
   },
   {
