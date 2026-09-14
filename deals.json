@@ -1,26 +1,5 @@
 [
   {
-    "id": "fire-boltt-ninja-call-pro-plus",
-    "asin": "B0BF55P8NW",
-    "title": "Fire-Boltt Ninja Call Pro Plus",
-    "brand": "Fire-Boltt",
-    "price": 1299,
-    "original_price": 7999,
-    "discount": 84,
-    "rating": 4.3,
-    "reviews_count": 6314,
-    "deal_url": "https://www.amazon.in/dp/B0BF55P8NW/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/61S9aVnRZDL._SL1500_.jpg",
-    "category": "Tech Gadgets",
-    "features": [
-      "1.83-inch HD display, 100+ sports modes, voice assistant",
-      "Sub-₹1500 Smartwatch",
-      "Best for: Impulse Online Buyers"
-    ],
-    "is_deal_of_the_day": true,
-    "date_added": "2026-09-14T09:08:26.547Z"
-  },
-  {
     "id": "apple-macbook-air-m3-13-inch",
     "title": "Apple MacBook Air M3 (13-inch)",
     "brand": "Apple",
@@ -36,7 +15,7 @@
     "deal_url": "https://www.amazon.in/dp/B0CX234P92/?tag=dealon04-21&linkCode=ll1&language=en_IN",
     "image_url": "https://m.media-amazon.com/images/I/71TPda7cwUL._SL1500_.jpg",
     "badge": "DEAL OF THE DAY",
-    "is_deal_of_the_day": false,
+    "is_deal_of_the_day": true,
     "features": [
       "Fanless silent design, M3 chip, up to 18-hr battery life",
       "Ultrabook / Everyday Productivity",
@@ -64,7 +43,7 @@
     "reviews_count": 2494,
     "asin": "B0DLH958V5",
     "deal_url": "https://www.amazon.in/dp/B0DLH958V5/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/61lYnF4ZgqL._SL1500_.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/71TPda7cwUL._SL1500_.jpg",
     "badge": "HIGH DEMAND",
     "is_deal_of_the_day": false,
     "features": [
@@ -94,7 +73,7 @@
     "reviews_count": 3491,
     "asin": "B0B8YCHH65",
     "deal_url": "https://www.amazon.in/dp/B0B8YCHH65/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/71-OxB-4FkL._SL1500_.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/71vFKBpKakL._SL1500_.jpg",
     "badge": "BESTSELLER",
     "is_deal_of_the_day": false,
     "features": [
@@ -124,7 +103,7 @@
     "reviews_count": 4488,
     "asin": "B0B6F5V23Z",
     "deal_url": "https://www.amazon.in/dp/B0B6F5V23Z/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/71yE-a15eRL._SL1500_.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/71vFKBpKakL._SL1500_.jpg",
     "badge": "VALUE PICK",
     "is_deal_of_the_day": false,
     "features": [
@@ -154,7 +133,7 @@
     "reviews_count": 5485,
     "asin": "B0C289NYXQ",
     "deal_url": "https://www.amazon.in/dp/B0C289NYXQ/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/71V--WfZx-L._SL1500_.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/71vFKBpKakL._SL1500_.jpg",
     "badge": "GAMING PICK",
     "is_deal_of_the_day": false,
     "features": [
@@ -184,7 +163,7 @@
     "reviews_count": 6482,
     "asin": "B0CHMBW6Z7",
     "deal_url": "https://www.amazon.in/dp/B0CHMBW6Z7/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/61w3E93qV6L._SL1500_.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/61Dw5Z8LzJL._SL1500_.jpg",
     "badge": "BEST VALUE",
     "is_deal_of_the_day": false,
     "features": [
@@ -214,7 +193,7 @@
     "reviews_count": 7479,
     "asin": "B0C9JBC5Q4",
     "deal_url": "https://www.amazon.in/dp/B0C9JBC5Q4/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/61+u8w3o24L._SL1500_.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/61Dw5Z8LzJL._SL1500_.jpg",
     "badge": "POPULAR",
     "is_deal_of_the_day": false,
     "features": [
@@ -244,7 +223,7 @@
     "reviews_count": 8476,
     "asin": "B0CX8XF1PR",
     "deal_url": "https://www.amazon.in/dp/B0CX8XF1PR/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/71sE3e+d-aL._SL1500_.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/61Dw5Z8LzJL._SL1500_.jpg",
     "badge": "TOP GAMING",
     "is_deal_of_the_day": false,
     "features": [
@@ -274,7 +253,7 @@
     "reviews_count": 9473,
     "asin": "B09Z2TMTYF",
     "deal_url": "https://www.amazon.in/dp/B09Z2TMTYF/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/71Y3bA5c-6L._SL1500_.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/61Dw5Z8LzJL._SL1500_.jpg",
     "badge": "PRO GAMER",
     "is_deal_of_the_day": false,
     "features": [
@@ -334,7 +313,7 @@
     "reviews_count": 11467,
     "asin": "B0D5B2TFFR",
     "deal_url": "https://www.amazon.in/dp/B0D5B2TFFR/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/71e-q-cKqGL._SL1500_.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/71c05lTE03L._SL1500_.jpg",
     "badge": "OLED SPECIAL",
     "is_deal_of_the_day": false,
     "features": [
@@ -364,7 +343,7 @@
     "reviews_count": 12464,
     "asin": "B09RMT65M7",
     "deal_url": "https://www.amazon.in/dp/B09RMT65M7/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/81x4Y42d5mL._SL1500_.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/71c05lTE03L._SL1500_.jpg",
     "badge": "HEAVY DUTY",
     "is_deal_of_the_day": false,
     "features": [
@@ -394,7 +373,7 @@
     "reviews_count": 13461,
     "asin": "B0C8JZ7Y4T",
     "deal_url": "https://www.amazon.in/dp/B0C8JZ7Y4T/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/71D0gE8L-FL._SL1500_.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/71c05lTE03L._SL1500_.jpg",
     "badge": "FLAGSHIP",
     "is_deal_of_the_day": false,
     "features": [
@@ -424,7 +403,7 @@
     "reviews_count": 14458,
     "asin": "B0BH4M8B2P",
     "deal_url": "https://www.amazon.in/dp/B0BH4M8B2P/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/61N+p+aQhXL._SL1500_.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/61Dw5Z8LzJL._SL1500_.jpg",
     "badge": "OFFICE PRO",
     "is_deal_of_the_day": false,
     "features": [
@@ -454,7 +433,7 @@
     "reviews_count": 15455,
     "asin": "B0BY5M4N37",
     "deal_url": "https://www.amazon.in/dp/B0BY5M4N37/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/61y8B34Q3wL._SL1500_.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/61Dw5Z8LzJL._SL1500_.jpg",
     "badge": "2-IN-1 TOUCH",
     "is_deal_of_the_day": false,
     "features": [
@@ -484,7 +463,7 @@
     "reviews_count": 16452,
     "asin": "B0C7L8LL6K",
     "deal_url": "https://www.amazon.in/dp/B0C7L8LL6K/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/71R2o5f8sXL._SL1500_.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/61Dw5Z8LzJL._SL1500_.jpg",
     "badge": "GAMING MONSTER",
     "is_deal_of_the_day": false,
     "features": [
@@ -514,7 +493,7 @@
     "reviews_count": 17449,
     "asin": "B0C6L71L2J",
     "deal_url": "https://www.amazon.in/dp/B0C6L71L2J/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/61UhnN0qjVL._SL1500_.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/71f5Eu5lJSL._SL1500_.jpg",
     "badge": "STUDENT PICK",
     "is_deal_of_the_day": false,
     "features": [
@@ -574,7 +553,7 @@
     "reviews_count": 19443,
     "asin": "B0CHX373TT",
     "deal_url": "https://www.amazon.in/dp/B0CHX373TT/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/71m0o1pUvOL._SL1500_.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/71f5Eu5lJSL._SL1500_.jpg",
     "badge": "HOT DEAL",
     "is_deal_of_the_day": false,
     "features": [
@@ -604,7 +583,7 @@
     "reviews_count": 20440,
     "asin": "B0CVX9Z3LK",
     "deal_url": "https://www.amazon.in/dp/B0CVX9Z3LK/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/71O8i6Z3bSL._SL1500_.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/71f5Eu5lJSL._SL1500_.jpg",
     "badge": "OLED ULTRALIGHT",
     "is_deal_of_the_day": false,
     "features": [
@@ -634,7 +613,7 @@
     "reviews_count": 21437,
     "asin": "B0CVXF88K9",
     "deal_url": "https://www.amazon.in/dp/B0CVXF88K9/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/71P4r4y02BL._SL1500_.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/61Dw5Z8LzJL._SL1500_.jpg",
     "badge": "PREMIUM SLIM",
     "is_deal_of_the_day": false,
     "features": [
@@ -664,7 +643,7 @@
     "reviews_count": 22434,
     "asin": "B0C6B8DVS4",
     "deal_url": "https://www.amazon.in/dp/B0C6B8DVS4/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/61e8u8nUa6L._SL1500_.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/61Dw5Z8LzJL._SL1500_.jpg",
     "badge": "STEALTH GAMER",
     "is_deal_of_the_day": false,
     "features": [
@@ -694,7 +673,7 @@
     "reviews_count": 23431,
     "asin": "B0BS3LZZ37",
     "deal_url": "https://www.amazon.in/dp/B0BS3LZZ37/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/81e5bSgW07L._SL1500_.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/61Dw5Z8LzJL._SL1500_.jpg",
     "badge": "PRO RIG",
     "is_deal_of_the_day": false,
     "features": [
@@ -724,7 +703,7 @@
     "reviews_count": 24428,
     "asin": "B0BDKB5FFJ",
     "deal_url": "https://www.amazon.in/dp/B0BDKB5FFJ/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/71m01o19aEL._SL1500_.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/61Dw5Z8LzJL._SL1500_.jpg",
     "badge": "CREATOR SLIM",
     "is_deal_of_the_day": false,
     "features": [
@@ -754,7 +733,7 @@
     "reviews_count": 25425,
     "asin": "B0BSH75V1M",
     "deal_url": "https://www.amazon.in/dp/B0BSH75V1M/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/61gRj3TjHqL._SL1500_.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/61Dw5Z8LzJL._SL1500_.jpg",
     "badge": "SLIM POWER",
     "is_deal_of_the_day": false,
     "features": [
@@ -784,7 +763,7 @@
     "reviews_count": 26422,
     "asin": "B0DGJ9N123",
     "deal_url": "https://www.amazon.in/dp/B0DGJ9N123/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/71-k6i2-d1L._SL1500_.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/71d7rfSl0wL._SL1500_.jpg",
     "badge": "NEW LAUNCH",
     "is_deal_of_the_day": false,
     "features": [
@@ -814,7 +793,7 @@
     "reviews_count": 27419,
     "asin": "B0DGJGH678",
     "deal_url": "https://www.amazon.in/dp/B0DGJGH678/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/81f21B47UOL._SL1500_.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/71d7rfSl0wL._SL1500_.jpg",
     "badge": "ULTIMATE",
     "is_deal_of_the_day": false,
     "features": [
@@ -904,7 +883,7 @@
     "reviews_count": 2410,
     "asin": "B0CS5X8X67",
     "deal_url": "https://www.amazon.in/dp/B0CS5X8X67/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/71CXhVw5qkL._SL1500_.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/81ZSn2rk9WL._SL1500_.jpg",
     "badge": "AI FLAGSHIP",
     "is_deal_of_the_day": false,
     "features": [
@@ -934,7 +913,7 @@
     "reviews_count": 3407,
     "asin": "B0DHGPG7B8",
     "deal_url": "https://www.amazon.in/dp/B0DHGPG7B8/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/71+v9qO1i-L._SL1500_.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/81ZSn2rk9WL._SL1500_.jpg",
     "badge": "FAN EDITION",
     "is_deal_of_the_day": false,
     "features": [
@@ -964,7 +943,7 @@
     "reviews_count": 4404,
     "asin": "B0CX8X1234",
     "deal_url": "https://www.amazon.in/dp/B0CX8X1234/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/710P6j8tLqL._SL1500_.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/81ZSn2rk9WL._SL1500_.jpg",
     "badge": "PREMIUM 5G",
     "is_deal_of_the_day": false,
     "features": [
@@ -994,7 +973,7 @@
     "reviews_count": 5401,
     "asin": "B0CX8W89F4",
     "deal_url": "https://www.amazon.in/dp/B0CX8W89F4/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/71d1ytkU89L._SL1500_.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/81ZSn2rk9WL._SL1500_.jpg",
     "badge": "BEST ALLROUNDER",
     "is_deal_of_the_day": false,
     "features": [
@@ -1024,7 +1003,7 @@
     "reviews_count": 6398,
     "asin": "B0D78M27D4",
     "deal_url": "https://www.amazon.in/dp/B0D78M27D4/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/81utXnwtVcL._SL1500_.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/81ZSn2rk9WL._SL1500_.jpg",
     "badge": "BATTERY BEAST",
     "is_deal_of_the_day": false,
     "features": [
@@ -1114,7 +1093,7 @@
     "reviews_count": 9389,
     "asin": "B0D77PN2H3",
     "deal_url": "https://www.amazon.in/dp/B0D77PN2H3/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/71t6W0w-1EL._SL1500_.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/61Io5-ojWUL._SL1500_.jpg",
     "badge": "METAL SLIM",
     "is_deal_of_the_day": false,
     "features": [
@@ -1174,7 +1153,7 @@
     "reviews_count": 11383,
     "asin": "B0CP288F4T",
     "deal_url": "https://www.amazon.in/dp/B0CP288F4T/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/71T6q4qU4oL._SL1500_.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/81ZSn2rk9WL._SL1500_.jpg",
     "badge": "200MP CAM",
     "is_deal_of_the_day": false,
     "features": [
@@ -1204,7 +1183,7 @@
     "reviews_count": 12380,
     "asin": "B0D6W6552B",
     "deal_url": "https://www.amazon.in/dp/B0D6W6552B/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/71eX1Jg0tGL._SL1500_.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/81ZSn2rk9WL._SL1500_.jpg",
     "badge": "AFFORDABLE 5G",
     "is_deal_of_the_day": false,
     "features": [
@@ -1234,7 +1213,7 @@
     "reviews_count": 13377,
     "asin": "B0CW19B4C7",
     "deal_url": "https://www.amazon.in/dp/B0CW19B4C7/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/61B8c3aN8bL._SL1500_.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/81ZSn2rk9WL._SL1500_.jpg",
     "badge": "LEICA OPTICS",
     "is_deal_of_the_day": false,
     "features": [
@@ -1324,7 +1303,7 @@
     "reviews_count": 16368,
     "asin": "B0D58YV6K8",
     "deal_url": "https://www.amazon.in/dp/B0D58YV6K8/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/71z3u66o64L._SL1500_.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/71jG+e7roXL._SL1500_.jpg",
     "badge": "TOP PERFORMANCE",
     "is_deal_of_the_day": false,
     "features": [
@@ -1354,7 +1333,7 @@
     "reviews_count": 17365,
     "asin": "B0CRDM5157",
     "deal_url": "https://www.amazon.in/dp/B0CRDM5157/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/71Uq83q8QDL._SL1500_.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/71jG+e7roXL._SL1500_.jpg",
     "badge": "PERISCOPE CAM",
     "is_deal_of_the_day": false,
     "features": [
@@ -1414,7 +1393,7 @@
     "reviews_count": 19359,
     "asin": "B07WGNK4V6",
     "deal_url": "https://www.amazon.in/dp/B07WGNK4V6/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/71ZtTL9nVAL._SL1500_.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/81ZSn2rk9WL._SL1500_.jpg",
     "badge": "GAMING KING",
     "is_deal_of_the_day": false,
     "features": [
@@ -1444,7 +1423,7 @@
     "reviews_count": 20356,
     "asin": "B0DCVNZ9L3",
     "deal_url": "https://www.amazon.in/dp/B0DCVNZ9L3/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/61H6eFzLwJL._SL1500_.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/81ZSn2rk9WL._SL1500_.jpg",
     "badge": "CURVED AMOLED",
     "is_deal_of_the_day": false,
     "features": [
@@ -1504,7 +1483,7 @@
     "reviews_count": 22350,
     "asin": "B0D8W12Z2M",
     "deal_url": "https://www.amazon.in/dp/B0D8W12Z2M/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/71o8bW8VqfL._SL1500_.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/71g2ednj0JL._SL1500_.jpg",
     "badge": "CURVED DISPLAY",
     "is_deal_of_the_day": false,
     "features": [
@@ -1564,7 +1543,7 @@
     "reviews_count": 24344,
     "asin": "B0B8Y4L56G",
     "deal_url": "https://www.amazon.in/dp/B0B8Y4L56G/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/61kWB+bRLLL._SL1500_.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/51xxA+6E+xL._SL1500_.jpg",
     "badge": "24-BIT AUDIO",
     "is_deal_of_the_day": false,
     "features": [
@@ -1594,7 +1573,7 @@
     "reviews_count": 25341,
     "asin": "B0C33XXS56",
     "deal_url": "https://www.amazon.in/dp/B0C33XXS56/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/61fL8zL3RzL._SL1500_.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/61Qe0euJJZL._SL1500_.jpg",
     "badge": "AUDIOPHILE ANC",
     "is_deal_of_the_day": false,
     "features": [
@@ -1684,7 +1663,7 @@
     "reviews_count": 28332,
     "asin": "B0DCVMM3XN",
     "deal_url": "https://www.amazon.in/dp/B0DCVMM3XN/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/61d2d3N5jQL._SL1500_.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/51xxA+6E+xL._SL1500_.jpg",
     "badge": "DYNAUDIO HI-RES",
     "is_deal_of_the_day": false,
     "features": [
@@ -1714,7 +1693,7 @@
     "reviews_count": 1329,
     "asin": "B0928TKBVP",
     "deal_url": "https://www.amazon.in/dp/B0928TKBVP/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/51TjB1kYqCL._SL1500_.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/51xxA+6E+xL._SL1500_.jpg",
     "badge": "VALUE HIT",
     "is_deal_of_the_day": false,
     "features": [
@@ -1774,7 +1753,7 @@
     "reviews_count": 3323,
     "asin": "B0C8Z313M5",
     "deal_url": "https://www.amazon.in/dp/B0C8Z313M5/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/71wK8nB73WL._SL1500_.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/61ZjlBOp+rL._SL1500_.jpg",
     "badge": "BIOACTIVE PRO",
     "is_deal_of_the_day": false,
     "features": [
@@ -1804,7 +1783,7 @@
     "reviews_count": 4320,
     "asin": "B0BF57K39V",
     "deal_url": "https://www.amazon.in/dp/B0BF57K39V/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/61dFjC64YmL._SL1500_.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/61ZjlBOp+rL._SL1500_.jpg",
     "badge": "14-DAY BATTERY",
     "is_deal_of_the_day": false,
     "features": [
@@ -1834,7 +1813,7 @@
     "reviews_count": 5317,
     "asin": "B0CNGSZ474",
     "deal_url": "https://www.amazon.in/dp/B0CNGSZ474/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/71Q84Qqms4L._SL1500_.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/61ZjlBOp+rL._SL1500_.jpg",
     "badge": "AMOLED SPECIAL",
     "is_deal_of_the_day": false,
     "features": [
@@ -1848,6 +1827,33 @@
       3239,
       3119,
       2999
+    ]
+  },
+  {
+    "id": "fire-boltt-ninja-call-pro-plus",
+    "title": "Fire-Boltt Ninja Call Pro Plus",
+    "brand": "Fire-Boltt",
+    "category": "Tech Gadgets",
+    "price": 1299,
+    "original_price": 7999,
+    "historical_low": 1299,
+    "is_historical_low": true,
+    "discount": 84,
+    "rating": 4.3,
+    "reviews_count": 6314,
+    "asin": "B0BF55P8NW",
+    "deal_url": "https://www.amazon.in/dp/B0BF55P8NW/?tag=dealon04-21&linkCode=ll1&language=en_IN",
+    "image_url": "https://m.media-amazon.com/images/I/61S9aVnRZDL._SL1500_.jpg",
+    "badge": "DEAL OF THE DAY",
+    "is_deal_of_the_day": false,
+    "features": [
+      "1.83-inch HD display, 100+ sports modes, voice assistant",
+      "Sub-₹1500 Smartwatch",
+      "Best for: Impulse Online Buyers"
+    ],
+    "price_history": [
+      7999,
+      1299
     ]
   },
   {
@@ -1894,7 +1900,7 @@
     "reviews_count": 8308,
     "asin": "B09ZXB96T6",
     "deal_url": "https://www.amazon.in/dp/B09ZXB96T6/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/61fW8-38GRL._SL1500_.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/61MbLLagiVL._SL1500_.jpg",
     "badge": "COMPACT SMART",
     "is_deal_of_the_day": false,
     "features": [
@@ -1924,7 +1930,7 @@
     "reviews_count": 9305,
     "asin": "B08XVVPV2C",
     "deal_url": "https://www.amazon.in/dp/B08XVVPV2C/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/51Da2Z+FTUL._SL1500_.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/61Qe0euJJZL._SL1500_.jpg",
     "badge": "STREAMING 4K",
     "is_deal_of_the_day": false,
     "features": [
@@ -1954,7 +1960,7 @@
     "reviews_count": 10302,
     "asin": "B08HV83HL3",
     "deal_url": "https://www.amazon.in/dp/B08HV83HL3/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/61gXN-rW0xL._SL1500_.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/61Qe0euJJZL._SL1500_.jpg",
     "badge": "POWER SURGE",
     "is_deal_of_the_day": false,
     "features": [
@@ -1984,7 +1990,7 @@
     "reviews_count": 11299,
     "asin": "B09W2PNLX7",
     "deal_url": "https://www.amazon.in/dp/B09W2PNLX7/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/61r5K8Zt+qL._SL1500_.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/61Qe0euJJZL._SL1500_.jpg",
     "badge": "GAN TECH",
     "is_deal_of_the_day": false,
     "features": [
@@ -2014,7 +2020,7 @@
     "reviews_count": 12296,
     "asin": "B08LG2XFDR",
     "deal_url": "https://www.amazon.in/dp/B08LG2XFDR/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/61jCg5l2pEL._SL1500_.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/61Qe0euJJZL._SL1500_.jpg",
     "badge": "POCKET CHARGER",
     "is_deal_of_the_day": false,
     "features": [
@@ -2044,7 +2050,7 @@
     "reviews_count": 13293,
     "asin": "B098NS6PVG",
     "deal_url": "https://www.amazon.in/dp/B098NS6PVG/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/51k+g17E9lL._SL1500_.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/61Qe0euJJZL._SL1500_.jpg",
     "badge": "FAST CABLE",
     "is_deal_of_the_day": false,
     "features": [
@@ -2074,7 +2080,7 @@
     "reviews_count": 14290,
     "asin": "B0B7NV73PJ",
     "deal_url": "https://www.amazon.in/dp/B0B7NV73PJ/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/7180ZMrTH2L._SL1500_.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/61Qe0euJJZL._SL1500_.jpg",
     "badge": "HIGH SPEED",
     "is_deal_of_the_day": false,
     "features": [
@@ -2134,7 +2140,7 @@
     "reviews_count": 16284,
     "asin": "B0148NPH9I",
     "deal_url": "https://www.amazon.in/dp/B0148NPH9I/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/61O2h2jZ5kL._SL1500_.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/61Qe0euJJZL._SL1500_.jpg",
     "badge": "MULTI-DEVICE",
     "is_deal_of_the_day": false,
     "features": [
@@ -2164,7 +2170,7 @@
     "reviews_count": 17281,
     "asin": "B0856W4P6N",
     "deal_url": "https://www.amazon.in/dp/B0856W4P6N/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/71y8uWf5S4L._SL1500_.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/61u1VALn6JL._SL1500_.jpg",
     "badge": "RUGGED SOUND",
     "is_deal_of_the_day": false,
     "features": [
@@ -2194,7 +2200,7 @@
     "reviews_count": 18278,
     "asin": "B09KJ8W2K5",
     "deal_url": "https://www.amazon.in/dp/B09KJ8W2K5/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/61u9uW6k1EL._SL1500_.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/61u1VALn6JL._SL1500_.jpg",
     "badge": "WATERPROOF BASS",
     "is_deal_of_the_day": false,
     "features": [
@@ -2224,7 +2230,7 @@
     "reviews_count": 19275,
     "asin": "B0B72BPBBP",
     "deal_url": "https://www.amazon.in/dp/B0B72BPBBP/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/61M8mPzU6aL._SL1500_.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/61Qe0euJJZL._SL1500_.jpg",
     "badge": "CREATOR TOOL",
     "is_deal_of_the_day": false,
     "features": [
@@ -2254,7 +2260,7 @@
     "reviews_count": 20272,
     "asin": "B08HDKD89Z",
     "deal_url": "https://www.amazon.in/dp/B08HDKD89Z/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/51b2sU0K5LL._SL1500_.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/61Qe0euJJZL._SL1500_.jpg",
     "badge": "AMBIENT LIGHT",
     "is_deal_of_the_day": false,
     "features": [
@@ -2284,7 +2290,7 @@
     "reviews_count": 21269,
     "asin": "B0819KTVW9",
     "deal_url": "https://www.amazon.in/dp/B0819KTVW9/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/61aW2k-dEwL._SL1500_.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/61Qe0euJJZL._SL1500_.jpg",
     "badge": "SMART GLOW",
     "is_deal_of_the_day": false,
     "features": [
@@ -2314,7 +2320,7 @@
     "reviews_count": 22266,
     "asin": "B08KFG9P97",
     "deal_url": "https://www.amazon.in/dp/B08KFG9P97/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/61hX4Pj7bGL._SL1500_.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/61Qe0euJJZL._SL1500_.jpg",
     "badge": "DESK AESTHETIC",
     "is_deal_of_the_day": false,
     "features": [
@@ -2344,7 +2350,7 @@
     "reviews_count": 23263,
     "asin": "B09B4ML8K8",
     "deal_url": "https://www.amazon.in/dp/B09B4ML8K8/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/71y2bT89rYL._SL1500_.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/61Qe0euJJZL._SL1500_.jpg",
     "badge": "RGBIC DÉCOR",
     "is_deal_of_the_day": false,
     "features": [
@@ -2374,7 +2380,7 @@
     "reviews_count": 24260,
     "asin": "B091CR2Y5M",
     "deal_url": "https://www.amazon.in/dp/B091CR2Y5M/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/61zC8cZ68GL._SL1500_.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/61Qe0euJJZL._SL1500_.jpg",
     "badge": "SYNC LIGHTS",
     "is_deal_of_the_day": false,
     "features": [
@@ -2404,7 +2410,7 @@
     "reviews_count": 25257,
     "asin": "B09K7MBLG8",
     "deal_url": "https://www.amazon.in/dp/B09K7MBLG8/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/61eZ5Xy8H-L._SL1500_.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/61Qe0euJJZL._SL1500_.jpg",
     "badge": "GALAXY NIGHT",
     "is_deal_of_the_day": false,
     "features": [
@@ -2434,7 +2440,7 @@
     "reviews_count": 26254,
     "asin": "B07G95FFN9",
     "deal_url": "https://www.amazon.in/dp/B07G95FFN9/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/61aK3c7X9cL._SL1500_.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/61Qe0euJJZL._SL1500_.jpg",
     "badge": "MONITOR BACKLIGHT",
     "is_deal_of_the_day": false,
     "features": [
@@ -2464,7 +2470,7 @@
     "reviews_count": 27251,
     "asin": "B084TNH1CY",
     "deal_url": "https://www.amazon.in/dp/B084TNH1CY/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/51Vb4J5X3QL._SL1500_.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/61MbLLagiVL._SL1500_.jpg",
     "badge": "SMART DISPLAY",
     "is_deal_of_the_day": false,
     "features": [
@@ -2494,7 +2500,7 @@
     "reviews_count": 28248,
     "asin": "B07XLML2YS",
     "deal_url": "https://www.amazon.in/dp/B07XLML2YS/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/51H5V71W4-L._SL1500_.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/61Qe0euJJZL._SL1500_.jpg",
     "badge": "360 SECURITY",
     "is_deal_of_the_day": false,
     "features": [
@@ -2524,7 +2530,7 @@
     "reviews_count": 1245,
     "asin": "B0BDG41N8C",
     "deal_url": "https://www.amazon.in/dp/B0BDG41N8C/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/51fF8Q9991L._SL1500_.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/61Qe0euJJZL._SL1500_.jpg",
     "badge": "AI HOME CAM",
     "is_deal_of_the_day": false,
     "features": [
@@ -2554,7 +2560,7 @@
     "reviews_count": 2242,
     "asin": "B09H2SBD62",
     "deal_url": "https://www.amazon.in/dp/B09H2SBD62/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/61k9s61w1tL._SL1500_.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/61Qe0euJJZL._SL1500_.jpg",
     "badge": "HEPA AIR CARE",
     "is_deal_of_the_day": false,
     "features": [
@@ -2584,7 +2590,7 @@
     "reviews_count": 3239,
     "asin": "B0B8C86V2K",
     "deal_url": "https://www.amazon.in/dp/B0B8C86V2K/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/61xWvKx1PGL._SL1500_.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/61Qe0euJJZL._SL1500_.jpg",
     "badge": "CLEAN AIR PRO",
     "is_deal_of_the_day": false,
     "features": [
@@ -2614,7 +2620,7 @@
     "reviews_count": 4236,
     "asin": "B0172605AC",
     "deal_url": "https://www.amazon.in/dp/B0172605AC/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/61W2iMh4xTL._SL1500_.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/61Qe0euJJZL._SL1500_.jpg",
     "badge": "60% OFF STEAL",
     "is_deal_of_the_day": false,
     "features": [
@@ -2644,7 +2650,7 @@
     "reviews_count": 5233,
     "asin": "B08NW3C54S",
     "deal_url": "https://www.amazon.in/dp/B08NW3C54S/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/41-998m1nYL._SL1500_.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/61Qe0euJJZL._SL1500_.jpg",
     "badge": "TOUCH AUTOMATION",
     "is_deal_of_the_day": false,
     "features": [
@@ -2674,7 +2680,7 @@
     "reviews_count": 6230,
     "asin": "B099K11KTV",
     "deal_url": "https://www.amazon.in/dp/B099K11KTV/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/51yL857iN8L._SL1500_.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/61Qe0euJJZL._SL1500_.jpg",
     "badge": "ENERGY MONITOR",
     "is_deal_of_the_day": false,
     "features": [
@@ -2704,7 +2710,7 @@
     "reviews_count": 7227,
     "asin": "B08HN7PQ3F",
     "deal_url": "https://www.amazon.in/dp/B08HN7PQ3F/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/51N-3u3+n6L._SL1500_.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/61Qe0euJJZL._SL1500_.jpg",
     "badge": "16A HEAVY PLUG",
     "is_deal_of_the_day": false,
     "features": [
@@ -2734,7 +2740,7 @@
     "reviews_count": 8224,
     "asin": "B09G3F6XZ8",
     "deal_url": "https://www.amazon.in/dp/B09G3F6XZ8/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/61x0j1Q7w6L._SL1500_.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/61Qe0euJJZL._SL1500_.jpg",
     "badge": "ROBOT VACUUM",
     "is_deal_of_the_day": false,
     "features": [
@@ -2764,7 +2770,7 @@
     "reviews_count": 9221,
     "asin": "B08R697H8M",
     "deal_url": "https://www.amazon.in/dp/B08R697H8M/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/61r5c8mU3lL._SL1500_.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/61Qe0euJJZL._SL1500_.jpg",
     "badge": "AUTO CLEAN",
     "is_deal_of_the_day": false,
     "features": [
@@ -2794,7 +2800,7 @@
     "reviews_count": 10218,
     "asin": "B07D2C7YTF",
     "deal_url": "https://www.amazon.in/dp/B07D2C7YTF/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/51yL9hVbMCL._SL1500_.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/61Qe0euJJZL._SL1500_.jpg",
     "badge": "BIOMETRIC LOCK",
     "is_deal_of_the_day": false,
     "features": [
@@ -2824,7 +2830,7 @@
     "reviews_count": 11215,
     "asin": "B08P3L7YKL",
     "deal_url": "https://www.amazon.in/dp/B08P3L7YKL/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/61T2K4xUv1L._SL1500_.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/61Qe0euJJZL._SL1500_.jpg",
     "badge": "SMART DIGITAL",
     "is_deal_of_the_day": false,
     "features": [
@@ -2854,7 +2860,7 @@
     "reviews_count": 12212,
     "asin": "B08C5D3H11",
     "deal_url": "https://www.amazon.in/dp/B08C5D3H11/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/51q2b812fWL._SL1500_.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/61Qe0euJJZL._SL1500_.jpg",
     "badge": "SMART AC",
     "is_deal_of_the_day": false,
     "features": [
@@ -2884,7 +2890,7 @@
     "reviews_count": 13209,
     "asin": "B08V4R93D2",
     "deal_url": "https://www.amazon.in/dp/B08V4R93D2/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/41Q8e17U3rL._SL1500_.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/61Qe0euJJZL._SL1500_.jpg",
     "badge": "SAFETY SENSOR",
     "is_deal_of_the_day": false,
     "features": [
@@ -2914,7 +2920,7 @@
     "reviews_count": 14206,
     "asin": "B07FMY2V6G",
     "deal_url": "https://www.amazon.in/dp/B07FMY2V6G/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/61R89pY4zWL._SL1500_.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/61Qe0euJJZL._SL1500_.jpg",
     "badge": "AROMA RELAX",
     "is_deal_of_the_day": false,
     "features": [
@@ -2944,7 +2950,7 @@
     "reviews_count": 15203,
     "asin": "B07YWSK4H9",
     "deal_url": "https://www.amazon.in/dp/B07YWSK4H9/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/61wL3t9-vWL._SL1500_.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/61Qe0euJJZL._SL1500_.jpg",
     "badge": "PIXEL ART RETRO",
     "is_deal_of_the_day": false,
     "features": [
@@ -2974,7 +2980,7 @@
     "reviews_count": 16200,
     "asin": "B08Z3M8T3D",
     "deal_url": "https://www.amazon.in/dp/B08Z3M8T3D/?tag=dealon04-21&linkCode=ll1&language=en_IN",
-    "image_url": "https://m.media-amazon.com/images/I/61t3xW7p5cL._SL1500_.jpg",
+    "image_url": "https://m.media-amazon.com/images/I/61Qe0euJJZL._SL1500_.jpg",
     "badge": "3D LED DÉCOR",
     "is_deal_of_the_day": false,
     "features": [

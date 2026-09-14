@@ -544,7 +544,15 @@
 
     // ── 1. Authentication & Session ──────────────────────────────────
     function isUserAuthenticated() {
-      return sessionStorage.getItem('dealon_auth') === 'true';
+      if (sessionStorage.getItem('dealon_auth') === 'true') return true;
+      try {
+        const u = JSON.parse(localStorage.getItem('dealon_auth_user') || '{}');
+        if (u && u.role === 'admin') {
+          sessionStorage.setItem('dealon_auth', 'true');
+          return true;
+        }
+      } catch (e) {}
+      return false;
     }
 
     function initAuth() {
@@ -565,6 +573,12 @@
       
       if (enteredPin === savedPin) {
         sessionStorage.setItem('dealon_auth', 'true');
+        localStorage.setItem('dealon_auth_user', JSON.stringify({
+          role: 'admin',
+          name: 'Store Administrator',
+          email: 'admin@dealon.in',
+          avatar: '🛡️'
+        }));
         document.getElementById('authGate').classList.add('hidden');
         document.getElementById('mainDashboard').classList.remove('hidden');
         loadCatalogData();
@@ -575,6 +589,12 @@
 
     function handleLogout() {
       sessionStorage.removeItem('dealon_auth');
+      try {
+        const u = JSON.parse(localStorage.getItem('dealon_auth_user') || '{}');
+        if (u && u.role === 'admin') {
+          localStorage.removeItem('dealon_auth_user');
+        }
+      } catch(e) {}
       window.location.reload();
     }
 
