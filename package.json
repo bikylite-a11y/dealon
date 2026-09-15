@@ -4,6 +4,7 @@
   "description": "DealOn - Smart Tech Deals & Automated Publishing Engine",
   "main": "auto_publisher.js",
   "scripts": {
+    "deploy": "wrangler deploy",
     "publish": "node auto_publisher.js",
     "tracker": "node tracker.js",
     "engine": "node publish_engine.js"
